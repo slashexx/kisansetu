@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+/* .header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/banner.avif);
+    background-position: center;
+    background-size: cover;
+} */
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+.nav-bar{
+    border-bottom: 2px solid grey;
+}
+
+.logo{
+    width: 96px;
+}
+
+.nav-links{
+    display: flex;
+    flex-direction: row;
+    margin-top: 47px;
+    margin-left: -45px;
+}
+
+.nav-links ul a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-bar .nav-links ul{
+    text-decoration: none; /* Remove default underline */
+    position: relative;
+}
+
+.nav-bar .nav-links ul::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor; /* Uses the text color */
+    transition: width 0.3s ease;
+}
+
+.nav-bar .nav-links ul:hover::after {
+    margin-left: 25px;
+    width: 75%; /* Expands the underline on hover */
+}
+
+.buttons{
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+.buttons button {
+    margin-right: 15px;
+    border: none;
+    width: 75px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.buttons button:last-child {
+    margin-right: 0;
+}
+
+.buttons button:first-child {
+    background-color: #4CAF50; /* Green for Sign Up */
+    color: white;
+}
+
+.buttons button:last-child {
+    background-color: #2196F3; /* Blue for Login */
+    color: white;
+}
+
+.buttons button:hover {
+    transform: scale(1.05); /* Slightly enlarges the button */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adds shadow for a pop effect */
+}
+
+.buttons button:first-child:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.buttons button:last-child:hover {
+    background-color: #1e88e5; /* Darker blue on hover */
+}
+
+
+
+
+
+/* page 1 */
+.page-1{
+    min-height: 100vh;
+    width: 100%;
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/banner.avif); */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)),
+                url(/images/banner.avif);
+    background-position: center;
+    background-size: cover;
+
+    padding: 10% 7%;
+}
+
+.page-1 h1 p{
+    font-family: 'Merriweather', serif;
+}
+
+.page-1 h1{
+    margin-bottom: 15px;
+}
+
+.page-1 p{
+    font-size: 18px;
+    margin-right: 90px;
+    margin-bottom: 120px;
+}
+
+.redirect-links{
+    margin-top: 50px;
+}
+
+.redirect-links button{
+    margin-bottom: 25px;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 7px;
+} 
+
+.redirect-links button {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    margin-right: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 60px;
+}
+
+.crop-btn {
+    background-color: #4CAF50; 
+}
+
+.crop-btn:hover {
+    background-color: #45a049;
+}
+
+.farmer-btn {
+    background-color: #8B4513;
+}
+
+.farmer-btn:hover {
+    background-color: #7B3D11;
+}
+
+.about-btn {
+    background-color: #2196F3;
+}
+
+.about-btn:hover {
+    background-color: #1E88E5;
+}
