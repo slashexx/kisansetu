@@ -30,6 +30,7 @@ nav{
 }
 
 .nav-links li a{
+    font-family: 'Montserrat', sans-serif;
     text-decoration: none;
     color: #333;
     font-size: 18px;

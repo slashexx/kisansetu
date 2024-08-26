@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+.nav-bar{
+    border-bottom: 2px solid grey;
+}
+
+.nav-bar ul li a.active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000; /* Color for the underline */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.logo{
+    width: 96px;
+}
+
+.nav-links{
+    
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    margin-top: 47px;
+    margin-left: 35px;
+    margin-bottom: 15px;
+}
+
+.nav-links li a{
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li{
+    text-decoration: none; /* Remove default underline */
+    position: relative;
+    margin-right: 30px;
+}
+
+.nav-bar .nav-links li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor; /* Uses the text color */
+    transition: width 0.3s ease;
+}
+
+.nav-bar .nav-links li:hover::after {
+    /* margin-left: 2px; */
+    width: 100%; /* Expands the underline on hover */
+}
+
+.buttons{
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+.buttons button {
+    margin-right: 15px;
+    border: none;
+    width: 75px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.buttons button:last-child {
+    margin-right: 0;
+}
+
+.buttons button:first-child {
+    background-color: #4CAF50; /* Green for Sign Up */
+    color: white;
+}
+
+.buttons button:last-child {
+    background-color: #2196F3; /* Blue for Login */
+    color: white;
+}
+
+.buttons button:hover {
+    transform: scale(1.05); /* Slightly enlarges the button */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adds shadow for a pop effect */
+}
+
+.buttons button:first-child:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.buttons button:last-child:hover {
+    background-color: #1e88e5; /* Darker blue on hover */
+}
+
+
+
+/* About Us Page */
+/* General body styling */
+body {
+    font-family: 'Merriweather', serif; /* Use the Merriweather font for a formal look */
+    margin: 0;
+    padding: 0;
+    color: #333; /* Dark text color for readability */
+    background-color: #f4f4f4; /* Light background color */
+}
+
+/* Container for the entire about us page */
+.about-us-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Hero section styling */
+/* Hero section styling */
+.hero {
+    background-image: url('/kisansetu/public/images/hero-image-3.jpg');
+    background-size: cover;
+    /* background-position: center center; */
+    background-repeat: no-repeat;
+    color: yellow; /* Light grey text color */
+    padding: 100px 20px;
+    text-align: center;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8); /* Stronger shadow for visibility */
+    border-bottom: 4px solid #ddd;
+    margin-bottom: 40px;
+    height: 400px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.8); /* Strong shadow for h1 */
+}
+
+.hero p {
+    font-family: 'Merriweather', serif;
+    font-size: 24px;
+    margin-top: 10px;
+    line-height: 1.4;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7); /* Strong shadow for p */
+}
+
+/* Content sections */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between content blocks */
+    padding: 20px 0;
+}
+
+.content-block {
+    background: #fff; /* White background for content blocks */
+    border: 1px solid #ddd; /* Light border for separation */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.content-block h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #0056b3; /* Dark blue for headings */
+}
+
+.content-block p {
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Images section */
+.about-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between image blocks */
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.image-block {
+    flex: 1 1 calc(50% - 20px); /* Two images per row with gap */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+}
+
+.image-block img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.image-block h3 {
+    font-family: 'Playfair Display', serif;
+    margin-top: 10px;
+    font-size: 22px;
+    color: #333;
+}
+
+/* Call to action section */
+.call-to-action {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.call-to-action a{
+    text-decoration: none;
+}
+
+.cta-btn {
+    font-family: 'Playfair Display', serif;
+    background-color: #0056b3;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.cta-btn:hover {
+    background-color: #003d7a; /* Darker blue on hover */
+    transform: translateY(-5px);
+}
