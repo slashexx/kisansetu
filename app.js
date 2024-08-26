@@ -21,6 +21,10 @@ app.get('/signup', (req, res) => {
     res.sendFile(path.join(__dirname, "public", "signup.html"));
 })
 
+app.get('/dashboard', (req, res)=> {
+  res.sendFile(path.join(__dirname, "public", "dashboard.html"))
+})
+
 
 
 
