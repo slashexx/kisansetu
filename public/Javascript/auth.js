@@ -11,6 +11,7 @@ const firebaseConfig = {
     appId: "1:763552320675:web:93cff2382387b7b5dc4316"
 };
 
+const messageElement = document.getElementById('message');
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -42,8 +43,9 @@ function emailSignUpHandler(auth, email, password, name, occupation, state, phon
             // alert("Details noted !");
             window.location.href = "/dashboard.html";
         })
-        .catch((error) => {
-            console.error("Error during sign-up:", error.message);
+        .catch((error) => {messageElement.textContent = `Error: ${error.message}`;
+        messageElement.style.color = 'red';
+        
         });
 }
 
@@ -57,7 +59,7 @@ document.getElementById('signup-form').addEventListener('submit', (e) => {
     const state = document.getElementById('state').value;
     const phoneNo = document.getElementById('phoneNo').value;
     const aadhar = document.getElementById('aadhar').value;
-    const messageElement = document.getElementById('message');
+    
 
     emailSignUpHandler(auth, email, password, name, occupation, state, phoneNo, aadhar)
         .then(() => {
