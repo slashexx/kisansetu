@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <script src="../dashboard.js" defer></script>
+    <script src="./Javascript/dashboard.js" type="module" defer></script>
 </head>
 <body>
     <h1>Welcome to Your Dashboard</h1>
@@ -14,5 +14,13 @@
     <p>Phone Number: <span id="userPhoneNo"></span></p>
     <p>Aadhar: <span id="userAadhar"></span></p>
     <p>Email: <span id="userEmail"></span></p>
+    <button onclick="logout()"">Logout</button>
+    <script>
+
+function logout() {
+    localStorage.removeItem('uid');
+    window.location.href = "/signup";
+}
+    </script>
 </body>
 </html>

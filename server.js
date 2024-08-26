@@ -16,8 +16,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'home-page.html'));
 });
 
-// Add your codes here [Dhruv]
-
+// Add your codes here - [Dhruv]
+app.get('/signup', (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "signup.html"));
+})
 
 
 
@@ -50,8 +52,9 @@ app.use((err, req, res, next) => {
   });
   
   
-  const port = 5000;
-  app.listen(port, () => {
+const port = 5000;
+
+app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
   });
   
