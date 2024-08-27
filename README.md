@@ -85,7 +85,35 @@ Kisansetu is a comprehensive platform designed to facilitate assured contract fa
      }
    };
    ```
+   (Also create a env file with MNEMONIC="your-mnemonic-here")
+   OR
+   ```js
+   const HDWalletProvider = require('@truffle/hdwallet-provider');
+   require('dotenv').config();
 
+   module.exports = {
+     networks: {
+       development: {
+         host: "127.0.0.1",
+         port: 7545, // Default Ganache port
+         network_id: "*", // Match any network id
+       },
+       zetachain: {
+         provider: () => new HDWalletProvider(
+           mnemonic, // Add your mnemonic here !
+           'https://zetachain-athens-evm.blockpi.network/v1/rpc/public'
+         ),
+         network_id: 7001,
+         gas: 4500000,
+         gasPrice: 10000000000,
+       },
+     },
+     compilers: {
+       solc: {
+         version: "0.8.0"
+       }
+     }
+   };
    Compile and migrate the smart contracts:
 
    ```bash
