@@ -49,9 +49,10 @@ Kisansetu is a comprehensive platform designed to facilitate assured contract fa
 4. **Compile and Migrate Smart Contracts:**
 
    ```bash
-   truffle compile
-   truffle migrate
+   truffle compile --config truffle-config.cjs
+   truffle migrate --config truffle-config.cjs
    ```
+   (The config part was added to prevent conflicts with the package.json which handles the website backend)
 
 5. **Start the Development Server:**
 
