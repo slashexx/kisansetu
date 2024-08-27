@@ -85,8 +85,8 @@ Kisansetu is a comprehensive platform designed to facilitate assured contract fa
      }
    };
    ```
-   (Also create a env file with MNEMONIC="your-mnemonic-here")
-   OR
+   (Also create a env file with MNEMONIC="your-mnemonic-here") <br>
+   OR <br>
    ```js
    const HDWalletProvider = require('@truffle/hdwallet-provider');
    require('dotenv').config();
@@ -115,6 +115,8 @@ Kisansetu is a comprehensive platform designed to facilitate assured contract fa
      }
    };
    Compile and migrate the smart contracts:
+
+To run your contract locally, follow these steps :-
 
    ```bash
    truffle compile --config truffle-config.cjs
