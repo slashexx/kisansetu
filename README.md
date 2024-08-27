@@ -14,7 +14,7 @@ Kisansetu is a comprehensive platform designed to facilitate assured contract fa
 
 - **Frontend**: HTML, CSS, JavaScript
 - **Backend**: Firebase (Authentication and Firestore)
-- **Blockchain**: Ethereum, Solidity
+- **Blockchain**: Ethereum, Solidity, ZetaChain
 - **Development Framework**: Truffle for smart contract development and testing
 
 ## Getting Started
@@ -50,7 +50,7 @@ Kisansetu is a comprehensive platform designed to facilitate assured contract fa
 
    ```bash
    truffle compile --config truffle-config.cjs
-   truffle migrate --config truffle-config.cjs
+   truffle migrate --config truffle-config.cjs --network zetachain
    ```
    (The config part was added to prevent conflicts with the package.json which handles the website backend)
 
