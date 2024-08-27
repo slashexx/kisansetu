@@ -15,7 +15,7 @@ Kisansetu is a comprehensive platform designed to facilitate assured contract fa
 - **Frontend**: HTML, CSS, JavaScript
 - **Backend**: Firebase (Authentication and Firestore)
 - **Blockchain**: Ethereum, Solidity, ZetaChain
-- **Development Framework**: Truffle for smart contract development and testing
+- **Development Framework**: Truffle for smart contract development and testing, Ganache CLI for local blockchain testing
 
 ## Getting Started
 
@@ -23,6 +23,7 @@ Kisansetu is a comprehensive platform designed to facilitate assured contract fa
 
 - Node.js and npm installed
 - Truffle framework
+- Ganache CLI installed (`npm install -g ganache-cli`)
 - A Firebase project
 - MetaMask wallet (for Ethereum transactions)
 
@@ -46,23 +47,64 @@ Kisansetu is a comprehensive platform designed to facilitate assured contract fa
    - Create a Firebase project and configure authentication and Firestore.
    - Update the Firebase configuration in `firebase-config.js` with your project details.
 
-4. **Compile and Migrate Smart Contracts:**
+4. **Start Ganache CLI:**
+
+   ```bash
+   ganache-cli
+   ```
+
+5. **Compile and Migrate Smart Contracts:**
+
+   Update `truffle-config.cjs` to use the local Ganache network:
+
+   ```js
+   const HDWalletProvider = require('@truffle/hdwallet-provider');
+   require('dotenv').config();
+
+   module.exports = {
+     networks: {
+       development: {
+         host: "127.0.0.1",
+         port: 7545, // Default Ganache port
+         network_id: "*", // Match any network id
+       },
+       zetachain: {
+         provider: () => new HDWalletProvider(
+           process.env.MNEMONIC,
+           'https://zetachain-athens-evm.blockpi.network/v1/rpc/public'
+         ),
+         network_id: 7001,
+         gas: 4500000,
+         gasPrice: 10000000000,
+       },
+     },
+     compilers: {
+       solc: {
+         version: "0.8.0"
+       }
+     }
+   };
+   ```
+
+   Compile and migrate the smart contracts:
 
    ```bash
    truffle compile --config truffle-config.cjs
    truffle migrate --config truffle-config.cjs --network zetachain
    ```
-   (The config part was added to prevent conflicts with the package.json which handles the website backend)
 
-5. **Start the Development Server:**
+   (Parallely run `ganache-cli` and replace `zetachain` with `development` if deploying locally on ganache.)
+   
+
+7. **Start the Development Server:**
 
    ```bash
    npm start
    ```
 
-6. **Access the Application:**
+8. **Access the Application:**
 
-   Open your browser and navigate to `http://localhost:3000`.
+   Open your browser and navigate to `http://localhost:5000`.
 
 ## Usage
 
@@ -75,7 +117,7 @@ Kisansetu is a comprehensive platform designed to facilitate assured contract fa
 - **Run Tests**: Execute smart contract tests using Truffle.
 
    ```bash
-   truffle test
+   truffle test --config truffle-config.cjs
    ```
 
 ## Contributing
