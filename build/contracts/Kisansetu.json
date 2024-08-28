@@ -6089,10 +6089,16 @@
       "links": {},
       "address": "0xe9498ABB98981eC081E6AE9A79406A3189BF1441",
       "transactionHash": "0x68702ee2f7b6baaa14ec9e4142df098b88a893deeda524280d18ab9014e2affd"
+    },
+    "1724828413110": {
+      "events": {},
+      "links": {},
+      "address": "0x55BB8179d29A346307d6c36CD7c2b7F9C6D3A282",
+      "transactionHash": "0x46fdcfa0485637a6ba3d9ad3e5c6d7255d235d84cca80ad3336ed2b7b78b0648"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-08-27T14:19:56.048Z",
+  "updatedAt": "2024-08-28T07:00:26.535Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
