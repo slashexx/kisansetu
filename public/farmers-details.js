@@ -6,7 +6,7 @@ const farmerDetails = [
         "cropsGrown": ["Wheat", "Rice"],
         "postalCode": "140001",
         "address": "Vill: Sarhali, Dist: Amritsar, Punjab",
-        "image": "https://via.placeholder.com/40?text=R",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": true
     },
     {
@@ -16,27 +16,27 @@ const farmerDetails = [
         "cropsGrown": ["Jowar", "Bajra"],
         "postalCode": "210001",
         "address": "Vill: Aliganj, Dist: Etah, Uttar Pradesh",
-        "image": "https://via.placeholder.com/40?text=M",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": false
     },
     {
-        "farmerfarmerId": 3,
+        "farmerId": 3,
         "name": "Amit Sharma",
         "state": "Maharashtra",
         "cropsGrown": ["Chickpeas", "Mung Beans"],
         "postalCode": "400001",
         "address": "Vill: Karjat, Dist: Raigad, Maharashtra",
-        "image": "https://via.placeholder.com/40?text=A",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": true
     },
     {
-        "farmerfarmerId": 4,
+        "farmerId": 4,
         "name": "Sita Devi",
         "state": "Madhya Pradesh",
         "cropsGrown": ["Wheat", "Peas"],
         "postalCode": "452001",
         "address": "Vill: Depalpur, Dist: Indore, Madhya Pradesh",
-        "image": "https://via.placeholder.com/40?text=S",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": true
     },
     {
@@ -46,7 +46,7 @@ const farmerDetails = [
         "cropsGrown": ["Ragi", "Chickpeas"],
         "postalCode": "380001",
         "address": "Vill: Mandal, Dist: Ahmedabad, Gujarat",
-        "image": "https://via.placeholder.com/40?text=K",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": false
     },
     {
@@ -56,7 +56,7 @@ const farmerDetails = [
         "cropsGrown": ["Wheat", "Maize"],
         "postalCode": "134001",
         "address": "Vill: Ambala Cantt, Dist: Ambala, Haryana",
-        "image": "https://via.placeholder.com/40?text=S",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": true
     },
     {
@@ -66,7 +66,7 @@ const farmerDetails = [
         "cropsGrown": ["Millets", "Barley"],
         "postalCode": "302001",
         "address": "Vill: Chomu, Dist: Jaipur, Rajasthan",
-        "image": "https://via.placeholder.com/40?text=V",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": false
     },
     {
@@ -76,7 +76,7 @@ const farmerDetails = [
         "cropsGrown": ["Rice", "Maize"],
         "postalCode": "800001",
         "address": "Vill: Masaurhi, Dist: Patna, Bihar",
-        "image": "https://via.placeholder.com/40?text=R",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": true
     },
     {
@@ -86,7 +86,7 @@ const farmerDetails = [
         "cropsGrown": ["Rice", "Jowar"],
         "postalCode": "700001",
         "address": "Vill: Baruipur, Dist: South 24 Parganas, West Bengal",
-        "image": "https://via.placeholder.com/40?text=A",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": true
     },
     {
@@ -96,7 +96,7 @@ const farmerDetails = [
         "cropsGrown": ["Rice", "Peas"],
         "postalCode": "600001",
         "address": "Vill: Tiruvallur, Dist: Chennai, Tamil Nadu",
-        "image": "https://via.placeholder.com/40?text=R",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": false
     },
     {
@@ -106,7 +106,7 @@ const farmerDetails = [
         "cropsGrown": ["Chickpeas", "Ragi"],
         "postalCode": "560001",
         "address": "Vill: Anekal, Dist: Bengaluru, Karnataka",
-        "image": "https://via.placeholder.com/40?text=P",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": true
     },
     {
@@ -116,7 +116,7 @@ const farmerDetails = [
         "cropsGrown": ["Mung Beans", "Grapes"],
         "postalCode": "400002",
         "address": "Vill: Nashik, Dist: Nashik, Maharashtra",
-        "image": "https://via.placeholder.com/40?text=D",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": true
     },
     {
@@ -126,7 +126,7 @@ const farmerDetails = [
         "cropsGrown": ["Maize", "Ragi"],
         "postalCode": "171001",
         "address": "Vill: Rohru, Dist: Shimla, Himachal Pradesh",
-        "image": "https://via.placeholder.com/40?text=P",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": false
     },
     {
@@ -136,7 +136,7 @@ const farmerDetails = [
         "cropsGrown": ["Rice", "Peas"],
         "postalCode": "695001",
         "address": "Vill: Neyyattinkara, Dist: Thiruvananthapuram, Kerala",
-        "image": "https://via.placeholder.com/40?text=G",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": true
     },
     {
@@ -146,7 +146,7 @@ const farmerDetails = [
         "cropsGrown": ["Chickpeas", "Rice"],
         "postalCode": "500001",
         "address": "Vill: Kadapa, Dist: Kadapa, Andhra Pradesh",
-        "image": "https://via.placeholder.com/40?text=L",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": false
     },
     {
@@ -156,7 +156,7 @@ const farmerDetails = [
         "cropsGrown": ["Wheat", "Bajra"],
         "postalCode": "248001",
         "address": "Vill: Doiwala, Dist: Dehradun, Uttarakhand",
-        "image": "https://via.placeholder.com/40?text=A",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": true
     },
     {
@@ -166,7 +166,7 @@ const farmerDetails = [
         "cropsGrown": ["Rice", "Jowar"],
         "postalCode": "751001",
         "address": "Vill: Jatni, Dist: Khordha, Odisha",
-        "image": "https://via.placeholder.com/40?text=N",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": false
     },
     {
@@ -176,7 +176,7 @@ const farmerDetails = [
         "cropsGrown": ["Wheat", "Ragi"],
         "postalCode": "226001",
         "address": "Vill: Bakshi Ka Talab, Dist: Lucknow, Uttar Pradesh",
-        "image": "https://via.placeholder.com/40?text=H",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": true
     },
     {
@@ -186,7 +186,7 @@ const farmerDetails = [
         "cropsGrown": ["Rice", "Maize"],
         "postalCode": "492001",
         "address": "Vill: Arang, Dist: Raipur, Chhattisgarh",
-        "image": "https://via.placeholder.com/40?text=K",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": false
     },
     {
@@ -196,7 +196,7 @@ const farmerDetails = [
         "cropsGrown": ["Rice", "Mung Beans"],
         "postalCode": "834001",
         "address": "Vill: Namkum, Dist: Ranchi, Jharkhand",
-        "image": "https://via.placeholder.com/40?text=M",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": true
     },
     {
@@ -206,7 +206,7 @@ const farmerDetails = [
         "cropsGrown": ["Bajra", "Wheat"],
         "postalCode": "302002",
         "address": "Vill: Kalwar, Dist: Jaipur, Rajasthan",
-        "image": "https://via.placeholder.com/40?text=S",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": false
     },
     {
@@ -216,7 +216,7 @@ const farmerDetails = [
         "cropsGrown": ["Ragi", "Peas"],
         "postalCode": "400003",
         "address": "Vill: Ratnagiri, Dist: Ratnagiri, Maharashtra",
-        "image": "https://via.placeholder.com/40?text=D",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": true
     },
     {
@@ -226,7 +226,7 @@ const farmerDetails = [
         "cropsGrown": ["Wheat", "Maize"],
         "postalCode": "560002",
         "address": "Vill: Yelahanka, Dist: Bengaluru, Karnataka",
-        "image": "https://via.placeholder.com/40?text=G",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": false
     },
     {
@@ -236,7 +236,7 @@ const farmerDetails = [
         "cropsGrown": ["Rice", "Wheat"],
         "postalCode": "140002",
         "address": "Vill: Rajpura, Dist: Patiala, Punjab",
-        "image": "https://via.placeholder.com/40?text=A",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": true
     },
     {
@@ -246,7 +246,7 @@ const farmerDetails = [
         "cropsGrown": ["Rice", "Barley"],
         "postalCode": "134002",
         "address": "Vill: Pehowa, Dist: Kurukshetra, Haryana",
-        "image": "https://via.placeholder.com/40?text=R",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": true
     },
     {
@@ -256,7 +256,7 @@ const farmerDetails = [
         "cropsGrown": ["Rice", "Jowar"],
         "postalCode": "800002",
         "address": "Vill: Bishanpur, Dist: Patna, Bihar",
-        "image": "https://via.placeholder.com/40?text=A",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": true
     },
     {
@@ -266,7 +266,7 @@ const farmerDetails = [
         "cropsGrown": ["Wheat", "Maize"],
         "postalCode": "452002",
         "address": "Vill: Simrol, Dist: Indore, Madhya Pradesh",
-        "image": "https://via.placeholder.com/40?text=R",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": false
     },
     {
@@ -276,7 +276,7 @@ const farmerDetails = [
         "cropsGrown": ["Ragi", "Chickpeas"],
         "postalCode": "380002",
         "address": "Vill: Sanand, Dist: Ahmedabad, Gujarat",
-        "image": "https://via.placeholder.com/40?text=B",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": true
     },
     {
@@ -286,7 +286,7 @@ const farmerDetails = [
         "cropsGrown": ["Millets", "Barley"],
         "postalCode": "302003",
         "address": "Vill: Sanganer, Dist: Jaipur, Rajasthan",
-        "image": "https://via.placeholder.com/40?text=R",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": false
     },
     {
@@ -296,7 +296,7 @@ const farmerDetails = [
         "cropsGrown": ["Wheat", "Bajra"],
         "postalCode": "210002",
         "address": "Vill: Tindwari, Dist: Banda, Uttar Pradesh",
-        "image": "https://via.placeholder.com/40?text=D",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": true
     },
     {
@@ -306,7 +306,7 @@ const farmerDetails = [
         "cropsGrown": ["Rice", "Peas"],
         "postalCode": "695002",
         "address": "Vill: Neyyattinkara, Dist: Thiruvananthapuram, Kerala",
-        "image": "https://via.placeholder.com/40?text=P",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": true
     },
     {
@@ -316,7 +316,7 @@ const farmerDetails = [
         "cropsGrown": ["Wheat", "Maize"],
         "postalCode": "134003",
         "address": "Vill: Raiwala, Dist: Panchkula, Haryana",
-        "image": "https://via.placeholder.com/40?text=G",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": false
     },
     {
@@ -326,7 +326,7 @@ const farmerDetails = [
         "cropsGrown": ["Maize", "Ragi"],
         "postalCode": "171002",
         "address": "Vill: Kufri, Dist: Shimla, Himachal Pradesh",
-        "image": "https://via.placeholder.com/40?text=V",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": true
     },
     {
@@ -336,7 +336,7 @@ const farmerDetails = [
         "cropsGrown": ["Chickpeas", "Rice"],
         "postalCode": "500002",
         "address": "Vill: Ibrahimpatnam, Dist: Krishna, Andhra Pradesh",
-        "image": "https://via.placeholder.com/40?text=L",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": false
     },
     {
@@ -346,7 +346,7 @@ const farmerDetails = [
         "cropsGrown": ["Rice", "Jowar"],
         "postalCode": "700002",
         "address": "Vill: Chandannagar, Dist: Hooghly, West Bengal",
-        "image": "https://via.placeholder.com/40?text=R",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": true
     },
     {
@@ -356,7 +356,7 @@ const farmerDetails = [
         "cropsGrown": ["Rice", "Maize"],
         "postalCode": "492002",
         "address": "Vill: Tilda, Dist: Raipur, Chhattisgarh",
-        "image": "https://via.placeholder.com/40?text=M",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": false
     },
     {
@@ -366,7 +366,7 @@ const farmerDetails = [
         "cropsGrown": ["Rice", "Mung Beans"],
         "postalCode": "751002",
         "address": "Vill: Satyabadi, Dist: Puri, Odisha",
-        "image": "https://via.placeholder.com/40?text=A",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": true
     },
     {
@@ -376,7 +376,7 @@ const farmerDetails = [
         "cropsGrown": ["Mung Beans", "Grapes"],
         "postalCode": "400004",
         "address": "Vill: Igatpuri, Dist: Nashik, Maharashtra",
-        "image": "https://via.placeholder.com/40?text=S",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": false
     },
     {
@@ -386,7 +386,7 @@ const farmerDetails = [
         "cropsGrown": ["Ragi", "Maize"],
         "postalCode": "560003",
         "address": "Vill: Ramanagara, Dist: Bengaluru Rural, Karnataka",
-        "image": "https://via.placeholder.com/40?text=K",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": true
     },
     {
@@ -396,7 +396,7 @@ const farmerDetails = [
         "cropsGrown": ["Rice", "Chickpeas"],
         "postalCode": "834002",
         "address": "Vill: Ormanjhi, Dist: Ranchi, Jharkhand",
-        "image": "https://via.placeholder.com/40?text=D",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": false
     },
     {
@@ -405,8 +405,8 @@ const farmerDetails = [
         "state": "Uttarakhand",
         "cropsGrown": ["Bajra", "Wheat"],
         "postalCode": "248002",
-        "address": "Vill: DevfarmerIdhura, Dist: Champawat, Uttarakhand",
-        "image": "https://via.placeholder.com/40?text=S",
+        "address": "Vill:DevfarmerIdhura, Dist: Champawat, Uttarakhand",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": true
     },
     {
@@ -416,7 +416,7 @@ const farmerDetails = [
         "cropsGrown": ["Rice", "Maize"],
         "postalCode": "600002",
         "address": "Vill: Periyapalayam, Dist: Tiruvallur, Tamil Nadu",
-        "image": "https://via.placeholder.com/40?text=D",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": false
     },
     {
@@ -426,7 +426,7 @@ const farmerDetails = [
         "cropsGrown": ["Wheat", "Rice"],
         "postalCode": "140003",
         "address": "Vill: Kharar, Dist: Mohali, Punjab",
-        "image": "https://via.placeholder.com/40?text=S",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": true
     },
     {
@@ -436,7 +436,7 @@ const farmerDetails = [
         "cropsGrown": ["Barley", "Millets"],
         "postalCode": "302004",
         "address": "Vill: Laxmangarh, Dist: Alwar, Rajasthan",
-        "image": "https://via.placeholder.com/40?text=J",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": false
     },
     {
@@ -446,7 +446,7 @@ const farmerDetails = [
         "cropsGrown": ["Rice", "Peas"],
         "postalCode": "210003",
         "address": "Vill: Chitrakoot, Dist: Banda, Uttar Pradesh",
-        "image": "https://via.placeholder.com/40?text=S",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": true
     },
     {
@@ -456,7 +456,7 @@ const farmerDetails = [
         "cropsGrown": ["Rice", "Peas"],
         "postalCode": "695003",
         "address": "Vill: Kattakada, Dist: Thiruvananthapuram, Kerala",
-        "image": "https://via.placeholder.com/40?text=S",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": true
     },
     {
@@ -466,7 +466,7 @@ const farmerDetails = [
         "cropsGrown": ["Wheat", "Maize"],
         "postalCode": "140002",
         "address": "Vill: Majri, Dist: Rupnagar, Punjab",
-        "image": "https://via.placeholder.com/40?text=N",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": false
     },
     {
@@ -476,7 +476,7 @@ const farmerDetails = [
         "cropsGrown": ["Rice", "Millets"],
         "postalCode": "492003",
         "address": "Vill: Kharora, Dist: Raipur, Chhattisgarh",
-        "image": "https://via.placeholder.com/40?text=M",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": false
     },
     {
@@ -486,7 +486,7 @@ const farmerDetails = [
         "cropsGrown": ["Wheat", "Peas"],
         "postalCode": "452003",
         "address": "Vill: Mhow, Dist: Indore, Madhya Pradesh",
-        "image": "https://via.placeholder.com/40?text=K",
+        "image": "https://media.istockphoto.com/id/907753228/photo/indian-farmer-women-on-farm-field-with-happy-face.jpg?s=612x612&w=0&k=20&c=Hz8fwmpGs4iMWu9vtYVUnPfCD61srJhN8Tl3kW33JyM=",
         "governmentVerified": true
     },
     {
@@ -496,7 +496,8 @@ const farmerDetails = [
         "cropsGrown": ["Jowar", "Rice"],
         "postalCode": "500003",
         "address": "Vill: Mangalagiri, Dist: Guntur, Andhra Pradesh",
-        "image": "https://via.placeholder.com/40?text=G",
+        "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
         "governmentVerified": false
     }
 ];
+module.exports.farmerDetails=farmerDetails

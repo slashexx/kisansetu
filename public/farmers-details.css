@@ -4,7 +4,11 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
-
+svg{
+    width: 1rem;
+    height: 1rem;
+    fill: #00C5FF;
+}
 nav {
     display: flex;
     flex-direction: row;
