@@ -125,83 +125,120 @@ nav {
     /* Darker blue on hover */
 }
 
-
-/* page 1 */
-.page-1 {
-    min-height: 100vh;
-    width: 100%;
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/banner.avif); */
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)),
-        url(/kisansetu/public/images/banner.avif);
-    background-position: center;
-    background-size: cover;
-    padding: 10% 7%;
+/* Main container for profile */
+.profile-container {
+    display: flex;
+    /* flex-wrap: wrap; */
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 60px auto;
+    max-width: 1000px;
+    min-height: 600px;
 }
 
-.page-1 h1 {
-    font-family: 'Playfair Display', serif;
+/* Left section (image & verification) */
+.profile-sidebar {
+    background-color: #f4f4f4;
+    padding: 20px;
+    flex: 1 1 250px;
+    text-align: center;
+    border-right: 1px solid #e0e0e0;
+}
+
+.profile-sidebar img {
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    /* border: 4px solid #4caf50; */
     margin-bottom: 15px;
 }
 
-.page-1 p {
-    font-family: 'Fira Sans', sans-serif;
-    font-weight: 500;
-}
-
-.page-1 p {
-    font-size: 18px;
-    margin-right: 90px;
-    margin-bottom: 120px;
-}
-
-.redirect-links {
-    margin-top: 50px;
-}
-
-.redirect-links h3 {
-    font-family: 'Merriweather', serif;
-    font-size: 24px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-}
-
-.redirect-links button {
-    /* font-family: 'Playfair Display', serif; */
+.verification-badge {
+    display: inline-block;
+    padding: 8px 12px;
+    /* background-color: #4caf50; */
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
     margin-top: 10px;
-    margin-bottom: 25px;
-    border: none;
+}
+
+/* Right section (profile details) */
+.profile-details {
+    flex: 2 1 750px;
+    padding: 20px;
+}
+
+.profile-details h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.profile-details .section-title {
+    font-size: 22px;
+    color: #555;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 5px;
+}
+
+.profile-details p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.profile-details p strong {
+    font-weight: bold;
+    color: #444;
+}
+
+/* Tabs styling */
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.tabs div {
     padding: 10px 20px;
     cursor: pointer;
-    border-radius: 7px;
-    color: white;
     font-size: 16px;
-    margin-right: 15px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-bottom: 60px;
+    color: #555;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
 }
 
-.crop-btn {
-    background-color: #4CAF50;
+.tabs div:hover,
+.tabs div.active {
+    border-bottom: 2px solid #4caf50;
+    color: #4caf50;
 }
 
-.crop-btn:hover {
-    transform: translateY(-5px);
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Back button */
+.back-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
     background-color: #45a049;
-}
-
-.farmer-btn {
-    background-color: #8B4513;
-}
-
-.farmer-btn:hover {
-    transform: translateY(-5px);
-    background-color: #7B3D11;
-}
-
-.about-btn {
-    background-color: #2196F3;
-}
-
-.about-btn:hover {
-    transform: translateY(-5px);
-    background-color: #1E88E5;
 }

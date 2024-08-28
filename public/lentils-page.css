@@ -59,6 +59,19 @@ nav{
     width: 100%; /* Expands the underline on hover */
 }
 
+
+.nav-bar ul li a.active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    /* Color for the underline */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
 .buttons{
     margin-top: 30px;
     margin-right: 20px;

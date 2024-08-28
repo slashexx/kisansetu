@@ -205,3 +205,75 @@ nav {
     transform: translateY(-5px);
     background-color: #1E88E5;
 }
+
+/* Farmers Table */
+/* body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+} */
+table {
+    width: 85%; /* Set the table width to 85% of its container */
+    margin: 0 auto; /* Center the table horizontally */
+    border-collapse: collapse;
+}
+
+/* Centering images in the first column of the table */
+table tbody td:first-child {
+    text-align: center;
+}
+
+table tbody td:first-child img {
+    display: block;
+    margin: 0 auto;
+}
+
+table thead tr th{
+    text-align: center;
+}
+th,
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+a {
+    color: #000;
+    /* color: #007BFF; */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+tr td img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+table tbody td img {
+    display: block;
+    margin: 0 auto; /* Center images */
+}
+
+.farmers-list {
+    padding: 20px;
+}
+
+.farmers-list h1 {
+    margin-left: 60px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
