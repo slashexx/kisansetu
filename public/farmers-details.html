@@ -18,6 +18,10 @@
       href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
 
   <body>
@@ -79,13 +83,46 @@
           <p><strong>Crops Grown:</strong> <span id="farmerCrops"></span></p>
         </div>
 
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <!-- <div class="swiper-pagination"></div> -->
+        </div>
+
         <!-- Back Button -->
         <a href="farmers-page.html" class="back-btn">Back to List</a>
       </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./farmers-details.js"></script>
     <script>
+      //crop images
+      const cropsImages = {
+        Wheat:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTb0GgH3ccFLjH8ZPZxa9DKvjZ4uOgErcTs1fzGKugcyuKlE6ri",
+        Rice: "https://cdn.britannica.com/89/140889-050-EC3F00BF/Ripening-heads-rice-Oryza-sativa.jpg",
+        Jowar:
+          "https://i0.wp.com/www.svaguna.com/wp-content/uploads/2019/08/Jowar.jpg?fit=600%2C400&ssl=1",
+        Bajra:
+          "https://karthickorganics.com/wp-content/uploads/2023/11/bajra.webp",
+        Chickpeas:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI2UdrUCYD-xy6Fherf3RMmzBbjBklVKPR-A&s",
+        "Mung Beans":
+          "https://cdn.britannica.com/12/158012-050-F79D3126/mung-beans-dishes-desserts-soups.jpg",
+        Peas: "https://media.post.rvohealth.io/wp-content/uploads/2020/09/green-peas-thumb-1-732x549.jpg",
+        Ragi: "https://5.imimg.com/data5/SELLER/Default/2022/9/ZB/GS/FR/25008022/jiwa-organic-ragi-flour.jpg",
+        Maize:
+          "https://5.imimg.com/data5/BB/IW/MY-28079104/organic-yellow-maize.jpg",
+        Millets:
+          "https://sonkan.in/wp-content/uploads/2023/09/From-Farm-to-Table_-Tracing-the-Journey-of-Millets-in-Indian-Markets-930x614.webp",
+        Barley:
+          "https://cdn-prod.medicalnewstoday.com/content/images/articles/295/295268/barley-grains-in-a-wooden-bowl.jpg",
+        Grapes:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTUNelf6LWd4fNNrJDDXZRgxv9n4JnMDkx3Q&s",
+      };
+
       const farmers = farmerDetails;
       // Function to get query parameters
       function getQueryParam(param) {
@@ -127,22 +164,32 @@
             farmersdetails.cropsGrown.forEach(
               (crop) => (farmerCrops.innerHTML += `<li>${crop}</li>`)
             );
+            const swiperContainer =
+              document.getElementsByClassName("swiper-wrapper")[0]; // Select the container that holds all the swiper slides
+            console.log(swiperContainer);
+            farmersdetails.cropsGrown.forEach((crop) => {
+              console.log(crop);
+              swiperContainer.innerHTML += `<div class="swiper-slide"><div class="title" data-swiper-parallax="-300">${crop}</div><img src="${cropsImages[crop]}" alt="${crop}" /></div>`;
+            });
 
-            // const profileContainer = document.getElementsByClassName('profile-details');
-            // console.log(profileContainer)
-            // profileContainer.innerHTML = `
-            //     <img src="${farmersdetails.image}" alt="${farmersdetails.name}" width="100" height="100">
-            //     <div class="farmer-details">
-            //         <h2>${farmersdetails.name}</h2>
-            //         <p>State: ${farmersdetails.state}</p>
-            //         <p>Crops Grown: ${farmersdetails.cropsGrown.join(', ')}</p>
-            //         <p>Postal Code: ${farmersdetails.postalCode}</p>
-            //         <p>Address: ${farmersdetails.address}</p>
-            //         ${farmersdetails.governmentVerified ?
-            //             '<div class="verified-badge"><img src="verified.png" alt="Verified"></div>' :
-            //             ''}
-            //     </div>
-            // `;
+            const initializeSwiper = () => {
+              new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                pagination: {
+                  el: ".swiper-pagination",
+                  clickable: true,
+                },
+                navigation: {
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                },
+              });
+            };
+
+            initializeSwiper();
+      
           } else {
             document.getElementsByClassName("profile-details")[0].textContent =
               "Farmer not found.";

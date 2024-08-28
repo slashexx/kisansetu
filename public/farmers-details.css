@@ -246,3 +246,57 @@ nav {
 .back-btn:hover {
     background-color: #45a049;
 }
+
+/* swiper css */
+.swiper {
+    margin-left: 3rem !important; 
+    width: 30vw;
+    height: 15vw;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 80%;
+    height: 100%;
+    margin-left: 10%;
+    object-fit: cover;
+
+  }
+ 
+
+  .title{
+    font-weight: bold;
+  }
+  /* .title{
+    opacity: 0;
+    transition: all ease-in;
+  }
+  .swiper-slide:hover .title{
+    opacity: 1;
+  } */
+
+/* 
+  .swiper-slide .title {
+    font-size: 41px;
+    font-weight: 300;
+  } */
+ 
+.swiper-button-next,.swiper-button-prev{
+    scale: 0.5;
+    color: #000 !important;
+}
+
+  .swiper {
+    margin-left: auto;
+    margin-right: auto;
+  }

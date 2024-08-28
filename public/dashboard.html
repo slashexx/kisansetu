@@ -1,26 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
     <script src="./Javascript/dashboard.js" type="module" defer></script>
 </head>
-<body>
-    <h1>Welcome to Your Dashboard</h1>
-    <p>Name: <span id="userName"></span></p>
-    <p>Occupation: <span id="userOccupation"></span></p>
-    <p>State: <span id="userState"></span></p>
-    <p>Phone Number: <span id="userPhoneNo"></span></p>
-    <p>Aadhar: <span id="userAadhar"></span></p>
-    <p>Email: <span id="userEmail"></span></p>
-    <button onclick="logout()"">Logout</button>
-    <script>
 
-function logout() {
-    localStorage.removeItem('uid');
-    window.location.href = "/signup";
-}
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <div class="profile-header">
+                <h2>Welcome to Your Dashboard</h2>
+            </div>
+            <div class="profile-info">
+                <div class="profile-row">
+                    <label>Name:</label>
+                    <span id="userName">John Doe</span>
+                </div>
+                <div class="profile-row">
+                    <label>Occupation:</label>
+                    <span id="userOccupation">Farmer</span>
+                </div>
+                <div class="profile-row">
+                    <label>State:</label>
+                    <span id="userState">Punjab</span>
+                </div>
+                <div class="profile-row">
+                    <label>Phone Number:</label>
+                    <span id="userPhoneNo">+91 9876543210</span>
+                </div>
+                <div class="profile-row">
+                    <label>Aadhar:</label>
+                    <span id="userAadhar">XXXX-XXXX-1234</span>
+                </div>
+                <div class="profile-row">
+                    <label>Email:</label>
+                    <span id="userEmail">john@example.com</span>
+                </div>
+                <div class="logout-button">
+                    <button onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function logout() {
+            localStorage.removeItem('uid');
+            window.location.href = "/signup";
+        }
     </script>
 </body>
+
 </html>
