@@ -132,7 +132,7 @@ nav {
     width: 100%;
     /* background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/banner.avif); */
     background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)),
-        url(/kisansetu/public/images/banner.avif);
+        url('./images/banner.avif');
     background-position: center;
     background-size: cover;
     padding: 10% 7%;
