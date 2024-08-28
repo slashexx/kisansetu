@@ -103,23 +103,24 @@ const contractABI = [
       "payable": true
     }
   ];
-const contractAddress = '0xYourContractAddress';
+  const contractAddress = '0xe9498ABB98981eC081E6AE9A79406A3189BF1441';
 
-const contract = new web3.eth.Contract(contractABI, contractAddress);
-
-async function fulfillContract() {
-    const accounts = await web3.eth.getAccounts();
-    const buyerAddress = '0xBuyerAddress';
-    const price = web3.utils.toWei('1', 'ether'); // Example price
-
-    contract.methods.fulfillContract().send({
-        from: buyerAddress,
-        value: price
-    })
-    .on('receipt', function(receipt) {
-        console.log('Transaction successful:', receipt);
-    })
-    .on('error', function(error) {
-        console.error('Transaction error:', error);
-    });
-}
+  const contract = new web3.eth.Contract(contractABI, contractAddress);
+  
+  async function fulfillContract() {
+      const accounts = await web3.eth.getAccounts();
+      const buyerAddress = accounts[0]; // Use the first account from Ganache
+      const price = web3.utils.toWei('1', 'ether'); // Example price
+  
+      contract.methods.fulfillContract().send({
+          from: buyerAddress,
+          value: price
+      })
+      .on('receipt', function(receipt) {
+          console.log('Transaction successful:', receipt);
+      })
+      .on('error', function(error) {
+          console.error('Transaction error:', error);
+      });
+  }
+  
