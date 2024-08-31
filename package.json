@@ -1,10 +1,12 @@
 {
   "dependencies": {
     "@truffle/hdwallet-provider": "^2.1.15",
+    "body-parser": "^1.20.2",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "firebase": "^10.13.0",
     "nodemon": "^3.1.4",
+    "pdf-lib": "^1.17.1",
     "web3": "^4.12.1"
   },
   "type": "module",
