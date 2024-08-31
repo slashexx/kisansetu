@@ -42,18 +42,13 @@ Kisansetu is a comprehensive platform designed to facilitate assured contract fa
    npm install
    ```
 
-3. **Set Up Firebase:**
-
-   - Create a Firebase project and configure authentication and Firestore.
-   - Update the Firebase configuration in `firebase-config.js` with your project details.
-
-4. **Start Ganache CLI:**
+3. **Start Ganache CLI:**
 
    ```bash
    ganache-cli
    ```
 
-5. **Compile and Migrate Smart Contracts:**
+4. **Compile and Migrate Smart Contracts:**
 
    Update `truffle-config.cjs` to use the local Ganache network:
 
@@ -115,7 +110,7 @@ Kisansetu is a comprehensive platform designed to facilitate assured contract fa
      }
    };
 ``
-6. Compile and migrate the smart contracts: 
+5. Compile and migrate the smart contracts: 
    ```bash
    truffle compile --config truffle-config.cjs
    truffle migrate --config truffle-config.cjs --network zetachain
@@ -124,13 +119,13 @@ Kisansetu is a comprehensive platform designed to facilitate assured contract fa
    (Parallely run `ganache-cli` and replace `zetachain` with `development` if deploying locally on ganache.)
    
 
-7. **Start the Development Server:**
+6. **Start the Development Server:**
 
    ```bash
    npm start
    ```
 
-8. **Access the Application:**
+7. **Access the Application:**
 
    Open your browser and navigate to `http://localhost:5000`.
 

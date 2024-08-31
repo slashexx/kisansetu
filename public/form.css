@@ -1,0 +1,37 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(bg.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+.main h1{
+    text-align:center;
+    padding-bottom:20px
+}
+.input-box{
+     padding: 10px 50px 10px 50px;
+     opacity: 0.8;
+}
+.input-box input{
+    padding:10px 50px 15px 5px;
+    text-align: left;
+}
+.main{
+    border-style: solid;
+    border-radius: 20px;
+    padding: 50px 120px 50px 120px;
+}
+button{
+   height: 50px;
+   width:320px;
+   
+   background-color: green;
+   color:black;
+   font-size:25px;
+}
