@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+    <div class="container">
+        <h2>Signup</h2>
+        <form id="signup-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+
+
+
+            
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="occupation">Occupation:</label>
+            <select id="occupation" required>
+                <option value="Farmer">Farmer</option>
+                <option value="Buyer">Buyer</option>
+            </select>
+            <label for="state">State:</label>
+            <input type="text" id="state" required>
+            <label for="phoneNo">Phone Number:</label>
+            <input type="text" id="phoneNo" required>
+            <label for="aadhar">Aadhar Number:</label>
+            <input type="text" id="aadhar" required>
+            <button type="submit">Signup</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="./Javascript/auth.js"></script>
+</body>
+</html>

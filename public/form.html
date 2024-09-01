@@ -1,49 +1,69 @@
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <title>Details</title>
-            <link rel="stylesheet" href="form.css">
-        </head>
-        <body>
-
-                    <form class="main">
-                        <h1><u>User Details</u></h1>
-                        <div class="input-box">
-                            <input type="text" placeholder="First name" required>
-                            </div>
-                            <div class="input-box">
-                                <input type="text" placeholder="Last name" required>
-                                </div>
-                        <div class="input-box">
-                            <select name="" id="" >
-                                <option value=""disabled selected>Gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Other">other</option>
-                            </select> 
-                        </div>
-                        <div class="input-box">
-                            <select name="" id="" >
-                                <option value=""disabled selected>User</option>
-                                <option value="Farmer">Farmer</option>
-                                <option value="Buyer">Buyer</option>
-                            </select> 
-                        </div>
-                        <div class="input-box">
-                            <input type="text" placeholder="Aadhaar Number" required> 
-                        </div>
-                        <div class="input-box">
-                            <input type="text" placeholder="Phone Number" required> 
-                        </div>
-                        <div class="input-box">
-                            <input type="text" placeholder="Address" required> 
-                        </div>
-                        
-                        </div>
-                        <button><B>SUBMIT</B></button>
-                    </form>
-                    
-                </div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Details</title>
+        <link rel="stylesheet" href="form.css">
+    </head>
+    <body>
+        <form id="details-form" class="main">
+            <h1><u>Welcome! Kindly enter your details!</u></h1>
+            
+            <!-- Name -->
+            <div class="input-box">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" placeholder="Full name" required>
             </div>
-        </body>
-    </html>
+
+            <!-- State -->
+            <div class="input-box">
+                <label for="state">State:</label>
+                <input type="text" id="state" placeholder="State" required>
+            </div>
+
+            <!-- Crops Grown -->
+            <div class="input-box">
+                <label for="cropsGrown">Crops Grown:</label>
+                <input type="text" id="cropsGrown" placeholder="Crops Grown (comma-separated)" required>
+            </div>
+
+            <!-- Postal Code -->
+            <div class="input-box">
+                <label for="postalCode">Postal Code:</label>
+                <input type="text" id="postalCode" placeholder="Postal Code" required>
+            </div>
+
+            <!-- Address -->
+            <div class="input-box">
+                <label for="address">Address:</label>
+                <input type="text" id="address" placeholder="Address" required>
+            </div>
+
+            <!-- Aadhaar Number -->
+            <div class="input-box">
+                <label for="aadhar">Aadhaar Number:</label>
+                <input type="text" id="aadhar" placeholder="Aadhaar Number" required>
+            </div>
+
+            <!-- Amount Produced -->
+            <div class="input-box">
+                <label for="amountProduced">Amount Produced:</label>
+                <input type="text" id="amountProduced" placeholder="Amount Produced (in kg)" required>
+            </div>
+
+            <!-- Image Upload -->
+            <div class="input-box">
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" accept="image/jpeg" required>
+            </div>
+
+            <button type="submit"><b>SUBMIT</b></button>
+        </form>
+        <div id="message"></div>
+
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage.js"></script>
+        <script src="./Javascript/formRegister.js" type="module"></script> <!-- Script handling form details -->
+    </body>
+</html>

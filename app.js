@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 import { PDFDocument, StandardFonts } from "pdf-lib";
+import { resourceLimits } from "worker_threads";
 
 const app = express();
 app.use(express.json());
@@ -27,6 +28,10 @@ app.get("/dashboard", (req, res) => {
 app.get("/contract-form", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "contract-form.html"));
 });
+
+app.get('/register', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'form.html'));
+})
 
 app.post("/create-pdf", async (req, res) => {
   const { sellerName, sellerAddress, buyerName, buyerAddress, cropDescription, quantity, price, totalAmount } = req.body;

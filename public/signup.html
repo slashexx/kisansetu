@@ -1,38 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
     <title>Signup</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="signup.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Signup</h2>
+    <div class="main">
         <form id="signup-form">
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" required>
-            <label for="name">Name:</label>
-            <input type="text" id="name" required>
-            <label for="occupation">Occupation:</label>
-            <select id="occupation" required>
-                <option value="Farmer">Farmer</option>
-                <option value="Buyer">Buyer</option>
-            </select>
-            <label for="state">State:</label>
-            <input type="text" id="state" required>
-            <label for="phoneNo">Phone Number:</label>
-            <input type="text" id="phoneNo" required>
-            <label for="aadhar">Aadhar Number:</label>
-            <input type="text" id="aadhar" required>
-            <button type="submit">Signup</button>
+            <h1><u>SIGNUP</u></h1>
+            <h5>Enter Email</h5>
+            <div class="input-box">
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+            <h5>Enter Password</h5>
+            <div class="input-box">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="b">Sign Up</button>
+            <p>Already have an account? <a href="#">Login!</a></p>
+            <p>Or, continue with</p>
+            <button id="google-sign-up">Google</button>
         </form>
-        <p id="message"></p>
     </div>
-
-    <!-- Firebase SDK -->
+    <div id="message"></div>
     <script type="module" src="./Javascript/auth.js"></script>
 </body>
 </html>
