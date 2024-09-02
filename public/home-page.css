@@ -1,19 +1,19 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
 nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 15px;
 }
 
 .nav-bar {
-    border-bottom: 2px solid grey;
+  border-bottom: 2px solid grey;
 }
 
 /* .nav-bar ul li a:hover,
@@ -22,186 +22,270 @@ nav {
 } */
 
 .nav-bar ul li a.active::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #000;
-    /* Color for the underline */
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  /* Color for the underline */
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .logo {
-    width: 96px;
+  width: 96px;
 }
 
 .nav-links {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    margin-top: 47px;
-    margin-left: 35px;
-    margin-bottom: 15px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  margin-top: 47px;
+  margin-left: 35px;
+  margin-bottom: 15px;
 }
 
 .nav-links li a {
-    font-family: 'Montserrat', sans-serif;
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    transition: color 0.3s ease;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  transition: color 0.3s ease;
 }
 
 .nav-links li {
-    text-decoration: none;
-    /* Remove default underline */
-    position: relative;
-    margin-right: 30px;
+  text-decoration: none;
+  /* Remove default underline */
+  position: relative;
+  margin-right: 30px;
 }
 
 .nav-bar .nav-links li::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: currentColor;
-    /* Uses the text color */
-    transition: width 0.3s ease;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  /* Uses the text color */
+  transition: width 0.3s ease;
 }
 
 .nav-bar .nav-links li:hover::after {
-    /* margin-left: 2px; */
-    width: 100%;
-    /* Expands the underline on hover */
+  /* margin-left: 2px; */
+  width: 100%;
+  /* Expands the underline on hover */
 }
 
 .buttons {
-    margin-top: 30px;
-    margin-right: 20px;
+  margin-top: 30px;
+  margin-right: 20px;
 }
 
 .buttons button {
-    margin-right: 15px;
-    border: none;
-    width: 75px;
-    padding: 10px;
-    border-radius: 10px;
+  margin-right: 15px;
+  border: none;
+  width: 75px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .buttons button:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 .buttons button:first-child {
-    background-color: #4CAF50;
-    /* Green for Sign Up */
-    color: white;
+  background-color: #4caf50;
+  /* Green for Sign Up */
+  color: white;
 }
 
 .buttons button:last-child {
-    background-color: #2196F3;
-    /* Blue for Login */
-    color: white;
+  background-color: #2196f3;
+  /* Blue for Login */
+  color: white;
 }
 
 .buttons button:hover {
-    transform: scale(1.05);
-    /* Slightly enlarges the button */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    /* Adds shadow for a pop effect */
+  transform: scale(1.05);
+  /* Slightly enlarges the button */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  /* Adds shadow for a pop effect */
 }
 
 .buttons button:first-child:hover {
-    background-color: #45a049;
-    /* Darker green on hover */
+  background-color: #45a049;
+  /* Darker green on hover */
 }
 
 .buttons button:last-child:hover {
-    background-color: #1e88e5;
-    /* Darker blue on hover */
+  background-color: #1e88e5;
+  /* Darker blue on hover */
 }
-
 
 /* page 1 */
 .page-1 {
-    min-height: 100vh;
-    width: 100%;
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/banner.avif); */
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)),
-        url('./images/banner.avif');
-    background-position: center;
-    background-size: cover;
-    padding: 10% 7%;
+  min-height: 100vh;
+  width: 100%;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/banner.avif); */
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0)
+    ),
+    url("./images/banner.avif");
+  background-position: center;
+  background-size: cover;
+  padding: 10% 7%;
+  position: relative;
 }
 
 .page-1 h1 {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 15px;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 15px;
 }
 
 .page-1 p {
-    font-family: 'Fira Sans', sans-serif;
-    font-weight: 500;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500;
 }
 
 .page-1 p {
-    font-size: 18px;
-    margin-right: 90px;
-    margin-bottom: 120px;
+  font-size: 18px;
+  margin-right: 90px;
+  margin-bottom: 120px;
 }
 
 .redirect-links {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .redirect-links h3 {
-    font-family: 'Merriweather', serif;
-    font-size: 24px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  font-family: "Merriweather", serif;
+  font-size: 24px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .redirect-links button {
-    /* font-family: 'Playfair Display', serif; */
-    margin-top: 10px;
-    margin-bottom: 25px;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 7px;
-    color: white;
-    font-size: 16px;
-    margin-right: 15px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-bottom: 60px;
+  /* font-family: 'Playfair Display', serif; */
+  margin-top: 10px;
+  margin-bottom: 25px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 7px;
+  color: white;
+  font-size: 16px;
+  margin-right: 15px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-bottom: 60px;
 }
 
+.bot-logo img {
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* styles for ai-bot */
+.ai-bot {
+  display: none;
+}
+
+#bot-img {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.lang-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.chat-container {
+  position: fixed;
+  right: 20px;
+  top: 90px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  width: 35vw;
+  min-height: 70vh;
+  background-color: #212936;
+  border: 1px solid rgb(234, 234, 236);
+  border-radius: 32px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.message-element {
+  color: white;
+}
+
+.user-prompt {
+  display: flex;
+  padding: 0 8px;
+  margin: 16px;
+  background-color: #c1cad6;
+  border-radius: 16px;
+}
+#chat-messages {
+  max-height: 58vh;
+  overflow-y: scroll;
+  padding: 16px 16px 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+textarea {
+  flex-grow: 1;
+  font-size: 16px;
+  background-color: transparent;
+  border: 0;
+  margin: 16px;
+  resize: none;
+  /* border-radius: 16px; */
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.enter-icon {
+  fill: #999;
+  cursor: pointer;
+  margin: 16px;
+}
+
+/* styles for crop btns */
 .crop-btn {
-    background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
 .crop-btn:hover {
-    transform: translateY(-5px);
-    background-color: #45a049;
+  transform: translateY(-5px);
+  background-color: #45a049;
 }
 
 .farmer-btn {
-    background-color: #8B4513;
+  background-color: #8b4513;
 }
 
 .farmer-btn:hover {
-    transform: translateY(-5px);
-    background-color: #7B3D11;
+  transform: translateY(-5px);
+  background-color: #7b3d11;
 }
 
 .about-btn {
-    background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 .about-btn:hover {
-    transform: translateY(-5px);
-    background-color: #1E88E5;
+  transform: translateY(-5px);
+  background-color: #1e88e5;
 }

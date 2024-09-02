@@ -53,10 +53,48 @@
       </div>
       <div class="redirect-links">
         <div>
-          <h3>Click To Buy From Specific Farmers</h3>
-          <a href="farmers-page.html"
-            ><button class="farmer-btn">Check Farmers</button></a
-          >
+          <div>
+            <h3>Click To Buy From Specific Farmers</h3>
+            <a href="farmers-page.html"
+              ><button class="farmer-btn">Check Farmers</button></a
+            >
+          </div>
+        </div>
+        <img
+          src="./images/logo.jpeg"
+          id="bot-img"
+          alt=""
+          height="50px"
+          width="50px"
+          style="border-radius: 10px"
+        />
+        <div class="ai-bot">
+          <div class="content">
+            <div class="chat-container">
+              <div id="chat-messages"></div>
+              <div class="user-prompt">
+                <textarea
+                  id="userInput"
+                  rows="1"
+                  class="textarea"
+                  placeholder="किसानसेतु का उपयोग कैसे करें?"
+                ></textarea>
+                <div class="lang-select">
+                  <select id="languageSelect">
+                    <option value="english">English</option>
+                    <option value="hindi">Hindi</option>
+                  </select>
+                </div>
+
+                <img
+                  id="enterIcon"
+                  src="images/send.svg"
+                  alt=""
+                  class="enter-icon"
+                />
+              </div>
+            </div>
+          </div>
         </div>
         <div>
           <h3>Click To Buy Specific Crops</h3>
@@ -88,5 +126,6 @@
         });
       });
     </script>
+    <script src="bot.js"></script>
   </body>
 </html>
