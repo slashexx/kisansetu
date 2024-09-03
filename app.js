@@ -8,7 +8,7 @@ import bodyParser from "body-parser";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import dotenv from "dotenv";
 import removeMd from "remove-markdown";
-dotenv.config();
+// dotenv.config();
 
 const app = express();
 
@@ -20,8 +20,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, "public")));
+// console.log(process.env.GEM_API_KEY)
 
-const genAI = new GoogleGenerativeAI(process.env.GEM_API_KEY);
+const genAI = new GoogleGenerativeAI("AIzaSyAiboOEzf7IJhuuL99QYnTNOdjA9R0UsCY");
 const WEBSITE_CONTEXT = await fs.readFile("kisanSetu-info.md", "utf8");
 app.post("/assistance", async (req, res) => {
   const { message, language } = req.body;
