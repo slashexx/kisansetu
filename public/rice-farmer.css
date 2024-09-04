@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -215,9 +215,42 @@ nav {
     font-family: Arial, sans-serif;
     padding: 20px;
 } */
+
+.back-button {
+    margin-top: 40px;
+    margin-right: 30px;
+    height: 50px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+}
+
+.back-button:active {
+    background-color: #d0d0d0;
+    border-color: #bbb;
+}
+
+.top-page{
+    display: flex;
+    justify-content: space-between;
+}
+
 table {
-    width: 85%; /* Set the table width to 85% of its container */
-    margin: 0 auto; /* Center the table horizontally */
+    width: 85%;
+    /* Set the table width to 85% of its container */
+    margin: 0 auto;
+    /* Center the table horizontally */
     border-collapse: collapse;
 }
 
@@ -231,9 +264,10 @@ table tbody td:first-child img {
     margin: 0 auto;
 }
 
-table thead tr th{
+table thead tr th {
     text-align: center;
 }
+
 th,
 td {
     padding: 12px;
@@ -269,7 +303,8 @@ tr td img {
 
 table tbody td img {
     display: block;
-    margin: 0 auto; /* Center images */
+    margin: 0 auto;
+    /* Center images */
 }
 
 .farmers-list {
