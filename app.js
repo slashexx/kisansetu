@@ -8,7 +8,7 @@ import bodyParser from "body-parser";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import dotenv from "dotenv";
 import removeMd from "remove-markdown";
-// dotenv.config();
+dotenv.config();
 
 const app = express();
 
@@ -20,9 +20,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, "public")));
-// console.log(process.env.GEM_API_KEY)
+// console.log(process.env.GEM_API_KEY)x
 
-const genAI = new GoogleGenerativeAI("AIzaSyAiboOEzf7IJhuuL99QYnTNOdjA9R0UsCY");
+const genAI = new GoogleGenerativeAI(process.env.GEM_API_KEY);
 const WEBSITE_CONTEXT = await fs.readFile("kisanSetu-info.md", "utf8");
 app.post("/assistance", async (req, res) => {
   const { message, language } = req.body;
@@ -60,20 +60,18 @@ app.post("/assistance", async (req, res) => {
   const response = await result.response;
   let text = await response.text();
 
-  // Convert Markdown to plain text
   text = removeMd(text);
 
-  // Remove any remaining Markdown-style formatting
   text = text.replace(/\*\*/g, "").trim();
 
   // Improve formatting
-  text = text.replace(/(\d+\.)\s+/g, "\n$1 "); // Add newline before numbered items
-  text = text.replace(/([a-z])\s+([A-Z])/g, "$1\n$2"); // Add newline between lowercase and uppercase letters
+  text = text.replace(/(\d+\.)\s+/g, "\n$1 ");
+  text = text.replace(/([a-z])\s+([A-Z])/g, "$1\n$2");
   text = text
     .split("\n")
     .map((line) => line.trim())
     .join("\n"); // Trim each line
-  text = text.replace(/\n{3,}/g, "\n\n"); // Replace multiple newlines with double newlines
+  text = text.replace(/\n{3,}/g, "\n\n");
 
   res.json({ text });
 });
