@@ -1,443 +1,452 @@
 const farmers = [
     {
-        "id": 1,
-        "name": "Rajesh Kumar",
-        "state": "Punjab",
-        "cropsGrown": ["Toor Dal", "Chana Dal"],
-        "produceAmount": [3000, 1200],
-        "image": "https://via.placeholder.com/40?text=R",
-        "governmentVerified": true
+      "farmerId": 1,
+      "name": "Ram Chandra",
+      "state": "Maharashtra",
+      "cropsGrown": ["Toor Dal", "Moong Dal"],
+      "produceAmount": [3500, 2500], // Amount in kilograms for each crop
+      "image": "https://example.com/images/ram_chandra.jpg",
+      "governmentVerified": true
     },
     {
-        "id": 2,
-        "name": "Meena Singh",
-        "state": "Uttar Pradesh",
-        "cropsGrown": ["Moong Dal", "Urad Dal"],
-        "produceAmount": [5000, 2500],
-        "image": "https://via.placeholder.com/40?text=M",
-        "governmentVerified": false
+      "farmerId": 2,
+      "name": "Seeta Devi",
+      "state": "Uttar Pradesh",
+      "cropsGrown": ["Chana Dal", "Masoor Dal"],
+      "produceAmount": [2700, 3200],
+      "image": "https://example.com/images/seeta_devi.jpg",
+      "governmentVerified": false
     },
     {
-        "id": 3,
-        "name": "Amit Sharma",
-        "state": "Maharashtra",
-        "cropsGrown": ["Chana Dal", "Moong Dal"],
-        "produceAmount": [4000, 3200],
-        "image": "https://via.placeholder.com/40?text=A",
-        "governmentVerified": true
+      "farmerId": 3,
+      "name": "Mohit Singh",
+      "state": "Rajasthan",
+      "cropsGrown": ["Urad Dal", "Rajma"],
+      "produceAmount": [3100, 2900],
+      "image": "https://example.com/images/mohit_singh.jpg",
+      "governmentVerified": true
     },
     {
-        "id": 4,
-        "name": "Sita Devi",
-        "state": "Madhya Pradesh",
-        "cropsGrown": ["Toor Dal", "Masoor Dal"],
-        "produceAmount": [2900, 2100],
-        "image": "https://via.placeholder.com/40?text=S",
-        "governmentVerified": true
+      "farmerId": 4,
+      "name": "Aarti Kumari",
+      "state": "Madhya Pradesh",
+      "cropsGrown": ["Lobia", "Moong Dal"],
+      "produceAmount": [1800, 2000],
+      "image": "https://example.com/images/aarti_kumari.jpg",
+      "governmentVerified": true
     },
     {
-        "id": 5,
-        "name": "Karan Patel",
-        "state": "Gujarat",
-        "cropsGrown": ["Moong Dal", "Chana Dal"],
-        "produceAmount": [3300, 1500],
-        "image": "https://via.placeholder.com/40?text=K",
-        "governmentVerified": false
+      "farmerId": 5,
+      "name": "Vinay Patil",
+      "state": "Karnataka",
+      "cropsGrown": ["Rajma", "Moth Beans"],
+      "produceAmount": [2900, 2400],
+      "image": "https://example.com/images/vinay_patil.jpg",
+      "governmentVerified": false
     },
     {
-        "id": 6,
-        "name": "Sunita Yadav",
-        "state": "Haryana",
-        "cropsGrown": ["Toor Dal", "Masoor Dal"],
-        "produceAmount": [4000, 1700],
-        "image": "https://via.placeholder.com/40?text=S",
-        "governmentVerified": true
+      "farmerId": 6,
+      "name": "Anjali Gupta",
+      "state": "Gujarat",
+      "cropsGrown": ["Urad Dal", "Masoor Dal"],
+      "produceAmount": [2800, 3100],
+      "image": "https://example.com/images/anjali_gupta.jpg",
+      "governmentVerified": true
     },
     {
-        "id": 7,
-        "name": "Vikram Singh",
-        "state": "Rajasthan",
-        "cropsGrown": ["Moong Dal", "Urad Dal"],
-        "produceAmount": [2400, 2800],
-        "image": "https://via.placeholder.com/40?text=V",
-        "governmentVerified": false
+      "farmerId": 7,
+      "name": "Rajkumar Yadav",
+      "state": "Bihar",
+      "cropsGrown": ["Toor Dal", "Lobia"],
+      "produceAmount": [3300, 1600],
+      "image": "https://example.com/images/rajkumar_yadav.jpg",
+      "governmentVerified": false
     },
     {
-        "id": 8,
-        "name": "Rohit Gupta",
-        "state": "Bihar",
-        "cropsGrown": ["Chana Dal", "Masoor Dal"],
-        "produceAmount": [3500, 1800],
-        "image": "https://via.placeholder.com/40?text=R",
-        "governmentVerified": true
+      "farmerId": 8,
+      "name": "Suman Thakur",
+      "state": "Haryana",
+      "cropsGrown": ["Chana Dal", "Moong Dal"],
+      "produceAmount": [2400, 2200],
+      "image": "https://example.com/images/suman_thakur.jpg",
+      "governmentVerified": true
     },
     {
-        "id": 9,
-        "name": "Anita Joshi",
-        "state": "West Bengal",
-        "cropsGrown": ["Toor Dal", "Moong Dal"],
-        "produceAmount": [2800, 2200],
-        "image": "https://via.placeholder.com/40?text=A",
-        "governmentVerified": true
+      "farmerId": 9,
+      "name": "Deepak Choudhary",
+      "state": "Punjab",
+      "cropsGrown": ["Rajma", "Urad Dal"],
+      "produceAmount": [3000, 2700],
+      "image": "https://example.com/images/deepak_choudhary.jpg",
+      "governmentVerified": true
     },
     {
-        "id": 10,
-        "name": "Rakesh Verma",
-        "state": "Tamil Nadu",
-        "cropsGrown": ["Masoor Dal", "Urad Dal"],
-        "produceAmount": [3100, 900],
-        "image": "https://via.placeholder.com/40?text=R",
-        "governmentVerified": false
+      "farmerId": 10,
+      "name": "Preeti Singh",
+      "state": "West Bengal",
+      "cropsGrown": ["Lobia", "Moth Beans"],
+      "produceAmount": [2300, 2600],
+      "image": "https://example.com/images/preeti_singh.jpg",
+      "governmentVerified": false
     },
     {
-        "id": 11,
-        "name": "Pooja Mehta",
-        "state": "Karnataka",
-        "cropsGrown": ["Chana Dal", "Moong Dal"],
-        "produceAmount": [2600, 1800],
-        "image": "https://via.placeholder.com/40?text=P",
-        "governmentVerified": true
+      "farmerId": 11,
+      "name": "Amit Patel",
+      "state": "Madhya Pradesh",
+      "cropsGrown": ["Toor Dal", "Rajma"],
+      "produceAmount": [3200, 3100],
+      "image": "https://example.com/images/amit_patel.jpg",
+      "governmentVerified": true
     },
     {
-        "id": 12,
-        "name": "Devendra Deshmukh",
-        "state": "Maharashtra",
-        "cropsGrown": ["Urad Dal", "Masoor Dal"],
-        "produceAmount": [4500, 2000],
-        "image": "https://via.placeholder.com/40?text=D",
-        "governmentVerified": true
+      "farmerId": 12,
+      "name": "Sunita Yadav",
+      "state": "Rajasthan",
+      "cropsGrown": ["Moong Dal", "Chana Dal"],
+      "produceAmount": [2600, 2500],
+      "image": "https://example.com/images/sunita_yadav.jpg",
+      "governmentVerified": false
     },
     {
-        "id": 13,
-        "name": "Preeti Singh",
-        "state": "Himachal Pradesh",
-        "cropsGrown": ["Moong Dal", "Chana Dal"],
-        "produceAmount": [1800, 2300],
-        "image": "https://via.placeholder.com/40?text=P",
-        "governmentVerified": false
+      "farmerId": 13,
+      "name": "Harish Kumar",
+      "state": "Haryana",
+      "cropsGrown": ["Urad Dal", "Masoor Dal"],
+      "produceAmount": [2700, 3000],
+      "image": "https://example.com/images/harish_kumar.jpg",
+      "governmentVerified": true
     },
     {
-        "id": 14,
-        "name": "Gopal Naik",
-        "state": "Kerala",
-        "cropsGrown": ["Masoor Dal", "Toor Dal"],
-        "produceAmount": [1700, 900],
-        "image": "https://via.placeholder.com/40?text=G",
-        "governmentVerified": true
+      "farmerId": 14,
+      "name": "Pooja Sharma",
+      "state": "Uttar Pradesh",
+      "cropsGrown": ["Rajma", "Lobia"],
+      "produceAmount": [3100, 1900],
+      "image": "https://example.com/images/pooja_sharma.jpg",
+      "governmentVerified": false
     },
     {
-        "id": 15,
-        "name": "Lakshmi Reddy",
-        "state": "Andhra Pradesh",
-        "cropsGrown": ["Chana Dal", "Moong Dal"],
-        "produceAmount": [3900, 3200],
-        "image": "https://via.placeholder.com/40?text=L",
-        "governmentVerified": false
+      "farmerId": 15,
+      "name": "Vikram Mehta",
+      "state": "Maharashtra",
+      "cropsGrown": ["Moth Beans", "Toor Dal"],
+      "produceAmount": [2200, 3400],
+      "image": "https://example.com/images/vikram_mehta.jpg",
+      "governmentVerified": true
     },
     {
-        "id": 16,
-        "name": "Abhinav Chauhan",
-        "state": "Uttarakhand",
-        "cropsGrown": ["Toor Dal", "Masoor Dal"],
-        "produceAmount": [2700, 1600],
-        "image": "https://via.placeholder.com/40?text=A",
-        "governmentVerified": true
+      "farmerId": 16,
+      "name": "Meena Rathore",
+      "state": "Punjab",
+      "cropsGrown": ["Chana Dal", "Moong Dal"],
+      "produceAmount": [2700, 2600],
+      "image": "https://example.com/images/meena_rathore.jpg",
+      "governmentVerified": true
     },
     {
-        "id": 17,
-        "name": "Neha Sahu",
-        "state": "Odisha",
-        "cropsGrown": ["Chana Dal", "Moong Dal"],
-        "produceAmount": [3800, 2200],
-        "image": "https://via.placeholder.com/40?text=N",
-        "governmentVerified": false
+      "farmerId": 17,
+      "name": "Naveen Pratap",
+      "state": "Gujarat",
+      "cropsGrown": ["Lobia", "Masoor Dal"],
+      "produceAmount": [2900, 2700],
+      "image": "https://example.com/images/naveen_pratap.jpg",
+      "governmentVerified": false
     },
     {
-        "id": 18,
-        "name": "Harish Bhatt",
-        "state": "Uttar Pradesh",
-        "cropsGrown": ["Toor Dal", "Chana Dal"],
-        "produceAmount": [4100, 2800],
-        "image": "https://via.placeholder.com/40?text=H",
-        "governmentVerified": true
+      "farmerId": 18,
+      "name": "Sarla Rani",
+      "state": "Karnataka",
+      "cropsGrown": ["Toor Dal", "Urad Dal"],
+      "produceAmount": [3400, 2900],
+      "image": "https://example.com/images/sarla_rani.jpg",
+      "governmentVerified": true
     },
     {
-        "id": 19,
-        "name": "Kavita Dixit",
-        "state": "Chhattisgarh",
-        "cropsGrown": ["Masoor Dal", "Urad Dal"],
-        "produceAmount": [2900, 1700],
-        "image": "https://via.placeholder.com/40?text=K",
-        "governmentVerified": false
+      "farmerId": 19,
+      "name": "Vijay Chauhan",
+      "state": "Madhya Pradesh",
+      "cropsGrown": ["Rajma", "Moong Dal"],
+      "produceAmount": [2800, 2500],
+      "image": "https://example.com/images/vijay_chauhan.jpg",
+      "governmentVerified": true
     },
     {
-        "id": 20,
-        "name": "Manish Pandey",
-        "state": "Jharkhand",
-        "cropsGrown": ["Chana Dal", "Moong Dal"],
-        "produceAmount": [3400, 2100],
-        "image": "https://via.placeholder.com/40?text=M",
-        "governmentVerified": true
+      "farmerId": 20,
+      "name": "Rani Devi",
+      "state": "Bihar",
+      "cropsGrown": ["Chana Dal", "Moth Beans"],
+      "produceAmount": [2400, 2100],
+      "image": "https://example.com/images/rani_devi.jpg",
+      "governmentVerified": false
     },
     {
-        "id": 21,
-        "name": "Sushila Thakur",
-        "state": "Rajasthan",
-        "cropsGrown": ["Masoor Dal", "Chana Dal"],
-        "produceAmount": [2900, 3100],
-        "image": "https://via.placeholder.com/40?text=S",
-        "governmentVerified": false
+      "farmerId": 21,
+      "name": "Aakash Pandey",
+      "state": "Uttar Pradesh",
+      "cropsGrown": ["Toor Dal", "Moong Dal"],
+      "produceAmount": [3300, 2700],
+      "image": "https://example.com/images/aakash_pandey.jpg",
+      "governmentVerified": true
     },
     {
-        "id": 22,
-        "name": "Deepak Patil",
-        "state": "Maharashtra",
-        "cropsGrown": ["Moong Dal", "Toor Dal"],
-        "produceAmount": [3900, 3200],
-        "image": "https://via.placeholder.com/40?text=D",
-        "governmentVerified": true
+      "farmerId": 22,
+      "name": "Shanti Devi",
+      "state": "West Bengal",
+      "cropsGrown": ["Masoor Dal", "Lobia"],
+      "produceAmount": [2600, 2200],
+      "image": "https://example.com/images/shanti_devi.jpg",
+      "governmentVerified": false
     },
     {
-        "id": 23,
-        "name": "Gayatri Rao",
-        "state": "Karnataka",
-        "cropsGrown": ["Chana Dal", "Masoor Dal"],
-        "produceAmount": [2800, 1700],
-        "image": "https://via.placeholder.com/40?text=G",
-        "governmentVerified": true
+      "farmerId": 23,
+      "name": "Brijesh Kumar",
+      "state": "Rajasthan",
+      "cropsGrown": ["Rajma", "Chana Dal"],
+      "produceAmount": [2900, 2400],
+      "image": "https://example.com/images/brijesh_kumar.jpg",
+      "governmentVerified": true
     },
-    {
-        "id": 24,
-        "name": "Mahesh Yadav",
-        "state": "Uttar Pradesh",
-        "cropsGrown": ["Toor Dal", "Chana Dal"],
-        "produceAmount": [3200, 4100],
-        "image": "https://via.placeholder.com/40?text=M",
-        "governmentVerified": true
-    },
-    {
-        "id": 25,
-        "name": "Rekha Devi",
-        "state": "Bihar",
-        "cropsGrown": ["Masoor Dal", "Moong Dal"],
-        "produceAmount": [3300, 2500],
-        "image": "https://via.placeholder.com/40?text=R",
-        "governmentVerified": false
-    },
-    {
-        "id": 26,
-        "name": "Rahul Chaturvedi",
-        "state": "Uttar Pradesh",
-        "cropsGrown": ["Lobia", "Urad Dal"],
-        "produceAmount": [3200, 2100],
-        "image": "https://via.placeholder.com/40?text=R",
-        "governmentVerified": true
-    },
-    {
-        "id": 27,
-        "name": "Jyoti Kumari",
-        "state": "Madhya Pradesh",
-        "cropsGrown": ["Chana dal", "Rajma"],
-        "produceAmount": [3600, 2300],
-        "image": "https://via.placeholder.com/40?text=J",
-        "governmentVerified": false
-    },
-    {
-        "id": 28,
-        "name": "Dinesh Kumar",
-        "state": "Haryana",
-        "cropsGrown": ["Moong Dal", "Toor Dal"],
-        "produceAmount": [2900, 2500],
-        "image": "https://via.placeholder.com/40?text=D",
-        "governmentVerified": true
-    },
-    {
-        "id": 29,
-        "name": "Anjali Gupta",
-        "state": "West Bengal",
-        "cropsGrown": ["Urad dal", "Chana dal"],
-        "produceAmount": [3300, 1800],
-        "image": "https://via.placeholder.com/40?text=A",
-        "governmentVerified": false
-    },
-    {
-        "id": 30,
-        "name": "Sanjay Rao",
-        "state": "Andhra Pradesh",
-        "cropsGrown": ["Moth beans", "Lobia"],
-        "produceAmount": [4500, 3200],
-        "image": "https://via.placeholder.com/40?text=S",
-        "governmentVerified": true
-    },
-    {
-        "id": 31,
-        "name": "Leela Thakur",
-        "state": "Karnataka",
-        "cropsGrown": ["Jowar", "Ragi"],
-        "produceAmount": [1700, 1200],
-        "image": "https://via.placeholder.com/40?text=L",
-        "governmentVerified": true
-    },
-    {
-        "id": 32,
-        "name": "Vikash Mehta",
-        "state": "Punjab",
-        "cropsGrown": ["Wheat", "Rice"],
-        "produceAmount": [4200, 2600],
-        "image": "https://via.placeholder.com/40?text=V",
-        "governmentVerified": true
-    },
-    {
-        "id": 33,
-        "name": "Neha Reddy",
-        "state": "Tamil Nadu",
-        "cropsGrown": ["Rice", "Maize"],
-        "produceAmount": [3000, 1200],
-        "image": "https://via.placeholder.com/40?text=N",
-        "governmentVerified": false
-    },
-    {
-        "id": 34,
-        "name": "Rajeev Verma",
-        "state": "Gujarat",
-        "cropsGrown": ["Peas", "Wheat"],
-        "produceAmount": [3300, 1700],
-        "image": "https://via.placeholder.com/40?text=R",
-        "governmentVerified": true
-    },
-    {
-        "id": 35,
-        "name": "Manju Devi",
-        "state": "Rajasthan",
-        "cropsGrown": ["Bajra", "Wheat"],
-        "produceAmount": [2600, 1900],
-        "image": "https://via.placeholder.com/40?text=M",
-        "governmentVerified": false
-    },
-    {
-        "id": 36,
-        "name": "Shivam Kapoor",
-        "state": "Bihar",
-        "cropsGrown": ["Maize", "Rice"],
-        "produceAmount": [3500, 2200],
-        "image": "https://via.placeholder.com/40?text=S",
-        "governmentVerified": true
-    },
-    {
-        "id": 37,
-        "name": "Sakshi Patel",
-        "state": "Uttar Pradesh",
-        "cropsGrown": ["Pulses", "Rice"],
-        "produceAmount": [3100, 2000],
-        "image": "https://via.placeholder.com/40?text=S",
-        "governmentVerified": false
-    },
-    {
-        "id": 38,
-        "name": "Krishna Rao",
-        "state": "Karnataka",
-        "cropsGrown": ["Mung bean", "Barley"],
-        "produceAmount": [2000, 1800],
-        "image": "https://via.placeholder.com/40?text=K",
-        "governmentVerified": true
-    },
-    {
-        "id": 39,
-        "name": "Geeta Sharma",
-        "state": "Himachal Pradesh",
-        "cropsGrown": ["Peas", "Chickpeas"],
-        "produceAmount": [2200, 1900],
-        "image": "https://via.placeholder.com/40?text=G",
-        "governmentVerified": true
-    },
-    {
-        "id": 40,
-        "name": "Sunil Singh",
-        "state": "Uttarakhand",
-        "cropsGrown": ["Rice", "Wheat"],
-        "produceAmount": [2700, 2300],
-        "image": "https://via.placeholder.com/40?text=S",
-        "governmentVerified": false
-    },
-    {
-        "id": 41,
-        "name": "Priya Desai",
-        "state": "Maharashtra",
-        "cropsGrown": ["Bajra", "Jowar"],
-        "produceAmount": [3200, 4000],
-        "image": "https://via.placeholder.com/40?text=P",
-        "governmentVerified": true
-    },
-    {
-        "id": 42,
-        "name": "Raj Patel",
-        "state": "Gujarat",
-        "cropsGrown": ["Ragi", "Mung beans"],
-        "produceAmount": [2400, 2900],
-        "image": "https://via.placeholder.com/40?text=R",
-        "governmentVerified": true
-    },
-    {
-        "id": 43,
-        "name": "Usha Bhat",
-        "state": "Karnataka",
-        "cropsGrown": ["Jowar", "Bajra"],
-        "produceAmount": [3000, 1300],
-        "image": "https://via.placeholder.com/40?text=U",
-        "governmentVerified": false
-    },
-    {
-        "id": 44,
-        "name": "Suraj Pandey",
-        "state": "Uttar Pradesh",
-        "cropsGrown": ["Wheat", "Maize"],
-        "produceAmount": [2800, 2400],
-        "image": "https://via.placeholder.com/40?text=S",
-        "governmentVerified": true
-    },
-    {
-        "id": 45,
-        "name": "Rani Sharma",
-        "state": "Madhya Pradesh",
-        "cropsGrown": ["Rice", "Wheat"],
-        "produceAmount": [2300, 2100],
-        "image": "https://via.placeholder.com/40?text=R",
-        "governmentVerified": true
-    },
-    {
-        "id": 46,
-        "name": "Kunal Aggarwal",
-        "state": "Punjab",
-        "cropsGrown": ["Chickpeas", "Wheat"],
-        "produceAmount": [3700, 3300],
-        "image": "https://via.placeholder.com/40?text=K",
-        "governmentVerified": false
-    },
-    {
-        "id": 47,
-        "name": "Aarti Gupta",
-        "state": "Haryana",
-        "cropsGrown": ["Peas", "Wheat"],
-        "produceAmount": [2800, 1700],
-        "image": "https://via.placeholder.com/40?text=A",
-        "governmentVerified": true
-    },
-    {
-        "id": 48,
-        "name": "Vikas Mishra",
-        "state": "Uttar Pradesh",
-        "cropsGrown": ["Rice", "Wheat"],
-        "produceAmount": [3900, 2900],
-        "image": "https://via.placeholder.com/40?text=V",
-        "governmentVerified": false
-    },
-    {
-        "id": 49,
-        "name": "Suman Rao",
-        "state": "Andhra Pradesh",
-        "cropsGrown": ["Chickpeas", "Mung beans"],
-        "produceAmount": [3600, 3100],
-        "image": "https://via.placeholder.com/40?text=S",
-        "governmentVerified": true
-    },
-];
+   {
+          "farmerId": 24,
+          "name": "Maya Devi",
+          "state": "Haryana",
+          "cropsGrown": ["Urad Dal", "Moth Beans"],
+          "produceAmount": [150, 200],
+          "image": "https://example.com/images/femaleFarmerImage.jpg",
+          "governmentVerified": false
+      },
+      {
+          "farmerId": 25,
+          "name": "Ravi Kishore",
+          "state": "Bihar",
+          "cropsGrown": ["Toor Dal", "Rajma"],
+          "produceAmount": [180, 220],
+          "image": "https://example.com/images/maleFarmerImage.jpg",
+          "governmentVerified": true
+      },
+      {
+          "farmerId": 26,
+          "name": "Sushma Tiwari",
+          "state": "Madhya Pradesh",
+          "cropsGrown": ["Moong Dal", "Masoor Dal"],
+          "produceAmount": [170, 190],
+          "image": "https://example.com/images/femaleFarmerImage.jpg",
+          "governmentVerified": false
+      },
+      {
+          "farmerId": 27,
+          "name": "Narayan Reddy",
+          "state": "Karnataka",
+          "cropsGrown": ["Lobia", "Chana Dal"],
+          "produceAmount": [160, 210],
+          "image": "https://example.com/images/maleFarmerImage.jpg",
+          "governmentVerified": true
+      },
+      {
+          "farmerId": 28,
+          "name": "Radha Yadav",
+          "state": "Uttar Pradesh",
+          "cropsGrown": ["Moth Beans", "Rajma"],
+          "produceAmount": [190, 230],
+          "image": "https://example.com/images/femaleFarmerImage.jpg",
+          "governmentVerified": true
+      },
+      {
+          "farmerId": 29,
+          "name": "Naveen Kumar",
+          "state": "Punjab",
+          "cropsGrown": ["Masoor Dal", "Urad Dal"],
+          "produceAmount": [200, 180],
+          "image": "https://example.com/images/maleFarmerImage.jpg",
+          "governmentVerified": true
+      },
+      {
+          "farmerId": 30,
+          "name": "Sarita Chauhan",
+          "state": "Maharashtra",
+          "cropsGrown": ["Chana Dal", "Lobia"],
+          "produceAmount": [210, 170],
+          "image": "https://example.com/images/femaleFarmerImage.jpg",
+          "governmentVerified": false
+      },
+      {
+          "farmerId": 31,
+          "name": "Vikrant Singh",
+          "state": "Rajasthan",
+          "cropsGrown": ["Toor Dal", "Moong Dal"],
+          "produceAmount": [190, 180],
+          "image": "https://example.com/images/maleFarmerImage.jpg",
+          "governmentVerified": true
+      },
+      {
+          "farmerId": 32,
+          "name": "Neelam Verma",
+          "state": "Bihar",
+          "cropsGrown": ["Rajma", "Moth Beans"],
+          "produceAmount": [200, 150],
+          "image": "https://example.com/images/femaleFarmerImage.jpg",
+          "governmentVerified": false
+      },
+      {
+          "farmerId": 33,
+          "name": "Prakash Rao",
+          "state": "Karnataka",
+          "cropsGrown": ["Lobia", "Masoor Dal"],
+          "produceAmount": [180, 190],
+          "image": "https://example.com/images/maleFarmerImage.jpg",
+          "governmentVerified": true
+      },
+      {
+          "farmerId": 34,
+          "name": "Kalpana Singh",
+          "state": "Uttar Pradesh",
+          "cropsGrown": ["Moong Dal", "Chana Dal"],
+          "produceAmount": [170, 160],
+          "image": "https://example.com/images/femaleFarmerImage.jpg",
+          "governmentVerified": false
+      },
+      {
+          "farmerId": 35,
+          "name": "Mahesh Kulkarni",
+          "state": "Maharashtra",
+          "cropsGrown": ["Toor Dal", "Urad Dal"],
+          "produceAmount": [200, 190],
+          "image": "https://example.com/images/maleFarmerImage.jpg",
+          "governmentVerified": true
+      },
+      {
+          "farmerId": 36,
+          "name": "Amrita Kaur",
+          "state": "Punjab",
+          "cropsGrown": ["Rajma", "Lobia"],
+          "produceAmount": [190, 180],
+          "image": "https://example.com/images/femaleFarmerImage.jpg",
+          "governmentVerified": false
+      },
+      {
+          "farmerId": 37,
+          "name": "Sanjay Deshmukh",
+          "state": "Madhya Pradesh",
+          "cropsGrown": ["Moth Beans", "Chana Dal"],
+          "produceAmount": [180, 200],
+          "image": "https://example.com/images/maleFarmerImage.jpg",
+          "governmentVerified": true
+      },
+      {
+          "farmerId": 38,
+          "name": "Sunita Gupta",
+          "state": "Haryana",
+          "cropsGrown": ["Masoor Dal", "Moong Dal"],
+          "produceAmount": [160, 190],
+          "image": "https://example.com/images/femaleFarmerImage.jpg",
+          "governmentVerified": false
+      },
+      {
+          "farmerId": 39,
+          "name": "Rajesh Patel",
+          "state": "Gujarat",
+          "cropsGrown": ["Toor Dal", "Rajma"],
+          "produceAmount": [220, 200],
+          "image": "https://example.com/images/maleFarmerImage.jpg",
+          "governmentVerified": true
+      },
+      {
+          "farmerId": 40,
+          "name": "Lalita Mishra",
+          "state": "Uttar Pradesh",
+          "cropsGrown": ["Lobia", "Chana Dal"],
+          "produceAmount": [210, 180],
+          "image": "https://example.com/images/femaleFarmerImage.jpg",
+          "governmentVerified": true
+      },
+      {
+          "farmerId": 41,
+          "name": "Ashok Nair",
+          "state": "Kerala",
+          "cropsGrown": ["Moong Dal", "Rajma"],
+          "produceAmount": [190, 200],
+          "image": "https://example.com/images/maleFarmerImage.jpg",
+          "governmentVerified": false
+      },
+      {
+          "farmerId": 42,
+          "name": "Geeta Rani",
+          "state": "Punjab",
+          "cropsGrown": ["Masoor Dal", "Urad Dal"],
+          "produceAmount": [200, 170],
+          "image": "https://example.com/images/femaleFarmerImage.jpg",
+          "governmentVerified": true
+      },
+      {
+          "farmerId": 43,
+          "name": "Suresh Pawar",
+          "state": "Maharashtra",
+          "cropsGrown": ["Moth Beans", "Chana Dal"],
+          "produceAmount": [170, 190],
+          "image": "https://example.com/images/maleFarmerImage.jpg",
+          "governmentVerified": false
+      },
+      {
+          "farmerId": 44,
+          "name": "Pushpa Devi",
+          "state": "Rajasthan",
+          "cropsGrown": ["Toor Dal", "Lobia"],
+          "produceAmount": [200, 160],
+          "image": "https://example.com/images/femaleFarmerImage.jpg",
+          "governmentVerified": true
+      },
+      {
+          "farmerId": 45,
+          "name": "Karan Singh",
+          "state": "Haryana",
+          "cropsGrown": ["Rajma", "Masoor Dal"],
+          "produceAmount": [190, 170],
+          "image": "https://example.com/images/maleFarmerImage.jpg",
+          "governmentVerified": false
+      },
+      {
+          "farmerId": 46,
+          "name": "Rakhi Sharma",
+          "state": "Uttar Pradesh",
+          "cropsGrown": ["Moong Dal", "Chana Dal"],
+          "produceAmount": [200, 210],
+          "image": "https://example.com/images/femaleFarmerImage.jpg",
+          "governmentVerified": true
+      },
+      {
+          "farmerId": 47,
+          "name": "Subhash Rao",
+          "state": "Karnataka",
+          "cropsGrown": ["Toor Dal", "Urad Dal"],
+          "produceAmount": [180, 190],
+          "image": "https://example.com/images/maleFarmerImage.jpg",
+          "governmentVerified": true
+      },
+  {
+          "farmerId": 48,
+          "name": "Poonam Verma",
+          "state": "Madhya Pradesh",
+          "cropsGrown": ["Chana Dal", "Moth Beans"],
+          "produceAmount": [160, 170],
+          "image": "https://example.com/images/femaleFarmerImage.jpg",
+          "governmentVerified": false
+      },
+      {
+          "farmerId": 49,
+          "name": "Ramesh Patel",
+          "state": "Gujarat",
+          "cropsGrown": ["Rajma", "Moong Dal"],
+          "produceAmount": [190, 210],
+          "image": "https://example.com/images/maleFarmerImage.jpg",
+          "governmentVerified": true
+      },
+      {
+          "farmerId": 50,
+          "name": "Bhavna Singh",
+          "state": "Uttar Pradesh",
+          "cropsGrown": ["Lobia", "Masoor Dal"],
+          "produceAmount": [200, 190],
+          "image": "https://example.com/images/femaleFarmerImage.jpg",
+          "governmentVerified": true
+      }
+  ]

@@ -1,65 +1,90 @@
-*{
-    margin:6px;
-    padding:3;
-    box-sizing:border-box;
+* {
+    margin: 6px;
+    padding: 3;
+    box-sizing: border-box;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.input-box{
+.input-box {
     padding: 5px 10px 10px 5px;
-    
-   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -5px;
+
 }
-.input-box input{
-   
-    padding:5px 10px 10px 5px;
+
+.input-box input {
+    width: 300px;
+    padding: 5px 10px 10px 5px;
     background: transparent;
     border-radius: 30px;
-   font-weight: bolder;
-    
+    font-weight: bolder;
+
 }
-.main h5{
+
+.main h5 {
+    text-align: start;
     font-size: 20px;
-    padding-bottom:0px;
+    padding-bottom: 0px;
     padding-top: 5px;
-    font-weight:bolder;
-    
-    
-} 
-.main h1{
+    font-weight: bolder;
+}
+
+.main h1 {
     font-size: 40px;
     text-align: center;
     padding-bottom: 30px;
-    
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-image: url(bg.jpeg);
+    height: 100vh;
+    background-image: url(./images/bg.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
 }
-.main{
-    width:350px;
-    background-color :transparent;
-     backdrop-filter: blur(10)px !important;
-   padding:30px 40px;
-   border:solid;
-   border-radius: 20px;
-   font-weight: bolder;
-   
 
+.main {
+    background: white;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 350px;
+    background-color: transparent;
+    backdrop-filter: blur(10)px !important; */
+    padding: 30px 40px;
+    /* border: solid; */
+    border-radius: 20px;
+    font-weight: bolder;
 }
-button{
+
+button {
     padding: 15px 15px 15px 15px;
-    border-style:dashed;
-    color:white;
+    border-style: dashed;
+    color: white;
     background-color: black;
     border-radius: 30px;
+}
 
+.sign-up{
+    width: 300px;
+    
+}
+
+#google-sign-up{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+img{
+    width: 35px;
 }

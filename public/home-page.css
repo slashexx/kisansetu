@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+.buttons a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from the button */
+}
+
 nav {
   display: flex;
   flex-direction: row;

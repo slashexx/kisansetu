@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
 nav {
     display: flex;
     flex-direction: row;
@@ -212,8 +216,10 @@ nav {
     padding: 20px;
 } */
 table {
-    width: 85%; /* Set the table width to 85% of its container */
-    margin: 0 auto; /* Center the table horizontally */
+    width: 85%;
+    /* Set the table width to 85% of its container */
+    margin: 0 auto;
+    /* Center the table horizontally */
     border-collapse: collapse;
 }
 
@@ -227,9 +233,10 @@ table tbody td:first-child img {
     margin: 0 auto;
 }
 
-table thead tr th{
+table thead tr th {
     text-align: center;
 }
+
 th,
 td {
     padding: 12px;
@@ -265,7 +272,8 @@ tr td img {
 
 table tbody td img {
     display: block;
-    margin: 0 auto; /* Center images */
+    margin: 0 auto;
+    /* Center images */
 }
 
 .farmers-list {
