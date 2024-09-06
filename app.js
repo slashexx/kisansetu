@@ -23,7 +23,19 @@ app.use(express.static(path.join(__dirname, "public")));
 // console.log(process.env.GEM_API_KEY)x
 
 const genAI = new GoogleGenerativeAI(process.env.GEM_API_KEY);
-const WEBSITE_CONTEXT = await fs.readFile("kisanSetu-info.md", "utf8");
+const WEBSITE_OVERVIEW = await fs.readFile("Kisansetu_Overview.md", "utf8");
+const WEBSITE_FEATURES = await fs.readFile(
+  "Kisansetu_Important_Features.md",
+  "utf8"
+);
+const WEBSITE_FUNCTIONING = await fs.readFile(
+  "kisansetu_How_It_Works.md",
+  "utf8"
+);
+const WEBSITE_PERSPECTIVE = await fs.readFile(
+  "Kisansetu_Buyer_Perspective.md",
+  "utf8"
+);
 app.post("/assistance", async (req, res) => {
   const { message, language } = req.body;
 
@@ -32,21 +44,111 @@ app.post("/assistance", async (req, res) => {
     history: [
       {
         role: "user",
-        parts: [{ text: "Here's context about our website:" }],
-      },
-      {
-        role: "model",
-        parts: [{ text: "Okay, I'm ready to receive the context." }],
-      },
-      {
-        role: "user",
-        parts: [{ text: WEBSITE_CONTEXT }],
+        parts: [
+          {
+            text: "Here's context about our website that i will be sharing in different parts:",
+          },
+        ],
       },
       {
         role: "model",
         parts: [
           {
-            text: "Thank you for providing the context about KisanSetu. I understand it's a platform connecting farmers and buyers in India, facilitating digital contracts, direct communication, government verification, secure transactions, and access to various crops. How can I assist you with questions related to KisanSetu?",
+            text: "Okay, I'm ready to receive the context in different parts.",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [
+          {
+            text: "okay so here is the first part which is about kisansetu overview",
+          },
+        ],
+      },
+      {
+        role: "model",
+        parts: [
+          { text: "Okay i am ready to receive the first part of context" },
+        ],
+      },
+      {
+        role: "user",
+        parts: [{ text: WEBSITE_OVERVIEW }],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "I have received the first part successfully now send the second part",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [
+          {
+            text: "Okay this is the second part which is about website important features",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [{ text: WEBSITE_FEATURES }],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "Okay i have received the second part as well , now send me the third part",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [
+          {
+            text: "Okay i am sharing the third part which is about how it works",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [{ text: WEBSITE_FUNCTIONING }],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "Okay i have received the third part as well , now send me the last part",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [
+          {
+            text: "Okay i am sharing the last part which gives you a brief demon from a buyer's perspective",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [
+          {
+            text: "Okay i am sharing the last part which gives you a brief demon from a buyer's perspective",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [{ text: WEBSITE_PERSPECTIVE }],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "Thank you for providing the context about KisanSetu in different parts. I understand it's a platform connecting farmers and buyers in India, facilitating digital contracts, direct communication, government verification, secure transactions, and access to various crops. How can I assist you with questions related to KisanSetu?",
           },
         ],
       },
