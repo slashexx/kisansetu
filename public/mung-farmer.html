@@ -22,8 +22,8 @@
             </a>
             <ul class="nav-links">
                 <li><a href="home-page.html">Home</a></li>
-                <li><a href="farmers-page.html" class="active">Farmers</a></li>
-                <li><a href="crops-page.html">Crops</a></li>
+                <li><a href="farmers-page.html">Farmers</a></li>
+                <li><a href="crops-page.html" class="active">Crops</a></li>
                 <li><a href="about-us-page.html">About Us</a></li>
             </ul>
             <div class="buttons">
@@ -34,7 +34,7 @@
     </div>
     <div class="farmers-list">
         <div class="top-page">
-            <h1>Mung Beans</h1>
+            <h1>Rice</h1>
             <a href="crops-page.html">
                 <button class="back-button">
                     ← Back
@@ -57,36 +57,45 @@
             </tbody>
         </table>
     </div>
-    <script src="farmers.js"></script>
+    <!-- <script src="lentil-farmers.js"></script> -->
     <script>
-        const farmerTableBody = document.getElementById('farmer-table-body');
+        fetch('./lentil-farmers.json')
+            .then(response => response.json())
+            .then(data => {
+                farmers = data;
+                displayFarmerDetails();
+            })
+            .catch(error => console.error('Error fetching the JSON file:', error));
+            function displayFarmerDetails(){
+                const farmerTableBody = document.getElementById('farmer-table-body');
+                // Paths to your custom images
+            const verifiedImage = './images/verified.png';  // Path to your verified icon image
+            const unverifiedImage = './images/unverified.jpg';  // Path to your unverified icon image
+                console.log(farmers)
+            farmers.forEach(farmer => {
+                // Check if the farmer grows rice
+                if (farmer.cropsGrown.includes('Moong Dal')) {
+                    console.log(farmer)
+                    // Choose the appropriate image based on the governmentVerified status
+                    const verifiedStatusImage = farmer.governmentVerified ? verifiedImage : unverifiedImage;
 
-        // Paths to your custom images
-        const verifiedImage = './images/verified.png';  // Path to your verified icon image
-        const unverifiedImage = './images/unverified.jpg';  // Path to your unverified icon image
-
-        farmers.forEach(farmer => {
-            // Check if the farmer grows rice
-            if (farmer.cropsGrown.includes('Mung Beans')) {
-                // Choose the appropriate image based on the governmentVerified status
-                const verifiedStatusImage = farmer.governmentVerified ? verifiedImage : unverifiedImage;
-
-                const row = document.createElement('tr');
-                row.innerHTML = `
-            <td><img src="${farmer.image}" alt="${farmer.name}"></td>
-            <td>
-                <a href="farmers-details.html?farmerId=${farmer.id}">
-                    ${farmer.name}
-                </a>
-            </td>
-            <td>${farmer.state}</td>
-            <td>${farmer.cropsGrown.join(', ')}</td>
-            <td>${farmer.produceAmount} kg</td>
-            <td class="verified-status"><img src="${verifiedStatusImage}" alt="Verified Status"></td>
-        `;
-                farmerTableBody.appendChild(row);
-            }
-        });
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                <td><img src="${farmer.image}" alt="${farmer.name}"></td>
+                <td>
+                    <a href="lentil-farmers-details.html?farmerId=${farmer.farmerId}">
+                        ${farmer.name}
+                    </a>
+                </td>
+                <td>${farmer.state}</td>
+                <td>${farmer.cropsGrown.join(', ')}</td>
+                <td>${farmer.produceAmount} kg</td>
+                <td class="verified-status"><img src="${verifiedStatusImage}" alt="Verified Status"></td>
+            `;
+                    farmerTableBody.appendChild(row);
+                }
+            });
+                }
     </script>
 </body>
 

@@ -4,6 +4,7 @@
     "@truffle/hdwallet-provider": "^2.1.15",
     "body-parser": "^1.20.2",
     "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
     "express": "^4.19.2",
     "firebase": "^10.13.0",
     "marked": "^14.1.0",
@@ -11,7 +12,8 @@
     "pdf-lib": "^1.17.1",
     "prettier": "^3.3.3",
     "remove-markdown": "^0.5.5",
-    "web3": "^4.12.1"
+    "web3": "^4.12.1",
+    "ws": "^8.18.0"
   },
   "type": "module",
   "scripts": {

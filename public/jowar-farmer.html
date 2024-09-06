@@ -60,34 +60,43 @@
     </div>
     <script src="farmers.js"></script>
     <script>
-        const farmerTableBody = document.getElementById('farmer-table-body');
+        fetch('./farmers.json')
+            .then(response => response.json())
+            .then(data => {
+                farmers = data;
+                displayFarmerDetails();
+            })
+            .catch(error => console.error('Error fetching the JSON file:', error));
+            function displayFarmerDetails(){
+                const farmerTableBody = document.getElementById('farmer-table-body');
+                // Paths to your custom images
+            const verifiedImage = './images/verified.png';  // Path to your verified icon image
+            const unverifiedImage = './images/unverified.jpg';  // Path to your unverified icon image
+                console.log(farmers)
+            farmers.forEach(farmer => {
+                // Check if the farmer grows rice
+                if (farmer.cropsGrown.includes('Jowar')) {
+                    console.log(farmer)
+                    // Choose the appropriate image based on the governmentVerified status
+                    const verifiedStatusImage = farmer.governmentVerified ? verifiedImage : unverifiedImage;
 
-        // Paths to your custom images
-        const verifiedImage = './images/verified.png';  // Path to your verified icon image
-        const unverifiedImage = './images/unverified.jpg';  // Path to your unverified icon image
-
-        farmers.forEach(farmer => {
-            // Check if the farmer grows rice
-            if (farmer.cropsGrown.includes('Jowar')) {
-                // Choose the appropriate image based on the governmentVerified status
-                const verifiedStatusImage = farmer.governmentVerified ? verifiedImage : unverifiedImage;
-
-                const row = document.createElement('tr');
-                row.innerHTML = `
-            <td><img src="${farmer.image}" alt="${farmer.name}"></td>
-            <td>
-                <a href="farmers-details.html?farmerId=${farmer.id}">
-                    ${farmer.name}
-                </a>
-            </td>
-            <td>${farmer.state}</td>
-            <td>${farmer.cropsGrown.join(', ')}</td>
-            <td>${farmer.produceAmount} kg</td>
-            <td class="verified-status"><img src="${verifiedStatusImage}" alt="Verified Status"></td>
-        `;
-                farmerTableBody.appendChild(row);
-            }
-        });
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                <td><img src="${farmer.image}" alt="${farmer.name}"></td>
+                <td>
+                    <a href="farmers-details.html?farmerId=${farmer.id}">
+                        ${farmer.name}
+                    </a>
+                </td>
+                <td>${farmer.state}</td>
+                <td>${farmer.cropsGrown.join(', ')}</td>
+                <td>${farmer.produceAmount} kg</td>
+                <td class="verified-status"><img src="${verifiedStatusImage}" alt="Verified Status"></td>
+            `;
+                    farmerTableBody.appendChild(row);
+                }
+            });
+                }
     </script>
 </body>
 

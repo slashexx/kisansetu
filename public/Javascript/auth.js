@@ -3,12 +3,13 @@ import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBNrhwRH5TeqAPyXmToaCGJ6St4g1FKOno",
-    authDomain: "kisansetu-1640.firebaseapp.com",
-    projectId: "kisansetu-1640",
-    storageBucket: "kisansetu-1640.appspot.com",
-    messagingSenderId: "763552320675",
-    appId: "1:763552320675:web:93cff2382387b7b5dc4316"
+    apiKey: "AIzaSyAd2l0U5sRkdDvKTgbBEZdWKl_RF1JfmxY",
+  authDomain: "kisansetu-346a8.firebaseapp.com",
+  projectId: "kisansetu-346a8",
+  storageBucket: "kisansetu-346a8.appspot.com",
+  messagingSenderId: "103062134377",
+  appId: "1:103062134377:web:466e64ef6631ee31f8ccf8",
+  measurementId: "G-VEHLV1STRG"
 };
 
 // Initialize Firebase

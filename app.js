@@ -8,19 +8,26 @@ import bodyParser from "body-parser";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import dotenv from "dotenv";
 import removeMd from "remove-markdown";
+import http from 'http';
+import WebSocket from 'ws';
+import { WebSocketServer } from 'ws';
+import farmers from './public/farmers.json' with { type: "json" };
+import url from "url"
 dotenv.config();
 
 const app = express();
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // To handle form data
 app.use(bodyParser.json());
-
+const server = http.createServer(app);
+const wss = new WebSocketServer({ server });
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
+const DATA_FILE = path.join(__dirname, './public/farmers.json');
+const BUYERS_FILE_PATH= path.join(__dirname, './public/buyers.json');
 app.use(express.static(path.join(__dirname, "public")));
-// console.log(process.env.GEM_API_KEY)x
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
 const genAI = new GoogleGenerativeAI(process.env.GEM_API_KEY);
 const WEBSITE_OVERVIEW = await fs.readFile("Kisansetu_Overview.md", "utf8");
@@ -288,13 +295,281 @@ app.post("/create-pdf", async (req, res) => {
     res.status(500).send("Failed to generate PDF");
   }
 });
+async function getFarmersData() {
+  try {
+    const fileContent = await fs.readFile(DATA_FILE, 'utf-8');
+    return JSON.parse(fileContent);
+  } catch (err) {
+    console.error('Error reading or parsing data file:', err);
+    throw err;
+  }
+}
 
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send("Something broke!");
+// Function to write farmers data
+async function writeFarmersData(data) {
+  try {
+    const content = JSON.stringify(data, null, 2);
+    await fs.writeFile(DATA_FILE, content, 'utf-8');
+  } catch (err) {
+    console.error('Error writing data file:', err);
+    throw err;
+  }
+}
+
+
+
+// In-memory store for chat connections
+const connections = {};
+let chats = {};
+
+// Route to render chat messages
+
+
+
+
+async function getBuyersData() {
+  try {
+    const fileContent = await fs.readFile(BUYERS_FILE_PATH, 'utf-8');
+    return JSON.parse(fileContent);
+  } catch (err) {
+    console.error('Error reading or parsing data file:', err);
+    throw err;
+  }
+}
+
+// Function to write farmers data
+async function writeBuyersData(data) {
+  try {
+    const content = JSON.stringify(data, null, 2);
+    await fs.writeFile(BUYERS_FILE_PATH, content, 'utf-8');
+  } catch (err) {
+    console.error('Error writing data file:', err);
+    throw err;
+  }
+}
+
+// In-memory store for chat connections
+
+let farmerChats={}
+//faemrs's buyer
+app.get("/buyers/:id",async(req,res)=>{
+  const {id} = req.params;
+  const farmers=await getFarmersData();
+  const buyers=await getBuyersData();
+  const currFarmer=findFarmerById(parseInt(id),farmers);
+  const farmersBuyer=[];
+  for(let keys in currFarmer.messages){
+    farmersBuyer.push(findBuyerById(keys,buyers))
+  }
+  console.log (farmersBuyer)
+  res.render("buyersList.ejs",{farmersBuyer,id})
+
+})
+// Route to render chat messages
+// app.get("/chat/:id", async (req, res) => {
+//   const { id } = req.params;
+//   console.log(id);
+//   console.log(chats);
+  
+//   const chatBetween = chats[id];
+//   const farmers=getFarmersData();
+//   console.log(farmers)
+//   const farmer = findFarmerById(parseInt(chatBetween), farmers);
+//   const buyers = await getBuyersData();
+//   const buyer = findBuyerById(parseInt(id), buyers);
+//   console.log(buyer);
+  
+//   let messages = [];
+//   if(buyer.messages[chatBetween]) messages=farmer.messages[chatBetween]
+//   console.log(messages)
+  
+//   res.render('message', {
+//     currUser: id,
+//     id: chatBetween,
+//     receiverUsername: farmer.name,
+//     messages
+//   });
+// });
+app.get("/chat/:id", async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  console.log(chats);
+  
+  const chatBetween = chats[id];
+  const farmers = await getFarmersData();
+  const farmer = findFarmerById(parseInt(chatBetween), farmers);
+  const buyers=await getBuyersData();
+  const buyer=await findBuyerById(id,buyers)
+  console.log(buyer);
+  console.log(farmer);
+  
+  let messages = [];
+  if(buyer.messages[parseInt(chatBetween)]) messages=buyer.messages[parseInt(chatBetween)]
+  console.log(messages)
+  
+  res.render('message', {
+    currUser: id,
+    id: chatBetween,
+    receiverUsername: farmer.name,
+    messages
+  });
 });
-const port = process.env.PORT || 5000;
 
-app.listen(port, () => {
+// Route to handle chat updates
+app.post("/chat/:id", async (req, res) => {
+  const { id } = req.params;
+  const data = req.body;
+  chats[data.userId] = data.farmerId;
+  console.log(data);
+  res.send(data);
+});
+app.get("/buyer/chat/:id", async (req, res) => {
+  const { id } = req.params;
+  
+  const chatBetween = farmerChats[id];
+  console.log(chatBetween)
+  const farmers = await getFarmersData();
+  const farmer = findFarmerById(parseInt(id), farmers);
+  console.log(farmer);
+  
+  let messages = [];
+  if(farmer.messages[chatBetween]) messages=farmer.messages[chatBetween]
+  console.log(messages)
+  
+  res.render('buyermessage.ejs', {
+    currUser: id,
+    id: chatBetween,
+    receiverUsername: chatBetween,
+    messages
+  });
+});
+app.post("/buyer/chat/:id", async (req, res) => {
+  const { id } = req.params;
+  const data = req.body;
+  farmerChats[data.farmerId] = data.buyerId;
+  // console.log(farmerChats);
+  res.send(data);
+});
+
+
+// WebSocket connection handling
+wss.on("connection", (ws, req) => {
+  const parsedUrl = url.parse(req.url);
+  const path = parsedUrl.pathname.substring(1);
+
+  if (connections[path]) {
+    connections[path].push(ws);
+    console.log(`${path} connected`);
+  } else {
+    connections[path] = [ws];
+    console.log(`${path} connected`);
+  }
+  console.log(`New connection on ${path}`);
+
+  ws.on("message", async (message) => {
+    console.log(`Received message on ${path}: ${message}`);
+    try {
+      const parsedMessage = JSON.parse(message);
+      console.log(parsedMessage);
+  
+      const sender_id = parsedMessage.sender;
+      const receiver_id = parsedMessage.receiver;
+  
+      // Update the farmers data
+      let farmers = await getFarmersData();
+      let buyers = await getBuyersData();
+      const receiver_farmer = findFarmerById(parseInt(receiver_id), farmers);
+      const receiver_buyer = findBuyerById(receiver_id, buyers);
+  
+      if (receiver_farmer) {
+        if (!receiver_farmer.messages) {
+          receiver_farmer.messages = {};
+        }
+  
+        if (!receiver_farmer.messages[sender_id]) {
+          receiver_farmer.messages[sender_id] = [];
+        }
+  
+        receiver_farmer.messages[sender_id].push({ from: parsedMessage.message });
+        const sender_buyer = findBuyerById(sender_id, buyers);
+        if (!sender_buyer.messages) {
+          sender_buyer.messages = {};
+        }
+  
+        if (!sender_buyer.messages[receiver_id]) {
+          sender_buyer.messages[receiver_id] = [];
+        }
+  
+        sender_buyer.messages[receiver_id].push({ to: parsedMessage.message });
+        await writeFarmersData(farmers);
+        await writeBuyersData(buyers);
+        console.log('Messages updated successfully.');
+        console.log('Updated Receiver:', receiver_farmer);
+      } else if (receiver_buyer) {
+        if (!receiver_buyer.messages) {
+          receiver_buyer.messages = {};
+        }
+  
+        if (!receiver_buyer.messages[sender_id]) {
+          receiver_buyer.messages[sender_id] = [];
+        }
+  
+        receiver_buyer.messages[sender_id].push({ from: parsedMessage.message });
+        const sender_farmer = findFarmerById(parseInt(sender_id), farmers);
+        if (!sender_farmer.messages) {
+          sender_farmer.messages = {};
+        }
+  
+        if (!sender_farmer.messages[receiver_id]) {
+          sender_farmer.messages[receiver_id] = [];
+        }
+  
+        sender_farmer.messages[receiver_id].push({ to: parsedMessage.message });
+        await writeFarmersData(farmers);
+        await writeBuyersData(buyers);
+        console.log('Messages updated successfully.');
+        console.log('Updated Receiver:', receiver_buyer);
+      } else {
+        console.error("Error occurred");
+        return;
+      }
+  
+      if (connections[parsedMessage.receiver]) {
+        connections[parsedMessage.receiver].forEach((client) => {
+          if (client.readyState === WebSocket.OPEN) {
+            client.send(JSON.stringify({
+              sender: parsedMessage.sender,
+              receiver: parsedMessage.receiver,
+              message: parsedMessage.message
+            }));
+          }
+        });
+      } else {
+        console.log(`No clients connected to path ${parsedMessage.receiver}`);
+      }
+    } catch (error) {
+      console.log("Error parsing message:", error);
+    }
+  });
+
+  ws.on('close', () => {
+    connections[path] = connections[path].filter(client => client !== ws);
+    console.log(`Connection closed on ${path}`);
+  });
+});
+
+// Helper function to find a farmer by ID
+function findFarmerById(id, farmers) {
+  return farmers.find(obj => obj.id === id);
+}
+
+function findBuyerById(id, buyer) {
+  return buyer.find(obj => obj.id === id);
+}
+
+
+const port = process.env.PORT || 3000;
+
+server.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
