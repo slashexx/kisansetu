@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebSocket Chat</title>
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        #messages {
+            border: 1px solid #ccc;
+            height: 80vh;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .message {
+            max-width: 60%;
+            padding: 8px 12px;
+            border-radius: 10px;
+            word-wrap: break-word;
+            display: inline-block;
+        }
+        .message.you {
+            background-color: #007bff;
+            color: #fff;
+            align-self: flex-end;
+            text-align: right;
+        }
+        .message.other {
+            background-color: #e9ecef;
+            color: #333;
+            align-self: flex-start;
+            text-align: left;
+        }
+        #input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+  </style>
+  </head>
+  <body>
+    
+    <div id="messages">
+      <% messages.forEach(message => { %>
+          <% for (let key in message) { %>
+              <div class="message <%= key === 'to' ? 'you' : 'other' %>">
+                  <%= key %> : <%= message[key] %>
+              </div>
+          <% } %>
+      <% }); %>
+  </div>
+  <input id="input" type="text" placeholder="Type a message..." />
+
+    <script>
+         const current_user = <%- JSON.stringify(currUser) %>;
+        const receiver_user = <%- JSON.stringify(id) %>;
+        const receiver_username = <%- JSON.stringify(receiverUsername) %>;
+        console.log("hello", receiver_user, current_user, receiver_username);
+
+        const socket = new WebSocket(`ws://localhost:3000/${current_user}`);
+
+        // Display a message in the messages div
+        function displayMessage(message, sender) {
+            const messagesDiv = document.getElementById("messages");
+            const messageElement = document.createElement("div");
+            messageElement.className = 'message ' + (sender === 'You' ? 'you' : 'other');
+            messageElement.textContent = `${sender} : ${message}`;
+            messagesDiv.appendChild(messageElement);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight; // Scroll to the bottom
+        }
+
+        // Event listener for when the WebSocket connection is established
+        socket.addEventListener("open", function () {
+            console.log("websocket connected");
+        });
+
+        // Event listener for when a message is received from the server
+        socket.addEventListener('message', function (event) {
+            try {
+                // Parse the incoming message as JSON
+                const parsedMessage = JSON.parse(event.data);
+
+                // Extract relevant data
+                const messageContent = parsedMessage.message;
+                const sender = parsedMessage.sender;
+                const receiver = parsedMessage.receiver;
+
+                // Display the message
+                if (sender === receiver_user) {
+                    displayMessage(messageContent, receiver_username);
+                }
+            } catch (error) {
+                console.error('Error parsing message:', error);
+                displayMessage('Error parsing message', 'System');
+            }
+        });
+
+        // Event listener for when the input field detects a keypress
+        document
+            .getElementById("input")
+            .addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    const message_to_send = event.target.value;
+                    socket.send(JSON.stringify({ sender: current_user, receiver: receiver_user, message: message_to_send })); // Send the message to the server
+                    displayMessage(message_to_send, 'You'); // Display the message locally
+                    event.target.value = ""; // Clear the input field
+                }
+            });
+
+        // Event listener for when the WebSocket connection is closed
+        socket.addEventListener("close", function () {
+            console.log("Disconnected from the WebSocket server");
+        });
+
+        // Event listener for errors
+        socket.addEventListener("error", function (error) {
+            displayMessage("Error: " + error.message, 'System');
+        });
+    </script>
+  </body>
+</html>

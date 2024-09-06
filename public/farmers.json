@@ -1,0 +1,480 @@
+[
+  {
+    "id": 1,
+    "name": "Rajesh Kumar",
+    "state": "Punjab",
+    "cropsGrown": [
+      "Wheat",
+      "Rice"
+    ],
+    "produceAmount": [
+      3000,
+      1200
+    ],
+    "image": "https://via.placeholder.com/40?text=R",
+    "governmentVerified": true,
+    "messages": {
+      "kdzk9xWfg5WEnQUknEbWCG8hqM63": [
+        {
+          "from": "i want wheat"
+        },
+        {
+          "to": "ok how much"
+        },
+        {
+          "from": "i want 1 ton"
+        },
+        {
+          "to": "ok 1ton is 5000 rs"
+        },
+        {
+          "from": "ok let make the contract"
+        },
+        {
+          "to": "ok"
+        },
+        {
+          "from": "what is your name"
+        },
+        {
+          "to": "my name is rajesh"
+        },
+        {
+          "from": "what do you sell"
+        },
+        {
+          "to": "actually i sell rice and wheat but i can also provide you with stuffs that can make you fell good 🥴"
+        },
+        {
+          "from": "🌝"
+        },
+        {
+          "from": "ok"
+        },
+        {
+          "from": "what the price"
+        },
+        {
+          "from": "?"
+        },
+        {
+          "from": "?"
+        },
+        {
+          "from": "?"
+        },
+        {
+          "from": "?"
+        },
+        {
+          "from": "?"
+        },
+        {
+          "from": "?"
+        },
+        {
+          "from": "hi"
+        },
+        {
+          "from": "how are you"
+        },
+        {
+          "from": "?"
+        },
+        {
+          "to": "i am fine"
+        },
+        {
+          "to": "how are you"
+        },
+        {
+          "from": "i am fine"
+        }
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "name": "Meena Singh",
+    "state": "Uttar Pradesh",
+    "cropsGrown": [
+      "Jowar",
+      "Bajra"
+    ],
+    "produceAmount": [
+      5000,
+      2500
+    ],
+    "image": "https://via.placeholder.com/40?text=M",
+    "governmentVerified": false,
+    "messages": {}
+  },
+  {
+    "id": 3,
+    "name": "Amit Sharma",
+    "state": "Maharashtra",
+    "cropsGrown": [
+      "Chickpeas",
+      "Mung Beans"
+    ],
+    "produceAmount": [
+      4000,
+      3200
+    ],
+    "image": "https://via.placeholder.com/40?text=A",
+    "governmentVerified": true,
+    "messages": {}
+  },
+  {
+    "id": 4,
+    "name": "Sita Devi",
+    "state": "Madhya Pradesh",
+    "cropsGrown": [
+      "Wheat",
+      "Peas"
+    ],
+    "produceAmount": [
+      2900,
+      2100
+    ],
+    "image": "https://via.placeholder.com/40?text=S",
+    "governmentVerified": true,
+    "messages": {}
+  },
+  {
+    "id": 5,
+    "name": "Karan Patel",
+    "state": "Gujarat",
+    "cropsGrown": [
+      "Ragi",
+      "Chickpeas"
+    ],
+    "produceAmount": [
+      3300,
+      1500
+    ],
+    "image": "https://via.placeholder.com/40?text=K",
+    "governmentVerified": false,
+    "messages": {}
+  },
+  {
+    "id": 6,
+    "name": "Sunita Yadav",
+    "state": "Haryana",
+    "cropsGrown": [
+      "Wheat",
+      "Maize"
+    ],
+    "produceAmount": [
+      4000,
+      1700
+    ],
+    "image": "https://via.placeholder.com/40?text=S",
+    "governmentVerified": true,
+    "messages": {}
+  },
+  {
+    "id": 7,
+    "name": "Vikram Singh",
+    "state": "Rajasthan",
+    "cropsGrown": [
+      "Millets",
+      "Barley"
+    ],
+    "produceAmount": [
+      2400,
+      2800
+    ],
+    "image": "https://via.placeholder.com/40?text=V",
+    "governmentVerified": false,
+    "messages": {}
+  },
+  {
+    "id": 8,
+    "name": "Rohit Gupta",
+    "state": "Bihar",
+    "cropsGrown": [
+      "Rice",
+      "Maize"
+    ],
+    "produceAmount": [
+      3500,
+      1800
+    ],
+    "image": "https://via.placeholder.com/40?text=R",
+    "governmentVerified": true,
+    "messages": {}
+  },
+  {
+    "id": 9,
+    "name": "Anita Joshi",
+    "state": "West Bengal",
+    "cropsGrown": [
+      "Rice",
+      "Jowar"
+    ],
+    "produceAmount": [
+      2800,
+      2200
+    ],
+    "image": "https://via.placeholder.com/40?text=A",
+    "governmentVerified": true,
+    "messages": {}
+  },
+  {
+    "id": 10,
+    "name": "Rakesh Verma",
+    "state": "Tamil Nadu",
+    "cropsGrown": [
+      "Rice",
+      "Peas"
+    ],
+    "produceAmount": [
+      3100,
+      900
+    ],
+    "image": "https://via.placeholder.com/40?text=R",
+    "governmentVerified": false,
+    "messages": {}
+  },
+  {
+    "id": 11,
+    "name": "Pooja Mehta",
+    "state": "Karnataka",
+    "cropsGrown": [
+      "Chickpeas",
+      "Ragi"
+    ],
+    "produceAmount": [
+      2600,
+      1800
+    ],
+    "image": "https://via.placeholder.com/40?text=P",
+    "governmentVerified": true,
+    "messages": {}
+  },
+  {
+    "id": 12,
+    "name": "Devendra Deshmukh",
+    "state": "Maharashtra",
+    "cropsGrown": [
+      "Mung Beans",
+      "Grapes"
+    ],
+    "produceAmount": [
+      4500,
+      2000
+    ],
+    "image": "https://via.placeholder.com/40?text=D",
+    "governmentVerified": true,
+    "messages": {}
+  },
+  {
+    "id": 13,
+    "name": "Preeti Singh",
+    "state": "Himachal Pradesh",
+    "cropsGrown": [
+      "Maize",
+      "Ragi"
+    ],
+    "produceAmount": [
+      1800,
+      2300
+    ],
+    "image": "https://via.placeholder.com/40?text=P",
+    "governmentVerified": false,
+    "messages": {}
+  },
+  {
+    "id": 14,
+    "name": "Gopal Naik",
+    "state": "Kerala",
+    "cropsGrown": [
+      "Rice",
+      "Peas"
+    ],
+    "produceAmount": [
+      1700,
+      900
+    ],
+    "image": "https://via.placeholder.com/40?text=G",
+    "governmentVerified": true,
+    "messages": {}
+  },
+  {
+    "id": 15,
+    "name": "Lakshmi Reddy",
+    "state": "Andhra Pradesh",
+    "cropsGrown": [
+      "Chickpeas",
+      "Rice"
+    ],
+    "produceAmount": [
+      3900,
+      3200
+    ],
+    "image": "https://via.placeholder.com/40?text=L",
+    "governmentVerified": false,
+    "messages": {}
+  },
+  {
+    "id": 16,
+    "name": "Abhinav Chauhan",
+    "state": "Uttarakhand",
+    "cropsGrown": [
+      "Wheat",
+      "Bajra"
+    ],
+    "produceAmount": [
+      2700,
+      1600
+    ],
+    "image": "https://via.placeholder.com/40?text=A",
+    "governmentVerified": true,
+    "messages": {}
+  },
+  {
+    "id": 17,
+    "name": "Neha Sahu",
+    "state": "Odisha",
+    "cropsGrown": [
+      "Rice",
+      "Jowar"
+    ],
+    "produceAmount": [
+      3800,
+      2200
+    ],
+    "image": "https://via.placeholder.com/40?text=N",
+    "governmentVerified": false,
+    "messages": {}
+  },
+  {
+    "id": 18,
+    "name": "Harish Bhatt",
+    "state": "Uttar Pradesh",
+    "cropsGrown": [
+      "Wheat",
+      "Ragi"
+    ],
+    "produceAmount": [
+      4100,
+      2800
+    ],
+    "image": "https://via.placeholder.com/40?text=H",
+    "governmentVerified": true,
+    "messages": {}
+  },
+  {
+    "id": 19,
+    "name": "Kavita Dixit",
+    "state": "Chhattisgarh",
+    "cropsGrown": [
+      "Rice",
+      "Maize"
+    ],
+    "produceAmount": [
+      2900,
+      1700
+    ],
+    "image": "https://via.placeholder.com/40?text=K",
+    "governmentVerified": false,
+    "messages": {}
+  },
+  {
+    "id": 20,
+    "name": "Manish Pandey",
+    "state": "Jharkhand",
+    "cropsGrown": [
+      "Rice",
+      "Mung Beans"
+    ],
+    "produceAmount": [
+      3400,
+      2100
+    ],
+    "image": "https://via.placeholder.com/40?text=M",
+    "governmentVerified": true,
+    "messages": {}
+  },
+  {
+    "id": 21,
+    "name": "Sushila Thakur",
+    "state": "Rajasthan",
+    "cropsGrown": [
+      "Bajra",
+      "Wheat"
+    ],
+    "produceAmount": [
+      2900,
+      3100
+    ],
+    "image": "https://via.placeholder.com/40?text=S",
+    "governmentVerified": false,
+    "messages": {}
+  },
+  {
+    "id": 22,
+    "name": "Deepak Patil",
+    "state": "Maharashtra",
+    "cropsGrown": [
+      "Ragi",
+      "Peas"
+    ],
+    "produceAmount": [
+      3900,
+      3200
+    ],
+    "image": "https://via.placeholder.com/40?text=D",
+    "governmentVerified": true,
+    "messages": {}
+  },
+  {
+    "id": 23,
+    "name": "Aarti Sharma",
+    "state": "Haryana",
+    "cropsGrown": [
+      "Wheat",
+      "Chickpeas"
+    ],
+    "produceAmount": [
+      3100,
+      2700
+    ],
+    "image": "https://via.placeholder.com/40?text=A",
+    "governmentVerified": false,
+    "messages": {}
+  },
+  {
+    "id": 24,
+    "name": "Ravi Kumar",
+    "state": "Bihar",
+    "cropsGrown": [
+      "Jowar",
+      "Peas"
+    ],
+    "produceAmount": [
+      3300,
+      1500
+    ],
+    "image": "https://via.placeholder.com/40?text=R",
+    "governmentVerified": true,
+    "messages": {}
+  },
+  {
+    "id": 25,
+    "name": "Simran Kaur",
+    "state": "Punjab",
+    "cropsGrown": [
+      "Wheat",
+      "Rice"
+    ],
+    "produceAmount": [
+      2800,
+      1400
+    ],
+    "image": "https://via.placeholder.com/40?text=S",
+    "governmentVerified": true,
+    "messages": {}
+  }
+]

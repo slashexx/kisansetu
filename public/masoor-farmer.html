@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KisanSetu</title>
+    <link rel="shortcut icon" href="./images/favicon.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="rice-farmer.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <div class="header">
+        <nav class="nav-bar">
+            <a href="home-page.html">
+                <img src="./images/farmer-logo.png" alt="logo" class="logo" />
+            </a>
+            <ul class="nav-links">
+                <li><a href="home-page.html">Home</a></li>
+                <li><a href="farmers-page.html">Farmers</a></li>
+                <li><a href="crops-page.html" class="active">Crops</a></li>
+                <li><a href="about-us-page.html">About Us</a></li>
+            </ul>
+            <div class="buttons">
+                <a href="./signup.html"><button class="sign-up">Sign up</button></a>
+                <a href="./login.html"><button class="login">Login</button></a>
+            </div>
+        </nav>
+    </div>
+    <div class="farmers-list">
+        <div class="top-page">
+            <h1>Rice</h1>
+            <a href="crops-page.html">
+                <button class="back-button">
+                    ← Back
+                </button>
+            </a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Profile Picture</th>
+                    <th>Name</th>
+                    <th>State</th>
+                    <th>Crop Type</th>
+                    <th>Amount Produced</th>
+                    <th>Government Verified</th>
+                </tr>
+            </thead>
+            <tbody id="farmer-table-body">
+                <!-- Farmer rows will be populated here -->
+            </tbody>
+        </table>
+    </div>
+    <!-- <script src="lentil-farmers.js"></script> -->
+    <script>
+        fetch('./lentil-farmers.json')
+            .then(response => response.json())
+            .then(data => {
+                farmers = data;
+                displayFarmerDetails();
+            })
+            .catch(error => console.error('Error fetching the JSON file:', error));
+            function displayFarmerDetails(){
+                const farmerTableBody = document.getElementById('farmer-table-body');
+                // Paths to your custom images
+            const verifiedImage = './images/verified.png';  // Path to your verified icon image
+            const unverifiedImage = './images/unverified.jpg';  // Path to your unverified icon image
+                console.log(farmers)
+            farmers.forEach(farmer => {
+                // Check if the farmer grows rice
+                if (farmer.cropsGrown.includes('Masoor Dal')) {
+                    console.log(farmer)
+                    // Choose the appropriate image based on the governmentVerified status
+                    const verifiedStatusImage = farmer.governmentVerified ? verifiedImage : unverifiedImage;
+
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                <td><img src="${farmer.image}" alt="${farmer.name}"></td>
+                <td>
+                    <a href="lentil-farmers-details.html?farmerId=${farmer.farmerId}">
+                        ${farmer.name}
+                    </a>
+                </td>
+                <td>${farmer.state}</td>
+                <td>${farmer.cropsGrown.join(', ')}</td>
+                <td>${farmer.produceAmount} kg</td>
+                <td class="verified-status"><img src="${verifiedStatusImage}" alt="Verified Status"></td>
+            `;
+                    farmerTableBody.appendChild(row);
+                }
+            });
+                }
+    </script>
+</body>
+
+</html>
