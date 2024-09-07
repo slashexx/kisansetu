@@ -56,7 +56,7 @@
     // Paths to your custom images
     const verifiedImage = './images/verified.png';  // Path to your verified icon image
     const unverifiedImage = './images/unverified.jpg';  // Path to your unverified icon image
-
+      console.log(farmers)
     farmers.forEach(farmer => {
       // Choose the appropriate image based on the governmentVerified status
       const verifiedStatusImage = farmer.governmentVerified ? verifiedImage : unverifiedImage;
@@ -65,7 +65,7 @@
       row.innerHTML = `
                 <td><img src="${farmer.image}" alt="${farmer.name}"></td>
                 <td>
-                    <a href="farmers-details.html?farmerId=${farmer.id}">
+                    <a href="farmers-details.html?farmerId=${farmer.farmerId}">
                         ${farmer.name}
                     </a>
                 </td>
@@ -77,10 +77,11 @@
       farmerTableBody.appendChild(row);
     });
     }
-    fetch('./farmers.json')
+    fetch('./farmers-details.json')
     .then(response => response.json())
     .then(data => {
       farmers = data;
+      console.log(farmers)
       displayFarmers();
     })
     .catch(error => console.error('Error fetching the JSON file:', error));

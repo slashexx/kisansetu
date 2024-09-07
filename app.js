@@ -23,7 +23,7 @@ const server = http.createServer(app);
 const wss = new WebSocketServer({ server });
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const DATA_FILE = path.join(__dirname, './public/farmers.json');
+const DATA_FILE = path.join(__dirname, './public/farmers-details.json');
 const BUYERS_FILE_PATH= path.join(__dirname, './public/buyers.json');
 app.use(express.static(path.join(__dirname, "public")));
 app.set("views", path.join(__dirname, "views"));
@@ -429,7 +429,9 @@ app.get("/buyer/chat/:id", async (req, res) => {
   const chatBetween = farmerChats[id];
   console.log(chatBetween)
   const farmers = await getFarmersData();
+  const buyers=await getBuyersData()
   const farmer = findFarmerById(parseInt(id), farmers);
+  const buyer=findBuyerById(chatBetween,buyers)
   console.log(farmer);
   
   let messages = [];
@@ -439,7 +441,7 @@ app.get("/buyer/chat/:id", async (req, res) => {
   res.render('buyermessage.ejs', {
     currUser: id,
     id: chatBetween,
-    receiverUsername: chatBetween,
+    receiverUsername: buyer.username,
     messages
   });
 });
@@ -560,7 +562,7 @@ wss.on("connection", (ws, req) => {
 
 // Helper function to find a farmer by ID
 function findFarmerById(id, farmers) {
-  return farmers.find(obj => obj.id === id);
+  return farmers.find(obj => obj.farmerId === id);
 }
 
 function findBuyerById(id, buyer) {

@@ -60,7 +60,7 @@
     <!-- <script src="farmers.js"></script> -->
     <script>
         
-        fetch('./farmers.json')
+        fetch('./farmers-details.json')
             .then(response => response.json())
             .then(data => {
                 farmers = data;
@@ -84,7 +84,7 @@
                     row.innerHTML = `
                 <td><img src="${farmer.image}" alt="${farmer.name}"></td>
                 <td>
-                    <a href="farmers-details.html?farmerId=${farmer.id}">
+                    <a href="farmers-details.html?farmerId=${farmer.farmerId}">
                         ${farmer.name}
                     </a>
                 </td>
