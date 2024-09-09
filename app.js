@@ -356,6 +356,7 @@ app.get("/buyers/:id",async(req,res)=>{
   const {id} = req.params;
   const farmers=await getFarmersData();
   const buyers=await getBuyersData();
+  console.log(buyers)
   const currFarmer=findFarmerById(parseInt(id),farmers);
   const farmersBuyer=[];
   for(let keys in currFarmer.messages){

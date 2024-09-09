@@ -12,87 +12,21 @@
     "image": "https://media.istockphoto.com/id/1205325344/photo/farmer-in-agricultural-field.jpg?s=612x612&w=0&k=20&c=krsRk4T2MsmMy6PmrpPDR0i_1ja3_jQaNl80fBejWck=",
     "governmentVerified": true,
     "messages": {
-      "wqo6oSEzFwceVetcg6Gb6cN5U1n1": [
+      "FJbnNVwBRKNXNJFIAbfZJYplK1D2": [
         {
-          "to": "i want wheat"
+          "from": "hello"
         },
         {
-          "from": "ok how much"
-        },
-        {
-          "to": "i want 1 ton"
-        },
-        {
-          "from": "ok 1ton is 5000 rs"
-        },
-        {
-          "to": "ok let make the contract"
-        },
-        {
-          "from": "ok"
-        },
-        {
-          "to": "what is your name"
-        },
-        {
-          "from": "my name is rajesh"
-        },
-        {
-          "to": "what do you sell"
-        },
-        {
-          "from": "actually i sell rice and wheat but i can also provide you with stuffs that can make you fell good 🥴"
-        },
-        {
-          "to": "🌝"
-        },
-        {
-          "to": "ok"
-        },
-        {
-          "to": "what the price"
-        },
-        {
-          "to": "?"
-        },
-        {
-          "to": "?"
-        },
-        {
-          "to": "?"
-        },
-        {
-          "to": "?"
-        },
-        {
-          "to": "?"
-        },
-        {
-          "to": "?"
+          "from": "hello"
         },
         {
           "to": "hi"
         },
         {
-          "to": "how are you"
+          "from": "hello"
         },
         {
-          "to": "?"
-        },
-        {
-          "from": "i am fine"
-        },
-        {
-          "from": "how are you"
-        },
-        {
-          "to": "i am fine"
-        },
-        {
-          "from": "actually i need something"
-        },
-        {
-          "to": "what you need"
+          "to": "hi"
         }
       ]
     },
