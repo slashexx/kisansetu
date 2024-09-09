@@ -36,7 +36,7 @@ const WEBSITE_FEATURES = await fs.readFile(
   "utf8"
 );
 const WEBSITE_FUNCTIONING = await fs.readFile(
-  "kisansetu_How_It_Works.md",
+  "Kisansetu_How_It_Works.md",
   "utf8"
 );
 const WEBSITE_PERSPECTIVE = await fs.readFile(
