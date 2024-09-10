@@ -11,7 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -39,14 +41,15 @@
       <img src="" alt="Farmer Image" id="farmerImage" width="100" height="100" />
     </div>
 
-      <!-- Right Section: Farmer Details -->
-      <div class="profile-details">
-        <div class="header-container">
-          <h2 id="farmerName" style="display: inline-block;">Farmer Name</h2><button class="chat-button" onclick="openChat()">
-            <i class="fa-solid fa-comment"></i> <!-- You can replace this with an SVG or font icon -->
+    <!-- Right Section: Farmer Details -->
+    <div class="profile-details">
+      <div class="header-container">
+        <h2 id="farmerName" style="display: inline-block;">Farmer Name</h2><button class="chat-button"
+          onclick="openChat()">
+          <i class="fa-solid fa-comment"></i> <!-- You can replace this with an SVG or font icon -->
         </button>
-        </div>
-        
+      </div>
+
 
       <!-- Tabs for different sections -->
       <div class="tabs">
@@ -83,47 +86,48 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- <script src="./farmers-details-details.js"></script> -->
   <script>
+
     const cropsImages = {
-Wheat:
-  "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTb0GgH3ccFLjH8ZPZxa9DKvjZ4uOgErcTs1fzGKugcyuKlE6ri",
-Rice: "https://cdn.britannica.com/89/140889-050-EC3F00BF/Ripening-heads-rice-Oryza-sativa.jpg",
-Jowar:
-  "https://i0.wp.com/www.svaguna.com/wp-content/uploads/2019/08/Jowar.jpg?fit=600%2C400&ssl=1",
-Bajra:
-  "https://karthickorganics.com/wp-content/uploads/2023/11/bajra.webp",
-Chickpeas:
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI2UdrUCYD-xy6Fherf3RMmzBbjBklVKPR-A&s",
-"Mung Beans":
-  "https://cdn.britannica.com/12/158012-050-F79D3126/mung-beans-dishes-desserts-soups.jpg",
-Peas: "https://media.post.rvohealth.io/wp-content/uploads/2020/09/green-peas-thumb-1-732x549.jpg",
-Ragi: "https://5.imimg.com/data5/SELLER/Default/2022/9/ZB/GS/FR/25008022/jiwa-organic-ragi-flour.jpg",
-Maize:
-  "https://5.imimg.com/data5/BB/IW/MY-28079104/organic-yellow-maize.jpg",
-Millets:
-  "https://sonkan.in/wp-content/uploads/2023/09/From-Farm-to-Table_-Tracing-the-Journey-of-Millets-in-Indian-Markets-930x614.webp",
-Barley:
-  "https://cdn-prod.medicalnewstoday.com/content/images/articles/295/295268/barley-grains-in-a-wooden-bowl.jpg",
-Grapes:
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTUNelf6LWd4fNNrJDDXZRgxv9n4JnMDkx3Q&s",
-};
-// Function to get query parameters
-function getQueryParam(param) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
-}
+      Wheat:
+        "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTb0GgH3ccFLjH8ZPZxa9DKvjZ4uOgErcTs1fzGKugcyuKlE6ri",
+      Rice: "https://cdn.britannica.com/89/140889-050-EC3F00BF/Ripening-heads-rice-Oryza-sativa.jpg",
+      Jowar:
+        "https://i0.wp.com/www.svaguna.com/wp-content/uploads/2019/08/Jowar.jpg?fit=600%2C400&ssl=1",
+      Bajra:
+        "https://karthickorganics.com/wp-content/uploads/2023/11/bajra.webp",
+      Chickpeas:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI2UdrUCYD-xy6Fherf3RMmzBbjBklVKPR-A&s",
+      "Mung Beans":
+        "https://cdn.britannica.com/12/158012-050-F79D3126/mung-beans-dishes-desserts-soups.jpg",
+      Peas: "https://media.post.rvohealth.io/wp-content/uploads/2020/09/green-peas-thumb-1-732x549.jpg",
+      Ragi: "https://5.imimg.com/data5/SELLER/Default/2022/9/ZB/GS/FR/25008022/jiwa-organic-ragi-flour.jpg",
+      Maize:
+        "https://5.imimg.com/data5/BB/IW/MY-28079104/organic-yellow-maize.jpg",
+      Millets:
+        "https://sonkan.in/wp-content/uploads/2023/09/From-Farm-to-Table_-Tracing-the-Journey-of-Millets-in-Indian-Markets-930x614.webp",
+      Barley:
+        "https://cdn-prod.medicalnewstoday.com/content/images/articles/295/295268/barley-grains-in-a-wooden-bowl.jpg",
+      Grapes:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTUNelf6LWd4fNNrJDDXZRgxv9n4JnMDkx3Q&s",
+    };
+    // Function to get query parameters
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
 
-// Function to display farmer details based on ID from the query parameter
-function displayFarmerDetails() {
-  const farmerId = getQueryParam("farmerId");
-  if (farmerId) {
-    // Find farmer details by ID
-    const farmerDetails = farmers.find(farmer => farmer.farmerId == parseInt(farmerId));
-    if (farmerDetails) {
-      document.getElementById("farmerName").innerText = farmerDetails.name;
-      document.getElementById("farmerImage").src = farmerDetails.image;
+    // Function to display farmer details based on ID from the query parameter
+    function displayFarmerDetails() {
+      const farmerId = getQueryParam("farmerId");
+      if (farmerId) {
+        // Find farmer details by ID
+        const farmerDetails = farmers.find(farmer => farmer.farmerId == parseInt(farmerId));
+        if (farmerDetails) {
+          document.getElementById("farmerName").innerText = farmerDetails.name;
+          document.getElementById("farmerImage").src = farmerDetails.image;
 
-      if (farmerDetails.governmentVerified) {
-        document.querySelector(".profile-sidebar").innerHTML += `
+          if (farmerDetails.governmentVerified) {
+            document.querySelector(".profile-sidebar").innerHTML += `
           <div class="verification-badge" id="farmerVerified" style="color: black;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <title>check-decagram</title>
@@ -131,98 +135,99 @@ function displayFarmerDetails() {
             </svg>
             <p style="margin-bottom: 1rem; position: relative; bottom: 0.2rem; display: inline-block;">Verified</p>
           </div>`;
-      }
+          }
 
-      document.getElementById("farmerState").innerText = farmerDetails.state;
-      document.getElementById("farmerPostalCode").innerText = farmerDetails.postalCode;
-      document.getElementById("farmerAddress").innerText = farmerDetails.address;
+          document.getElementById("farmerState").innerText = farmerDetails.state;
+          document.getElementById("farmerPostalCode").innerText = farmerDetails.postalCode;
+          document.getElementById("farmerAddress").innerText = farmerDetails.address;
 
-      const farmerCrops = document.getElementById("farmerCrops");
-      farmerCrops.innerHTML = '';
-      farmerDetails.cropsGrown.forEach(crop => {
-        farmerCrops.innerHTML += `<li>${crop}</li>`;
-      });
+          const farmerCrops = document.getElementById("farmerCrops");
+          farmerCrops.innerHTML = '';
+          farmerDetails.cropsGrown.forEach(crop => {
+            farmerCrops.innerHTML += `<li>${crop}</li>`;
+          });
 
-      const swiperContainer = document.querySelector(".swiper-wrapper");
-      swiperContainer.innerHTML = '';
-      farmerDetails.cropsGrown.forEach(crop => {
-        swiperContainer.innerHTML += `
+          const swiperContainer = document.querySelector(".swiper-wrapper");
+          swiperContainer.innerHTML = '';
+          farmerDetails.cropsGrown.forEach(crop => {
+            swiperContainer.innerHTML += `
           <div class="swiper-slide">
             <div class="title" data-swiper-parallax="-300">${crop}</div>
             <img src="${cropsImages[crop]}" alt="${crop}" />
           </div>`;
-      });
+          });
 
-      new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-    } else {
-      document.querySelector(".profile-details").textContent = "Farmer not found.";
+          new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        } else {
+          document.querySelector(".profile-details").textContent = "Farmer not found.";
+        }
+      } else {
+        document.querySelector(".profile-details").textContent = "No farmer selected.";
+      }
     }
-  } else {
-    document.querySelector(".profile-details").textContent = "No farmer selected.";
-  }
-}
 
-// Fetch the data and initialize
-fetch('./farmers-details.json')
-  .then(response => response.json())
-  .then(data => {
-    farmers = data;
-    displayFarmerDetails();
-  })
-  .catch(error => console.error('Error fetching the JSON file:', error));
+    // Fetch the data and initialize
+    fetch('./farmers-details.json')
+      .then(response => response.json())
+      .then(data => {
+        farmers = data;
+        displayFarmerDetails();
+      })
+      .catch(error => console.error('Error fetching the JSON file:', error));
 
-// Handle tab switching
-document.querySelectorAll(".tab").forEach(tab => {
-  tab.addEventListener("click", function () {
-    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-    this.classList.add("active");
+    // Handle tab switching
+    document.querySelectorAll(".tab").forEach(tab => {
+      tab.addEventListener("click", function () {
+        document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+        this.classList.add("active");
 
-    const tabId = this.getAttribute("data-tab");
-    document.querySelectorAll(".tab-content").forEach(content => content.classList.remove("active"));
-    document.getElementById(tabId).classList.add("active");
-    let swiperContainer = document.getElementsByClassName("swiper")[0];
-    swiperContainer.classList.toggle("hide");
-  });
-});
-
-// Chat button handler
-async function openChat() {
-  const userId = localStorage.getItem('uid');
-  if (userId) {
-    const farmerId = getQueryParam("farmerId");
-    try {
-      const response = await fetch(`/chat/${userId}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ farmerId, userId }),
+        const tabId = this.getAttribute("data-tab");
+        document.querySelectorAll(".tab-content").forEach(content => content.classList.remove("active"));
+        document.getElementById(tabId).classList.add("active");
+        let swiperContainer = document.getElementsByClassName("swiper")[0];
+        swiperContainer.classList.toggle("hide");
       });
+    });
 
-      if (!response.ok) throw new Error('Network response was not ok.');
-      const data = await response.json();
-      console.log('Server response:', data);
-      window.location.href = `/chat/${userId}`;
-    } catch (error) {
-      console.error('Error:', error);
-      alert('An error occurred while sending data.');
+    // Chat button handler
+    async function openChat() {
+      const userId = localStorage.getItem('uid');
+      if (userId) {
+        const farmerId = getQueryParam("farmerId");
+        try {
+          const response = await fetch(`/chat/${userId}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ farmerId, userId }),
+          });
+
+          if (!response.ok) throw new Error('Network response was not ok.');
+          const data = await response.json();
+          console.log('Server response:', data);
+          window.location.href = `/chat/${userId}`;
+        } catch (error) {
+          console.error('Error:', error);
+          alert('An error occurred while sending data.');
+        }
+      } else {
+        alert('User ID not found. Please log in.');
+      }
     }
-  } else {
-    alert('User ID not found. Please log in.');
-  }
-}
-</script>
-  </body>
+  </script>
+</body>
+
 </html>

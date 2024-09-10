@@ -44,7 +44,7 @@ const WEBSITE_PERSPECTIVE = await fs.readFile(
   "utf8"
 );
 app.post("/assistance", async (req, res) => {
-  const { message, language } = req.body;
+  const { message, language } = req.body; 
 
   const model = genAI.getGenerativeModel({ model: "gemini-pro" });
   const chat = model.startChat({
