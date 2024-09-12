@@ -85,7 +85,28 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- <script src="./farmers-details-details.js"></script> -->
-  <script>
+  <script type="module">
+
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+    import { getFirestore, doc, setDoc, getDoc, query, collection, where, getDocs } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+  
+    const firebaseConfig = {
+      apiKey: "AIzaSyBNrhwRH5TeqAPyXmToaCGJ6St4g1FKOno",
+      authDomain: "kisansetu-1640.firebaseapp.com",
+      projectId: "kisansetu-1640",
+      storageBucket: "kisansetu-1640.appspot.com",
+      messagingSenderId: "763552320675",
+      appId: "1:763552320675:web:93cff2382387b7b5dc4316"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const googleProvider = new GoogleAuthProvider();
+  
+
 
     const cropsImages = {
       Wheat:
@@ -116,67 +137,65 @@
       return urlParams.get(param);
     }
 
+    let farmers = []
+
     // Function to display farmer details based on ID from the query parameter
-    function displayFarmerDetails() {
-      const farmerId = getQueryParam("farmerId");
-      if (farmerId) {
-        // Find farmer details by ID
-        const farmerDetails = farmers.find(farmer => farmer.farmerId == parseInt(farmerId));
-        if (farmerDetails) {
-          document.getElementById("farmerName").innerText = farmerDetails.name;
-          document.getElementById("farmerImage").src = farmerDetails.image;
+    async function displayFarmerDetails() {
+  const farmerId = getQueryParam("farmerId");
 
-          if (farmerDetails.governmentVerified) {
-            document.querySelector(".profile-sidebar").innerHTML += `
-          <div class="verification-badge" id="farmerVerified" style="color: black;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <title>check-decagram</title>
-              <path d="M23,12L20.56,9.22L20.9,5.54L17.29,4.72L15.4,1.54L12,3L8.6,1.54L6.71,4.72L3.1,5.53L3.44,9.21L1,12L3.44,14.78L3.1,18.47L6.71,19.29L8.6,22.47L12,21L15.4,22.46L17.29,19.28L20.9,18.46L20.56,14.78L23,12M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z" />
-            </svg>
-            <p style="margin-bottom: 1rem; position: relative; bottom: 0.2rem; display: inline-block;">Verified</p>
-          </div>`;
-          }
+  if (farmerId) {
+    try {
+      // Firebase data fetch
+      const docRef = doc(db, "users", farmerId);
+      const docSnap = await getDoc(docRef);
 
-          document.getElementById("farmerState").innerText = farmerDetails.state;
-          document.getElementById("farmerPostalCode").innerText = farmerDetails.postalCode;
-          document.getElementById("farmerAddress").innerText = farmerDetails.address;
+      let farmerDetails;
+      if (docSnap.exists()) {
+        farmerDetails = docSnap.data();  // Firebase data
+      } else {
+        // Fallback to local JSON data if Firebase fails
+        farmerDetails = farmers.find(farmer => farmer.farmerId == parseInt(farmerId));
+      }
 
-          const farmerCrops = document.getElementById("farmerCrops");
-          farmerCrops.innerHTML = '';
-          farmerDetails.cropsGrown.forEach(crop => {
-            farmerCrops.innerHTML += `<li>${crop}</li>`;
-          });
+      if (farmerDetails) {
+        document.getElementById("farmerName").innerText = farmerDetails.name;
+        document.getElementById("farmerImage").src = farmerDetails.image || '';
+        document.getElementById("farmerState").innerText = farmerDetails.state || 'N/A';
+        document.getElementById("farmerPostalCode").innerText = farmerDetails.postalCode || 'N/A';
+        document.getElementById("farmerAddress").innerText = farmerDetails.address || 'N/A';
 
-          const swiperContainer = document.querySelector(".swiper-wrapper");
-          swiperContainer.innerHTML = '';
-          farmerDetails.cropsGrown.forEach(crop => {
-            swiperContainer.innerHTML += `
+        // Handle crops
+        const farmerCrops = document.getElementById("farmerCrops");
+        farmerCrops.innerHTML = farmerDetails.cropsGrown.map(crop => `<li>${crop}</li>`).join('');
+
+        // Swiper logic for images
+        const swiperContainer = document.querySelector(".swiper-wrapper");
+        swiperContainer.innerHTML = farmerDetails.cropsGrown.map(crop => `
           <div class="swiper-slide">
             <div class="title" data-swiper-parallax="-300">${crop}</div>
             <img src="${cropsImages[crop]}" alt="${crop}" />
-          </div>`;
-          });
+          </div>`).join('');
 
-          new Swiper(".mySwiper", {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
-            },
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            },
-          });
-        } else {
-          document.querySelector(".profile-details").textContent = "Farmer not found.";
-        }
+        new Swiper(".mySwiper", {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
       } else {
-        document.querySelector(".profile-details").textContent = "No farmer selected.";
+        document.querySelector(".profile-details").textContent = "Farmer not found.";
       }
+    } catch (error) {
+      console.error("Error fetching farmer details:", error);
+      document.querySelector(".profile-details").textContent = "Error fetching farmer details.";
     }
+  } else {
+    document.querySelector(".profile-details").textContent = "No farmer selected.";
+  }
+}
 
     // Fetch the data and initialize
     fetch('./farmers-details.json')

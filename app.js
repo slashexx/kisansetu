@@ -198,7 +198,7 @@ app.get("/dashboard", (req, res) => {
 });
 
 app.get("/contract-form", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "contract-form.html"));
+  res.sendFile(path.join(__dirname, "public", "contract_form.html"));
 });
 
 app.get("/register", (req, res) => {
@@ -446,6 +446,8 @@ app.get("/buyer/chat/:id", async (req, res) => {
     messages
   });
 });
+
+
 app.post("/buyer/chat/:id", async (req, res) => {
   const { id } = req.params;
   const data = req.body;
