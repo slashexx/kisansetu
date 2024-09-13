@@ -325,7 +325,12 @@
   
         // Merge with existing farmers data
         farmers = [...farmers, ...firestoreFarmers];
-  
+        const searchBar = document.querySelector("#query\\ searchBar");
+          searchBar.addEventListener("input", function () {
+            const searchTerm = searchBar.value.toLowerCase();
+            console.log(searchTerm)
+            displayFarmers(searchTerm);
+          });
         console.log(farmers);
         displayFarmers();
       } catch (error) {
@@ -333,7 +338,7 @@
       }
     }
   
-    function displayFarmers() {
+    function displayFarmers(searchTerm = "") {
   const farmerTableBody = document.getElementById('farmer-table-body');
 
   // Paths to your custom images
@@ -345,11 +350,13 @@
   farmers.forEach(farmer => {
     // Ensure produceAmount is an array, default to empty array if undefined
     const produceAmount = Array.isArray(farmer.produceAmount) ? farmer.produceAmount : [];
-
     // Choose the appropriate image based on the governmentVerified status
     const verifiedStatusImage = farmer.governmentVerified ? verifiedImage : unverifiedImage;
-
-    const row = document.createElement('tr');
+    let crops = farmer.cropsGrown?farmer.cropsGrown.map((str) => str.toLowerCase()):[];
+    let searchTermLower=searchTerm.toLowerCase()
+    if (farmer.name.toLowerCase().includes(searchTermLower) || 
+    crops.some(crop => crop.includes(searchTermLower))){
+      const row = document.createElement('tr');
     row.innerHTML = `
       <td><img src="${farmer.image || './images/farmer-logo.jpg'}" alt="${farmer.name[0] || 'No name'}"></td>
       <td>
@@ -363,7 +370,32 @@
       <td class="verified-status"><img src="${verifiedStatusImage}" alt="Verified Status"></td>
     `;
     farmerTableBody.appendChild(row);
+    }
+    
   });
+
+  // farmers.forEach(farmer => {
+  //   // Ensure produceAmount is an array, default to empty array if undefined
+  //   const produceAmount = Array.isArray(farmer.produceAmount) ? farmer.produceAmount : [];
+
+  //   // Choose the appropriate image based on the governmentVerified status
+  //   const verifiedStatusImage = farmer.governmentVerified ? verifiedImage : unverifiedImage;
+
+  //   const row = document.createElement('tr');
+  //   row.innerHTML = `
+  //     <td><img src="${farmer.image || './images/farmer-logo.jpg'}" alt="${farmer.name[0] || 'No name'}"></td>
+  //     <td>
+  //       <a href="farmers-details.html?farmerId=${farmer.farmerId || ''}">
+  //         ${farmer.name || 'No name'}
+  //       </a>
+  //     </td>
+  //     <td>${farmer.state || 'No state'}</td>
+  //     <td>${farmer.cropsGrown || 'No crops'}</td>
+  //     <td>${produceAmount.join(', ')} kg</td>
+  //     <td class="verified-status"><img src="${verifiedStatusImage}" alt="Verified Status"></td>
+  //   `;
+  //   farmerTableBody.appendChild(row);
+  // });
 }
   
     // Fetch existing farmers data from JSON
