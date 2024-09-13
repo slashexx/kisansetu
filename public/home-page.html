@@ -193,7 +193,8 @@
     font-size: 18vw;
     font-weight: 100;
   }
-  .char{
+
+  .char {
     transform: translateY(400px);
     transition: transform 0.5s;
   }
@@ -202,8 +203,7 @@
 <body>
   <div class="container">
     <div class="header">
-      <video src="./videos/Farmer Playback Video.mp4" autoplay muted loop
-        class="background-video"></video>
+      <video src="./videos/Farmer Playback Video.mp4" autoplay muted loop class="background-video"></video>
       <nav class="nav-bar">
         <a href="home-page.html">
           <img src="./images/farmer-logo-removebg-preview.png" alt="logo" class="logo" />
@@ -307,30 +307,26 @@
       </p>
     </div>
     <div class="redirect-links">
-      <div>
-        <div>
-          <h3>Click To Buy From Specific Farmers</h3>
-          <a href="farmers-page.html"><button class="farmer-btn">Check Farmers</button></a>
+      <div class="center-container">
+        <div >
+          <!-- <h3>Click To Buy From Specific Farmers</h3> -->
+          <a href="farmers-page.html">
+            <button class="farmer-btn">
+              Check Farmers
+              <video class="button-video" autoplay loop muted>
+                <source src="./videos/farmer-video.mp4" type="video/mp4">
+              </video>
+            </button>
+          </a>
         </div>
-        <img
-          src="./images/bot.svg"
-          id="bot-img"
-          alt=""
-          height="50px"
-          width="50px"
-          style="border-radius: 10px"
-        />
+        <img src="./images/bot.svg" id="bot-img" alt="" height="50px" width="50px" style="border-radius: 10px" />
         <div class="ai-bot">
           <div class="content">
             <div class="chat-container">
               <div id="chat-messages"></div>
               <div class="user-prompt">
-                <textarea
-                  id="userInput"
-                  rows="1"
-                  class="textarea"
-                  placeholder="किसानसेतु का उपयोग कैसे करें?"
-                ></textarea>
+                <textarea id="userInput" rows="1" class="textarea"
+                  placeholder="किसानसेतु का उपयोग कैसे करें?"></textarea>
                 <div class="lang-select">
                   <select id="languageSelect">
                     <option value="english">English</option>
@@ -338,44 +334,58 @@
                   </select>
                 </div>
 
-              <img id="enterIcon" src="images/send.svg" alt="" class="enter-icon" />
+                <img id="enterIcon" src="images/send.svg" alt="" class="enter-icon" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        <h3>Click To Buy Specific Crops</h3>
-        <a href="crops-page.html"><button class="crop-btn">Buy Crops</button></a>
-      </div>
-      <div>
-        <h3>Click To Learn More About Us</h3>
-        <a href="about-us-page.html"><button class="about-btn">About Us</button></a>
+        <div>
+          <!-- <h3>Click To Buy Specific Crops</h3> -->
+          <a href="crops-page.html">
+            <button class="crop-btn">
+              Buy Crops
+              <video class="button-video" autoplay loop muted>
+                <source src="./videos/crops-1.mp4" type="video/mp4">
+              </video>
+            </button>
+          </a>
+        </div>
+        <div>
+          <!-- <h3>Click To Learn More About Us</h3> -->
+          <a href="about-us-page.html">
+            <button class="about-btn">
+              About Us
+              <video class="button-video" autoplay loop muted>
+                <source src="./videos/Teamwork joining hand Free use footage.mp4" type="video/mp4">
+              </video>
+            </button>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
-    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="bot.js"></script>
-  <script>
-    // function redirectToPage(url) {
-    //   window.location.href = url;
-    // }
+    <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="bot.js"></script>
+    <script>
+      // function redirectToPage(url) {
+      //   window.location.href = url;
+      // }
 
-    const myText = new SplitType(".title")
+      const myText = new SplitType(".title")
 
-    gsap.to('.char', {
-      y:0,
-      stagger: 0.05,
-      delay:0.2,
-      duration:0.1
-    })
-  </script>
+      gsap.to('.char', {
+        y: 0,
+        stagger: 0.05,
+        delay: 0.2,
+        duration: 0.1
+      })
+    </script>
 </body>
 
 </html>

@@ -117,8 +117,10 @@
 }
 
 .buttons a {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit color from the button */
+  text-decoration: none;
+  /* Remove underline */
+  color: inherit;
+  /* Inherit color from the button */
 }
 
 nav {
@@ -269,6 +271,13 @@ nav {
   margin-top: 50px;
 }
 
+.redirect-links>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .redirect-links h3 {
   font-family: "Merriweather", serif;
   font-size: 24px;
@@ -276,24 +285,53 @@ nav {
 }
 
 .redirect-links button {
-  /* font-family: 'Playfair Display', serif; */
-  margin-top: 10px;
-  margin-bottom: 25px;
+  width: 600px;
+  height: 500px;
+  font-size: 2.2rem;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
   border: none;
-  padding: 10px 20px;
   cursor: pointer;
-  border-radius: 7px;
+  background-color: #28a745;
   color: white;
-  font-size: 16px;
-  margin-right: 15px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  margin-bottom: 60px;
+  transition: all 0.3s ease;
+}
+
+
+.redirect-links button:hover {
+  background-color: #218838;
+}
+
+.button-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  /* Initially hidden */
+  object-fit: cover;
+  /* Ensure video covers the button */
+  z-index: 1;
+}
+
+.redirect-links button:hover .button-video {
+  display: block;
+  /* Show video on hover */
+}
+
+/* Optional styling for a better user experience */
+.button-video:hover {
+  play: true;
+  display: block;
 }
 
 .bot-logo img {
   border-radius: 5px;
   cursor: pointer;
 }
+
 /* styles for ai-bot */
 .ai-bot {
   display: none;
@@ -307,12 +345,14 @@ nav {
   cursor: pointer;
   border-radius: 10px;
 }
+
 .lang-select {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+
 .chat-container {
   position: fixed;
   right: 20px;
@@ -329,6 +369,7 @@ nav {
   justify-content: space-between;
   overflow: hidden;
 }
+
 .message-element {
   color: white;
 }
@@ -340,6 +381,7 @@ nav {
   background-color: #c1cad6;
   border-radius: 16px;
 }
+
 #chat-messages {
   max-height: 58vh;
   overflow-y: scroll;
@@ -371,28 +413,41 @@ textarea:focus {
 
 /* styles for crop btns */
 .crop-btn {
-  background-color: #4caf50;
+  /* background-color: #4caf50; */
+  background-image: url(./images/buy-crops.png);
+  width: 900px;
+  height: 500px;
+  margin-bottom: 20px;
 }
 
 .crop-btn:hover {
   transform: translateY(-5px);
-  background-color: #45a049;
+  /* background-color: #45a049; */
 }
 
 .farmer-btn {
-  background-color: #8b4513;
+  /* background-color: #8b4513; */
+  background-image: url(./images/buy-from-farmer.png);
+  font-weight: 600;
+  width: 900px;
+  height: 500px;
+  margin-bottom: 20px;
 }
 
 .farmer-btn:hover {
   transform: translateY(-5px);
-  background-color: #7b3d11;
+  /* background-color: #7b3d11; */
 }
 
 .about-btn {
-  background-color: #2196f3;
+  background-image: url(./images/about-us.png);
+  /* background-color: #2196f3; */
+  width: 900px;
+  height: 500px;
+  margin-bottom: 20px;
 }
 
 .about-btn:hover {
   transform: translateY(-5px);
-  background-color: #1e88e5;
+  /* background-color: #1e88e5; */
 }
