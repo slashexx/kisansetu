@@ -13,50 +13,191 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet" />
 </head>
-
+<style>
+    /* From Uiverse.io by ryota1231 */
+    .animated-button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 12px 30px;
+        border: 4px solid;
+        border-color: transparent;
+        font-size: 12px;
+        /* background-color: ; */
+        border-radius: 100px;
+        font-weight: 600;
+        color: #1f387e;
+        box-shadow: 0 0 0 2px #ffffff;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+  
+    .animated-button svg {
+      position: absolute;
+      width: 24px;
+      fill: #1f387e;
+      z-index: 9;
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+  
+    .animated-button .arr-1 {
+      right: 16px;
+    }
+  
+    .animated-button .arr-2 {
+      left: -25%;
+    }
+  
+    .animated-button .circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      background-color: #c5e5e4;
+      border-radius: 50%;
+      opacity: 0;
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+  
+    .animated-button .text {
+      position: relative;
+      z-index: 1;
+      transform: translateX(-12px);
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+  
+    .animated-button:hover {
+      box-shadow: 0 0 0 12px transparent;
+      color: #212121;
+      border-radius: 12px;
+    }
+  
+    .animated-button:hover .arr-1 {
+      right: -25%;
+    }
+  
+    .animated-button:hover .arr-2 {
+      left: 16px;
+    }
+  
+    .animated-button:hover .text {
+      transform: translateX(12px);
+    }
+  
+    .animated-button:hover svg {
+      fill: #1f387e;
+    }
+  
+    .animated-button:active {
+      scale: 0.95;
+      box-shadow: 0 0 0 4px greenyellow;
+    }
+  
+    .animated-button:hover .circle {
+      width: 220px;
+      height: 220px;
+      opacity: 1;
+    }
+  
+    a {
+      text-decoration: none;
+    }
+  
+    .button {
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-between;
+    width: 220px;
+  }
+  </style>
 <body>
     <div class="header">
         <nav class="nav-bar">
-            <a href="home-page.html">
-                <img src="./images/farmer-logo.png" alt="logo" class="logo" />
-            </a>
-            <ul class="nav-links">
-                <li><a href="home-page.html">Home</a></li>
-                <li><a href="farmers-page.html" class="active">Farmers</a></li>
-                <li><a href="crops-page.html">Crops</a></li>
-                <li><a href="about-us-page.html">About Us</a></li>
-            </ul>
-            <div class="buttons">
-                <a href="./signup.html"><button class="sign-up">Sign up</button></a>
-                <a href="./login.html"><button class="login">Login</button></a>
+          <a href="home-page.html">
+            <img src="./images/farmer-logo.png" alt="logo" class="logo" />
+          </a>
+          <ul class="nav-links">
+            <div class="radio-inputs">
+              <label>
+                <input class="radio-input" type="radio" name="engine" onclick="window.location.href='home-page.html';" >
+                <span class="radio-tile">
+                  <span class="radio-icon">
+                    <img src="https://img.icons8.com/?size=100&id=z6m63h25vYs2&format=png&color=000000" alt="">
+                  </span>
+                  <span class="radio-label">Home</span>
+                </span>
+              </label>
+              <label>
+                <input class="radio-input" type="radio"  name="engine" onclick="window.location.href='farmers-page.html';" checked>
+                <span class="radio-tile">
+                  <span class="radio-icon">
+                    <img src="https://img.icons8.com/?size=100&id=47584&format=png&color=000000" alt="">
+                  </span>
+                  <span class="radio-label">Farmer</span>
+                </span>
+              </label>
+              <label>
+                <input class="radio-input" type="radio" name="engine" onclick="window.location.href='crops-page.html';">
+                <span class="radio-tile">
+                  <span class="radio-icon">
+                    <img src="https://img.icons8.com/?size=100&id=1832&format=png&color=000000" alt="">
+                  </span>
+                  <span class="radio-label">Crops</span>
+                </span>
+              </label>
+              <label>
+                <input class="radio-input" type="radio" name="engine" onclick="window.location.href='about-us-page.html';">
+                <span class="radio-tile">
+                  <span class="radio-icon">
+                    <img src="https://img.icons8.com/?size=100&id=3439&format=png&color=000000" alt="">
+                  </span>
+                  <span class="radio-label">About Us</span>
+                </span>
+              </label>
             </div>
-        </nav>
-    </div>
-    <div class="farmers-list">
-        <div class="top-page">
-            <h1>Peas</h1>
-            <a href="crops-page.html">
-                <button class="back-button">
-                    ← Back
-                </button>
+          </ul>
+          <div class="button">
+            <a href="./signup.html">
+              <button class="animated-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                  <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                  </path>
+                </svg>
+                <span class="text">Sign Up</span>
+                <span class="circle"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                  <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                  </path>
+                </svg>
+              </button>
+    
             </a>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Profile Picture</th>
-                    <th>Name</th>
-                    <th>State</th>
-                    <th>Crop Type</th>
-                    <th>Amount Produced</th>
-                    <th>Government Verified</th>
-                </tr>
-            </thead>
-            <tbody id="farmer-table-body">
-                <!-- Farmer rows will be populated here -->
-            </tbody>
-        </table>
-    </div>
+            <a href="./login.html">
+              <button class="animated-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                  <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                  </path>
+                </svg>
+                <span class="text">Login</span>
+                <span class="circle"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                  <path
+                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                  </path>
+                </svg>
+              </button>
+    
+            </a>
+          </div>
+        </nav>
+      </div>
     <script src="farmers.js"></script>
     <script>
         fetch('./farmers-details.json')

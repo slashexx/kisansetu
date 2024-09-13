@@ -11,8 +11,111 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+<style>
+  /* From Uiverse.io by ryota1231 */
+  .animated-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 30px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 12px;
+    /* background-color: ; */
+    border-radius: 100px;
+    font-weight: 600;
+    color: #1f387e;
+    box-shadow: 0 0 0 2px #ffffff;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .animated-button svg {
+    position: absolute;
+    width: 24px;
+    fill: #1f387e;
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .animated-button .arr-1 {
+    right: 16px;
+  }
+
+  .animated-button .arr-2 {
+    left: -25%;
+  }
+
+  .animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #c5e5e4;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #212121;
+    border-radius: 12px;
+  }
+
+  .animated-button:hover .arr-1 {
+    right: -25%;
+  }
+
+  .animated-button:hover .arr-2 {
+    left: 16px;
+  }
+
+  .animated-button:hover .text {
+    transform: translateX(12px);
+  }
+
+  .animated-button:hover svg {
+    fill: #1f387e;
+  }
+
+  .animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px greenyellow;
+  }
+
+  .animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .button {
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-between;
+    width: 220px;
+  }
+</style>
 
 <body>
   <div class="header">
@@ -21,14 +124,81 @@
         <img src="./images/farmer-logo.png" alt="logo" class="logo" />
       </a>
       <ul class="nav-links">
-        <li><a href="home-page.html">Home</a></li>
-        <li><a href="farmers-page.html" class="active">Farmers</a></li>
-        <li><a href="crops-page.html">Crops</a></li>
-        <li><a href="about-us-page.html">About Us</a></li>
+        <div class="radio-inputs">
+          <label>
+            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='home-page.html';">
+            <span class="radio-tile">
+              <span class="radio-icon">
+                <img src="https://img.icons8.com/?size=100&id=z6m63h25vYs2&format=png&color=000000" alt="">
+              </span>
+              <span class="radio-label">Home</span>
+            </span>
+          </label>
+          <label>
+            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='farmers-page.html';"
+              checked>
+            <span class="radio-tile">
+              <span class="radio-icon">
+                <img src="https://img.icons8.com/?size=100&id=47584&format=png&color=000000" alt="">
+              </span>
+              <span class="radio-label">Farmer</span>
+            </span>
+          </label>
+          <label>
+            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='crops-page.html';">
+            <span class="radio-tile">
+              <span class="radio-icon">
+                <img src="https://img.icons8.com/?size=100&id=1832&format=png&color=000000" alt="">
+              </span>
+              <span class="radio-label">Crops</span>
+            </span>
+          </label>
+          <label>
+            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='about-us-page.html';">
+            <span class="radio-tile">
+              <span class="radio-icon">
+                <img src="https://img.icons8.com/?size=100&id=3439&format=png&color=000000" alt="">
+              </span>
+              <span class="radio-label">About Us</span>
+            </span>
+          </label>
+        </div>
       </ul>
-      <div class="buttons">
-        <a href="./signup.html"><button class="sign-up">Sign up</button></a>
-        <a href="./login.html"><button class="login">Login</button></a>
+      <div class="button">
+        <a href="./signup.html">
+          <button class="animated-button">
+            <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+              <path
+                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+              </path>
+            </svg>
+            <span class="text">Sign Up</span>
+            <span class="circle"></span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+              <path
+                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+              </path>
+            </svg>
+          </button>
+
+        </a>
+        <a href="./login.html">
+          <button class="animated-button">
+            <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+              <path
+                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+              </path>
+            </svg>
+            <span class="text">Login</span>
+            <span class="circle"></span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+              <path
+                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+              </path>
+            </svg>
+          </button>
+
+        </a>
       </div>
     </nav>
   </div>
@@ -39,14 +209,15 @@
       <img src="" alt="Farmer Image" id="farmerImage" width="100" height="100" />
     </div>
 
-      <!-- Right Section: Farmer Details -->
-      <div class="profile-details">
-        <div class="header-container">
-          <h2 id="farmerName" style="display: inline-block;">Farmer Name</h2><button class="chat-button" onclick="openChat()">
-            <i class="fa-solid fa-comment"></i> <!-- You can replace this with an SVG or font icon -->
+    <!-- Right Section: Farmer Details -->
+    <div class="profile-details">
+      <div class="header-container">
+        <h2 id="farmerName" style="display: inline-block;">Farmer Name</h2><button class="chat-button"
+          onclick="openChat()">
+          <i class="fa-solid fa-comment"></i> <!-- You can replace this with an SVG or font icon -->
         </button>
-        </div>
-        
+      </div>
+
 
       <!-- Tabs for different sections -->
       <div class="tabs">
@@ -84,38 +255,38 @@
   <!-- <script src="./farmers-details-details.js"></script> -->
   <script>
     const cropsImages = {
-"Toor Dal":
-  './images/toor-dal.jpeg',
-"Moong Dal": './images/moong-dal.jpg',
-"Chana Dal":
-  './images/chana-dal.jpeg',
-"Masoor Dal":
-'./images/masoor-dal.jpeg',
-"Urad Dal":
-  './images/urad-dal.jpg',
-"Lobia":
-  './images/lobia.jpeg',
-"Rajma": './images/rajma.jpg',
-"Moth Beans": "./images/moth-bean.jpg"
-};
-// Function to get query parameters
-function getQueryParam(param) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
-}
+      "Toor Dal":
+        './images/toor-dal.jpeg',
+      "Moong Dal": './images/moong-dal.jpg',
+      "Chana Dal":
+        './images/chana-dal.jpeg',
+      "Masoor Dal":
+        './images/masoor-dal.jpeg',
+      "Urad Dal":
+        './images/urad-dal.jpg',
+      "Lobia":
+        './images/lobia.jpeg',
+      "Rajma": './images/rajma.jpg',
+      "Moth Beans": "./images/moth-bean.jpg"
+    };
+    // Function to get query parameters
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
 
-// Function to display farmer details based on ID from the query parameter
-function displayFarmerDetails() {
-  const farmerId = getQueryParam("farmerId");
-  if (farmerId) {
-    // Find farmer details by ID
-    const farmerDetails = farmers.find(farmer => farmer.farmerId == parseInt(farmerId));
-    if (farmerDetails) {
-      document.getElementById("farmerName").innerText = farmerDetails.name;
-      document.getElementById("farmerImage").src = farmerDetails.image;
+    // Function to display farmer details based on ID from the query parameter
+    function displayFarmerDetails() {
+      const farmerId = getQueryParam("farmerId");
+      if (farmerId) {
+        // Find farmer details by ID
+        const farmerDetails = farmers.find(farmer => farmer.farmerId == parseInt(farmerId));
+        if (farmerDetails) {
+          document.getElementById("farmerName").innerText = farmerDetails.name;
+          document.getElementById("farmerImage").src = farmerDetails.image;
 
-      if (farmerDetails.governmentVerified) {
-        document.querySelector(".profile-sidebar").innerHTML += `
+          if (farmerDetails.governmentVerified) {
+            document.querySelector(".profile-sidebar").innerHTML += `
           <div class="verification-badge" id="farmerVerified" style="color: black;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <title>check-decagram</title>
@@ -123,98 +294,99 @@ function displayFarmerDetails() {
             </svg>
             <p style="margin-bottom: 1rem; position: relative; bottom: 0.2rem; display: inline-block;">Verified</p>
           </div>`;
-      }
+          }
 
-      document.getElementById("farmerState").innerText = farmerDetails.state;
-      document.getElementById("farmerPostalCode").innerText = farmerDetails.postalCode;
-      document.getElementById("farmerAddress").innerText = farmerDetails.address;
+          document.getElementById("farmerState").innerText = farmerDetails.state;
+          document.getElementById("farmerPostalCode").innerText = farmerDetails.postalCode;
+          document.getElementById("farmerAddress").innerText = farmerDetails.address;
 
-      const farmerCrops = document.getElementById("farmerCrops");
-      farmerCrops.innerHTML = '';
-      farmerDetails.cropsGrown.forEach(crop => {
-        farmerCrops.innerHTML += `<li>${crop}</li>`;
-      });
+          const farmerCrops = document.getElementById("farmerCrops");
+          farmerCrops.innerHTML = '';
+          farmerDetails.cropsGrown.forEach(crop => {
+            farmerCrops.innerHTML += `<li>${crop}</li>`;
+          });
 
-      const swiperContainer = document.querySelector(".swiper-wrapper");
-      swiperContainer.innerHTML = '';
-      farmerDetails.cropsGrown.forEach(crop => {
-        swiperContainer.innerHTML += `
+          const swiperContainer = document.querySelector(".swiper-wrapper");
+          swiperContainer.innerHTML = '';
+          farmerDetails.cropsGrown.forEach(crop => {
+            swiperContainer.innerHTML += `
           <div class="swiper-slide">
             <div class="title" data-swiper-parallax="-300">${crop}</div>
             <img src="${cropsImages[crop]}" alt="${crop}" />
           </div>`;
-      });
+          });
 
-      new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-    } else {
-      document.querySelector(".profile-details").textContent = "Farmer not found.";
+          new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        } else {
+          document.querySelector(".profile-details").textContent = "Farmer not found.";
+        }
+      } else {
+        document.querySelector(".profile-details").textContent = "No farmer selected.";
+      }
     }
-  } else {
-    document.querySelector(".profile-details").textContent = "No farmer selected.";
-  }
-}
 
-// Fetch the data and initialize
-fetch('./lentil-farmers-details.json')
-  .then(response => response.json())
-  .then(data => {
-    farmers = data;
-    displayFarmerDetails();
-  })
-  .catch(error => console.error('Error fetching the JSON file:', error));
+    // Fetch the data and initialize
+    fetch('./lentil-farmers-details.json')
+      .then(response => response.json())
+      .then(data => {
+        farmers = data;
+        displayFarmerDetails();
+      })
+      .catch(error => console.error('Error fetching the JSON file:', error));
 
-// Handle tab switching
-document.querySelectorAll(".tab").forEach(tab => {
-  tab.addEventListener("click", function () {
-    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-    this.classList.add("active");
+    // Handle tab switching
+    document.querySelectorAll(".tab").forEach(tab => {
+      tab.addEventListener("click", function () {
+        document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+        this.classList.add("active");
 
-    const tabId = this.getAttribute("data-tab");
-    document.querySelectorAll(".tab-content").forEach(content => content.classList.remove("active"));
-    document.getElementById(tabId).classList.add("active");
-    let swiperContainer = document.getElementsByClassName("swiper")[0];
-    swiperContainer.classList.toggle("hide");
-  });
-});
-
-// Chat button handler
-async function openChat() {
-  const userId = localStorage.getItem('uid');
-  if (userId) {
-    const farmerId = getQueryParam("farmerId");
-    try {
-      const response = await fetch(`/chat/${userId}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ farmerId, userId }),
+        const tabId = this.getAttribute("data-tab");
+        document.querySelectorAll(".tab-content").forEach(content => content.classList.remove("active"));
+        document.getElementById(tabId).classList.add("active");
+        let swiperContainer = document.getElementsByClassName("swiper")[0];
+        swiperContainer.classList.toggle("hide");
       });
+    });
 
-      if (!response.ok) throw new Error('Network response was not ok.');
-      const data = await response.json();
-      console.log('Server response:', data);
-      window.location.href = `/chat/${userId}`;
-    } catch (error) {
-      console.error('Error:', error);
-      alert('An error occurred while sending data.');
+    // Chat button handler
+    async function openChat() {
+      const userId = localStorage.getItem('uid');
+      if (userId) {
+        const farmerId = getQueryParam("farmerId");
+        try {
+          const response = await fetch(`/chat/${userId}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ farmerId, userId }),
+          });
+
+          if (!response.ok) throw new Error('Network response was not ok.');
+          const data = await response.json();
+          console.log('Server response:', data);
+          window.location.href = `/chat/${userId}`;
+        } catch (error) {
+          console.error('Error:', error);
+          alert('An error occurred while sending data.');
+        }
+      } else {
+        alert('User ID not found. Please log in.');
+      }
     }
-  } else {
-    alert('User ID not found. Please log in.');
-  }
-}
-</script>
-  </body>
+  </script>
+</body>
+
 </html>

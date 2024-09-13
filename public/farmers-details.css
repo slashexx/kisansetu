@@ -5,17 +5,129 @@
     box-sizing: border-box;
 }
 
-svg{
+svg {
     width: 1rem;
     height: 1rem;
     fill: #00C5FF;
 }
 
-i{
+
+.radio-inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 350px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.radio-inputs>* {
+    margin: 6px;
+}
+
+.radio-input:checked+.radio-tile {
+    border-color: #2260ff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    color: #2260ff;
+}
+
+.radio-input:checked+.radio-tile:before {
+    transform: scale(1);
+    opacity: 1;
+    background-color: #2260ff;
+    border-color: #2260ff;
+}
+
+.radio-input:checked+.radio-tile .radio-icon svg {
+    fill: #2260ff;
+}
+
+.radio-input:checked+.radio-tile .radio-label {
+    color: #2260ff;
+}
+
+.radio-input:focus+.radio-tile {
+    border-color: #2260ff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
+}
+
+.radio-input:focus+.radio-tile:before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.radio-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    min-height: 80px;
+    border-radius: 0.5rem;
+    border: 2px solid #b5bfd9;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.15s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-tile:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0.75rem;
+    height: 0.75rem;
+    border: 2px solid #b5bfd9;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 0.25rem;
+    left: 0.25rem;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.25s ease;
+}
+
+.radio-tile:hover {
+    border-color: #2260ff;
+}
+
+.radio-tile:hover:before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.radio-icon img {
+    width: 2rem;
+    height: 2rem;
+    fill: #494949;
+}
+
+.radio-label {
+    color: #707070;
+    transition: 0.375s ease;
+    text-align: center;
+    font-size: 13px;
+}
+
+.radio-input {
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+i {
     font-size: 1.3rem;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -55,7 +167,7 @@ nav {
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    margin-top: 47px;
+    margin-top: 25px;
     margin-left: 35px;
     margin-bottom: 15px;
 }
@@ -258,16 +370,17 @@ nav {
 }
 
 /* swiper css */
-.hide{
+.hide {
     display: none !important;
 }
+
 .swiper {
-    margin-left: 3rem !important; 
+    margin-left: 3rem !important;
     width: 30vw;
     height: 15vw;
-  }
+}
 
-  .swiper-slide {
+.swiper-slide {
     text-align: center;
     font-size: 18px;
     background: #fff;
@@ -275,22 +388,23 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .swiper-slide img {
+.swiper-slide img {
     display: block;
     width: 80%;
     height: 100%;
     margin-left: 10%;
     object-fit: cover;
 
-  }
- 
+}
 
-  .title{
+
+.title {
     font-weight: bold;
-  }
-  /* .title{
+}
+
+/* .title{
     opacity: 0;
     transition: all ease-in;
   }
@@ -303,25 +417,27 @@ nav {
     font-size: 41px;
     font-weight: 300;
   } */
- 
-.swiper-button-next,.swiper-button-prev{
+
+.swiper-button-next,
+.swiper-button-prev {
     scale: 0.5;
     color: #000 !important;
 }
 
-  .swiper {
+.swiper {
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
 
 .chat-button {
     position: relative;
     bottom: 0.1rem;
     /* right: 20px; */
-    width:  50px;
+    width: 50px;
     height: 50px;
-    background-color: #007bff; /* Bootstrap primary color */
+    background-color: #007bff;
+    /* Bootstrap primary color */
     color: white;
     border: none;
     border-radius: 50%;
@@ -331,19 +447,23 @@ nav {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-    outline: none; /* Remove default button outline */
+    outline: none;
+    /* Remove default button outline */
 }
 
 .chat-button:hover {
-    background-color: #0056b3; /* Darker shade for hover effect */
-    transform: scale(1.1); /* Slight zoom effect on hover */
+    background-color: #0056b3;
+    /* Darker shade for hover effect */
+    transform: scale(1.1);
+    /* Slight zoom effect on hover */
 }
 
 .chat-icon {
-    font-size: 24px; /* Adjust size of the icon */
+    font-size: 24px;
+    /* Adjust size of the icon */
 }
 
-.header-container{
+.header-container {
     display: flex;
     align-items: center;
     gap: 1rem;

@@ -5,18 +5,130 @@
     box-sizing: border-box;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-nav{
+
+.radio-inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 350px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.radio-inputs>* {
+    margin: 6px;
+}
+
+.radio-input:checked+.radio-tile {
+    border-color: #2260ff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    color: #2260ff;
+}
+
+.radio-input:checked+.radio-tile:before {
+    transform: scale(1);
+    opacity: 1;
+    background-color: #2260ff;
+    border-color: #2260ff;
+}
+
+.radio-input:checked+.radio-tile .radio-icon svg {
+    fill: #2260ff;
+}
+
+.radio-input:checked+.radio-tile .radio-label {
+    color: #2260ff;
+}
+
+.radio-input:focus+.radio-tile {
+    border-color: #2260ff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
+}
+
+.radio-input:focus+.radio-tile:before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.radio-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    min-height: 80px;
+    border-radius: 0.5rem;
+    border: 2px solid #b5bfd9;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.15s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-tile:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0.75rem;
+    height: 0.75rem;
+    border: 2px solid #b5bfd9;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 0.25rem;
+    left: 0.25rem;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.25s ease;
+}
+
+.radio-tile:hover {
+    border-color: #2260ff;
+}
+
+.radio-tile:hover:before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.radio-icon img {
+    width: 2rem;
+    height: 2rem;
+    fill: #494949;
+}
+
+.radio-label {
+    color: #707070;
+    transition: 0.375s ease;
+    text-align: center;
+    font-size: 13px;
+}
+
+.radio-input {
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 10px 15px;
 }
 
-.nav-bar{
+.nav-bar {
     border-bottom: 2px solid grey;
 }
 
@@ -25,27 +137,28 @@ nav{
     display: block;
     width: 100%;
     height: 2px;
-    background-color: #000; /* Color for the underline */
+    background-color: #000;
+    /* Color for the underline */
     position: absolute;
     bottom: 0;
     left: 0;
 }
 
 
-.logo{
+.logo {
     width: 96px;
 }
 
-.nav-links{
+.nav-links {
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    margin-top: 47px;
+    margin-top: 25px;
     margin-left: 35px;
     margin-bottom: 15px;
 }
 
-.nav-links li a{
+.nav-links li a {
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
     color: #333;
@@ -53,8 +166,9 @@ nav{
     transition: color 0.3s ease;
 }
 
-.nav-links li{
-    text-decoration: none; /* Remove default underline */
+.nav-links li {
+    text-decoration: none;
+    /* Remove default underline */
     position: relative;
     margin-right: 30px;
 }
@@ -66,16 +180,18 @@ nav{
     bottom: 0;
     width: 0;
     height: 2px;
-    background-color: currentColor; /* Uses the text color */
+    background-color: currentColor;
+    /* Uses the text color */
     transition: width 0.3s ease;
 }
 
 .nav-bar .nav-links li:hover::after {
     /* margin-left: 2px; */
-    width: 100%; /* Expands the underline on hover */
+    width: 100%;
+    /* Expands the underline on hover */
 }
 
-.buttons{
+.buttons {
     margin-top: 30px;
     margin-right: 20px;
 }
@@ -93,40 +209,47 @@ nav{
 }
 
 .buttons button:first-child {
-    background-color: #4CAF50; /* Green for Sign Up */
+    background-color: #4CAF50;
+    /* Green for Sign Up */
     color: white;
 }
 
 .buttons button:last-child {
-    background-color: #2196F3; /* Blue for Login */
+    background-color: #2196F3;
+    /* Blue for Login */
     color: white;
 }
 
 .buttons button:hover {
-    transform: scale(1.05); /* Slightly enlarges the button */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adds shadow for a pop effect */
+    transform: scale(1.05);
+    /* Slightly enlarges the button */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    /* Adds shadow for a pop effect */
 }
 
 .buttons button:first-child:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #45a049;
+    /* Darker green on hover */
 }
 
 .buttons button:last-child:hover {
-    background-color: #1e88e5; /* Darker blue on hover */
+    background-color: #1e88e5;
+    /* Darker blue on hover */
 }
 
 
 /* Crops page */
-.crop-page{
+.crop-page {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)),
-                url(/kisansetu/public/images/banner.avif);
+        url(./images/banner.avif);
     background-position: center;
     background-size: cover;
 }
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Ensures two cards per row */
+    grid-template-columns: repeat(3, 1fr);
+    /* Ensures two cards per row */
     gap: 20px;
     padding: 20px;
     justify-content: center;
@@ -135,7 +258,7 @@ nav{
     margin-top: 200px;
 }
 
-.card-container a{
+.card-container a {
     text-decoration: none;
 }
 
@@ -152,10 +275,14 @@ nav{
     /* background-color: #f8f8f8; */
     transition: transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-size: cover; /* Ensures the background image covers the entire card */
-    background-position: center; /* Centers the background image */
-    background-repeat: no-repeat; /* Prevents the background image from repeating */
-    margin: 0 auto; /* Centers the card within the column */
+    background-size: cover;
+    /* Ensures the background image covers the entire card */
+    background-position: center;
+    /* Centers the background image */
+    background-repeat: no-repeat;
+    /* Prevents the background image from repeating */
+    margin: 0 auto;
+    /* Centers the card within the column */
     transition: transform 0.3s ease;
 }
 
@@ -169,6 +296,8 @@ nav{
     font-size: 20px;
     color: #fff;
     margin-top: 0;
-    line-height: 200px; /* Vertically center the text */
-    text-shadow: 4px 4px 10px rgba(0, 0, 0, 1); /* Text shadow for better contrast */
+    line-height: 200px;
+    /* Vertically center the text */
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 1);
+    /* Text shadow for better contrast */
 }
