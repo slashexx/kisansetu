@@ -429,3 +429,124 @@ table tbody td img {
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+/* Search input styling */
+.search-container {
+    margin-left: auto;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#searchBar {
+    width: 250px;
+    padding: 8px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#searchBar:focus {
+    border-color: #007BFF; /* Blue border on focus */
+    box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+#searchBar::placeholder {
+    color: #888;
+    font-size: 14px;
+}
+
+.navigation-container{
+    display: flex;
+    gap: 2rem;
+}
+
+.back-button {
+    margin-right: 30px;
+    height: 50px;
+    background: #39FF14; /* Electric Green background */
+    color: white;
+    font-family: inherit;
+    padding: 0.45em;
+    padding-left: 1em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1em -0.3em #00b300; /* Reduced shadow intensity */
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 1em;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.back-button:hover {
+    background-color: #33cc00; /* Slightly darker Electric Green on hover */
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.1em 0.1em #009900; /* Subtle shadow on hover */
+}
+
+.back-button:active {
+    background-color: #28a700; /* Even darker Electric Green when clicked */
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em #007700; /* Subtle shadow when clicked */
+}
+
+/* From Uiverse.io by LightAndy1 */ 
+.group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    max-width: 190px;
+}
+
+.input {
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    height: 45px;
+    padding-left: 2.5rem;
+    box-shadow: 0 0 0 1.5px #e0e0e0, 0 0 25px -17px #f0f0f0;
+    border: 0;
+    border-radius: 12px;
+    background-color: #ffffff;
+    outline: none;
+    color: #333333;
+    transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+    cursor: text;
+    z-index: 0;
+}
+
+.input::placeholder {
+    color: #666666;
+}
+
+.input:hover {
+    box-shadow: 0 0 0 2.5px #d0d0d0, 0px 0px 25px -15px #f0f0f0;
+}
+
+.input:active {
+    transform: scale(0.95);
+}
+
+.input:focus {
+    box-shadow: 0 0 0 2.5px #d0d0d0;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    fill: #666666;
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+    z-index: 1;
+}
