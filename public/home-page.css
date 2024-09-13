@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
   box-sizing: border-box;
 }
 
@@ -418,6 +418,8 @@ textarea:focus {
   width: 900px;
   height: 500px;
   margin-bottom: 20px;
+  overflow: hidden;
+  border: none;
 }
 
 .crop-btn:hover {
