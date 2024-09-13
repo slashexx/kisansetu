@@ -50,6 +50,15 @@
                 <input type="text" id="amountProduced" placeholder="Amount Produced (in kg)" required>
             </div>
 
+            <!-- Occupation Dropdown -->
+            <div class="input-box">
+                <label for="occupation">Occupation:</label>
+                <select id="occupation" required>
+                    <option value="Farmer">Farmer</option>
+                    <option value="Buyer">Buyer</option>
+                </select>
+            </div>
+
             <!-- Image Upload -->
             <div class="input-box">
                 <label for="image">Upload Image:</label>
@@ -64,6 +73,6 @@
         <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"></script>
         <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage.js"></script>
-        <script src="./Javascript/formRegister.js" type="module"></script> <!-- Script handling form details -->
+        <script src="./Javascript/formRegister.js" type="module"></script>
     </body>
 </html>

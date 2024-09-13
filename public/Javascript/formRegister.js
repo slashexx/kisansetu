@@ -19,12 +19,11 @@ document.getElementById('details-form').addEventListener('submit', async (e) => 
     e.preventDefault();
 
     const uid = localStorage.getItem('uid'); // Retrieve UID from local storage
-    console.log(uid);
-    console.log(uid);
-    console.log(uid);
-    console.log(uid);
-    console.log(uid);
-    
+    if (!uid) {
+        alert("User is not authenticated!");
+        return;
+    }
+
     const name = document.getElementById('name').value;
     const state = document.getElementById('state').value;
     const cropsGrown = document.getElementById('cropsGrown').value.split(',').map(crop => crop.trim());
@@ -33,11 +32,7 @@ document.getElementById('details-form').addEventListener('submit', async (e) => 
     const aadhar = document.getElementById('aadhar').value;
     const amountProduced = document.getElementById('amountProduced').value;
     const imageFile = document.getElementById('image').files[0];
-
-    if (!uid) {
-        alert("User is not authenticated!");
-        return;
-    }
+    const occupation = document.getElementById('occupation').value; // New occupation field
 
     try {
         // Upload image to Firebase Storage and get URL
@@ -55,7 +50,8 @@ document.getElementById('details-form').addEventListener('submit', async (e) => 
             aadhar: aadhar,
             amountProduced: amountProduced,
             image: imageURL,
-            governmentVerified: true,  // Assuming true as per your requirements
+            occupation: occupation,  // Storing occupation
+            governmentVerified: true,
             uid: uid
         });
 
