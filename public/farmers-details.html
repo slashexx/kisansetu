@@ -1,23 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KisanSetu</title>
-  <link rel="shortcut icon" href="./images/favicon.jpg" type="image/x-icon" />
-  <link rel="stylesheet" href="farmers-details.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<style>
-  /* From Uiverse.io by ryota1231 */
-  .animated-button {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KisanSetu</title>
+    <link rel="shortcut icon" href="./images/favicon.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="farmers-details.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style>
+    /* From Uiverse.io by ryota1231 */
+    .animated-button {
       position: relative;
       display: flex;
       align-items: center;
@@ -34,385 +49,511 @@
       cursor: pointer;
       overflow: hidden;
       transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  .animated-button svg {
-    position: absolute;
-    width: 24px;
-    fill: #1f387e;
-    z-index: 9;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  .animated-button .arr-1 {
-    right: 16px;
-  }
-
-  .animated-button .arr-2 {
-    left: -25%;
-  }
-
-  .animated-button .circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
-    background-color: #c5e5e4;
-    border-radius: 50%;
-    opacity: 0;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  .animated-button .text {
-    position: relative;
-    z-index: 1;
-    transform: translateX(-12px);
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  .animated-button:hover {
-    box-shadow: 0 0 0 12px transparent;
-    color: #212121;
-    border-radius: 12px;
-  }
-
-  .animated-button:hover .arr-1 {
-    right: -25%;
-  }
-
-  .animated-button:hover .arr-2 {
-    left: 16px;
-  }
-
-  .animated-button:hover .text {
-    transform: translateX(12px);
-  }
-
-  .animated-button:hover svg {
-    fill: #1f387e;
-  }
-
-  .animated-button:active {
-    scale: 0.95;
-    box-shadow: 0 0 0 4px greenyellow;
-  }
-
-  .animated-button:hover .circle {
-    width: 220px;
-    height: 220px;
-    opacity: 1;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  .button {
-    display: flex;
-    margin-top: 50px;
-    justify-content: space-between;
-    width: 220px;
-  }
-</style>
-<body>
-  <div class="header">
-    <nav class="nav-bar">
-      <a href="home-page.html">
-        <img src="./images/farmer-logo.png" alt="logo" class="logo" />
-      </a>
-      <ul class="nav-links">
-        <div class="radio-inputs">
-          <label>
-            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='home-page.html';" >
-            <span class="radio-tile">
-              <span class="radio-icon">
-                <img src="https://img.icons8.com/?size=100&id=z6m63h25vYs2&format=png&color=000000" alt="">
-              </span>
-              <span class="radio-label">Home</span>
-            </span>
-          </label>
-          <label>
-            <input class="radio-input" type="radio"  name="engine" onclick="window.location.href='farmers-page.html';" checked>
-            <span class="radio-tile">
-              <span class="radio-icon">
-                <img src="https://img.icons8.com/?size=100&id=47584&format=png&color=000000" alt="">
-              </span>
-              <span class="radio-label">Farmer</span>
-            </span>
-          </label>
-          <label>
-            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='crops-page.html';" >
-            <span class="radio-tile">
-              <span class="radio-icon">
-                <img src="https://img.icons8.com/?size=100&id=1832&format=png&color=000000" alt="">
-              </span>
-              <span class="radio-label">Crops</span>
-            </span>
-          </label>
-          <label>
-            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='about-us-page.html';">
-            <span class="radio-tile">
-              <span class="radio-icon">
-                <img src="https://img.icons8.com/?size=100&id=3439&format=png&color=000000" alt="">
-              </span>
-              <span class="radio-label">About Us</span>
-            </span>
-          </label>
-        </div>
-      </ul>
-      <div class="button">
-        <a href="./signup.html">
-          <button class="animated-button">
-            <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
-              <path
-                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-              </path>
-            </svg>
-            <span class="text">Sign Up</span>
-            <span class="circle"></span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
-              <path
-                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-              </path>
-            </svg>
-          </button>
-
-        </a>
-        <a href="./login.html">
-          <button class="animated-button">
-            <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
-              <path
-                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-              </path>
-            </svg>
-            <span class="text">Login</span>
-            <span class="circle"></span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
-              <path
-                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-              </path>
-            </svg>
-          </button>
-
-        </a>
-      </div>
-    </nav>
-  </div>
-
-  <div class="profile-container">
-    <!-- Left Sidebar: Farmer Image & Verification -->
-    <div class="profile-sidebar">
-      <img src="" alt="Farmer Image" id="farmerImage" width="100" height="100" />
-    </div>
-
-    <!-- Right Section: Farmer Details -->
-    <div class="profile-details">
-      <div class="header-container">
-        <h2 id="farmerName" style="display: inline-block;">Farmer Name</h2><button class="chat-button"
-          onclick="openChat()">
-          <i class="fa-solid fa-comment"></i> <!-- You can replace this with an SVG or font icon -->
-        </button>
-      </div>
-
-
-      <!-- Tabs for different sections -->
-      <div class="tabs">
-        <div class="tab active" data-tab="general-info">General Info</div>
-        <div class="tab" data-tab="crop-info">Crops Grown</div>
-      </div>
-
-      <!-- Tab Content for General Info -->
-      <div class="tab-content active" id="general-info">
-        <p><strong>State:</strong> <span id="farmerState"></span></p>
-        <p>
-          <strong>Postal Code:</strong> <span id="farmerPostalCode"></span>
-        </p>
-        <p><strong>Address:</strong> <span id="farmerAddress"></span></p>
-      </div>
-
-      <!-- Tab Content for Crop Info -->
-      <div class="tab-content" id="crop-info">
-        <p><strong>Crops Grown:</strong> <span id="farmerCrops"></span></p>
-      </div>
-
-      <div class="swiper mySwiper hide">
-        <div class="swiper-wrapper"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <!-- <div class="swiper-pagination"></div> -->
-      </div>
-
-      <!-- Back Button -->
-      <a href="farmers-page.html" class="back-btn">Back to List</a>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <!-- <script src="./farmers-details-details.js"></script> -->
-  <script type="module">
-
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
-    import { getFirestore, doc, setDoc, getDoc, query, collection, where, getDocs } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
-  
-    const firebaseConfig = {
-      apiKey: "AIzaSyBNrhwRH5TeqAPyXmToaCGJ6St4g1FKOno",
-      authDomain: "kisansetu-1640.firebaseapp.com",
-      projectId: "kisansetu-1640",
-      storageBucket: "kisansetu-1640.appspot.com",
-      messagingSenderId: "763552320675",
-      appId: "1:763552320675:web:93cff2382387b7b5dc4316"
-    };
-  
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
-    const googleProvider = new GoogleAuthProvider();
-  
-
-
-    const cropsImages = {
-      Wheat:
-        "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTb0GgH3ccFLjH8ZPZxa9DKvjZ4uOgErcTs1fzGKugcyuKlE6ri",
-      Rice: "https://cdn.britannica.com/89/140889-050-EC3F00BF/Ripening-heads-rice-Oryza-sativa.jpg",
-      Jowar:
-        "https://i0.wp.com/www.svaguna.com/wp-content/uploads/2019/08/Jowar.jpg?fit=600%2C400&ssl=1",
-      Bajra:
-        "https://karthickorganics.com/wp-content/uploads/2023/11/bajra.webp",
-      Chickpeas:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI2UdrUCYD-xy6Fherf3RMmzBbjBklVKPR-A&s",
-      "Mung Beans":
-        "https://cdn.britannica.com/12/158012-050-F79D3126/mung-beans-dishes-desserts-soups.jpg",
-      Peas: "https://media.post.rvohealth.io/wp-content/uploads/2020/09/green-peas-thumb-1-732x549.jpg",
-      Ragi: "https://5.imimg.com/data5/SELLER/Default/2022/9/ZB/GS/FR/25008022/jiwa-organic-ragi-flour.jpg",
-      Maize:
-        "https://5.imimg.com/data5/BB/IW/MY-28079104/organic-yellow-maize.jpg",
-      Millets:
-        "https://sonkan.in/wp-content/uploads/2023/09/From-Farm-to-Table_-Tracing-the-Journey-of-Millets-in-Indian-Markets-930x614.webp",
-      Barley:
-        "https://cdn-prod.medicalnewstoday.com/content/images/articles/295/295268/barley-grains-in-a-wooden-bowl.jpg",
-      Grapes:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTUNelf6LWd4fNNrJDDXZRgxv9n4JnMDkx3Q&s",
-    };
-    // Function to get query parameters
-    function getQueryParam(param) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
     }
 
-    let farmers = []
+    .animated-button svg {
+      position: absolute;
+      width: 24px;
+      fill: #1f387e;
+      z-index: 9;
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
 
-    // Function to display farmer details based on ID from the query parameter
-    async function displayFarmerDetails() {
-  const farmerId = getQueryParam("farmerId");
+    .animated-button .arr-1 {
+      right: 16px;
+    }
 
-  if (farmerId) {
-    try {
-      // Firebase data fetch
-      const docRef = doc(db, "users", farmerId);
-      const docSnap = await getDoc(docRef);
+    .animated-button .arr-2 {
+      left: -25%;
+    }
 
-      let farmerDetails;
-      if (docSnap.exists()) {
-        farmerDetails = docSnap.data();  // Firebase data
-      } else {
-        // Fallback to local JSON data if Firebase fails
-        farmerDetails = farmers.find(farmer => farmer.farmerId == parseInt(farmerId));
+    .animated-button .circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      background-color: #c5e5e4;
+      border-radius: 50%;
+      opacity: 0;
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .animated-button .text {
+      position: relative;
+      z-index: 1;
+      transform: translateX(-12px);
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .animated-button:hover {
+      box-shadow: 0 0 0 12px transparent;
+      color: #212121;
+      border-radius: 12px;
+    }
+
+    .animated-button:hover .arr-1 {
+      right: -25%;
+    }
+
+    .animated-button:hover .arr-2 {
+      left: 16px;
+    }
+
+    .animated-button:hover .text {
+      transform: translateX(12px);
+    }
+
+    .animated-button:hover svg {
+      fill: #1f387e;
+    }
+
+    .animated-button:active {
+      scale: 0.95;
+      box-shadow: 0 0 0 4px greenyellow;
+    }
+
+    .animated-button:hover .circle {
+      width: 220px;
+      height: 220px;
+      opacity: 1;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .button {
+      display: flex;
+      margin-top: 50px;
+      justify-content: space-between;
+      width: 220px;
+    }
+
+  </style>
+  <body>
+    <div class="header">
+      <nav class="nav-bar">
+        <a href="home-page.html">
+          <img src="./images/farmer-logo.png" alt="logo" class="logo" />
+        </a>
+        <ul class="nav-links">
+          <div class="radio-inputs">
+            <label>
+              <input
+                class="radio-input"
+                type="radio"
+                name="engine"
+                onclick="window.location.href='home-page.html';"
+              />
+              <span class="radio-tile">
+                <span class="radio-icon">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=z6m63h25vYs2&format=png&color=000000"
+                    alt=""
+                  />
+                </span>
+                <span class="radio-label">Home</span>
+              </span>
+            </label>
+            <label>
+              <input
+                class="radio-input"
+                type="radio"
+                name="engine"
+                onclick="window.location.href='farmers-page.html';"
+                checked
+              />
+              <span class="radio-tile">
+                <span class="radio-icon">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=47584&format=png&color=000000"
+                    alt=""
+                  />
+                </span>
+                <span class="radio-label">Farmer</span>
+              </span>
+            </label>
+            <label>
+              <input
+                class="radio-input"
+                type="radio"
+                name="engine"
+                onclick="window.location.href='crops-page.html';"
+              />
+              <span class="radio-tile">
+                <span class="radio-icon">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=1832&format=png&color=000000"
+                    alt=""
+                  />
+                </span>
+                <span class="radio-label">Crops</span>
+              </span>
+            </label>
+            <label>
+              <input
+                class="radio-input"
+                type="radio"
+                name="engine"
+                onclick="window.location.href='about-us-page.html';"
+              />
+              <span class="radio-tile">
+                <span class="radio-icon">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=3439&format=png&color=000000"
+                    alt=""
+                  />
+                </span>
+                <span class="radio-label">About Us</span>
+              </span>
+            </label>
+          </div>
+        </ul>
+        <div class="button">
+          <a href="./signup.html">
+            <button class="animated-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="arr-2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                ></path>
+              </svg>
+              <span class="text">Sign Up</span>
+              <span class="circle"></span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="arr-1"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                ></path>
+              </svg>
+            </button>
+          </a>
+          <a href="./login.html">
+            <button class="animated-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="arr-2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                ></path>
+              </svg>
+              <span class="text">Login</span>
+              <span class="circle"></span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="arr-1"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                ></path>
+              </svg>
+            </button>
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="profile-container">
+      <!-- Left Sidebar: Farmer Image & Verification -->
+      <div class="profile-sidebar">
+        <img
+          src=""
+          alt="Farmer Image"
+          id="farmerImage"
+          width="100"
+          height="100"
+        />
+      </div>
+
+      <!-- Right Section: Farmer Details -->
+      <div class="profile-details">
+        <div class="header-container">
+          <h2 id="farmerName" style="display: inline-block">Farmer Name</h2>
+          <button class="chat-button" onclick="openChat()">
+            <i class="fa-solid fa-comment"></i>
+            <!-- You can replace this with an SVG or font icon -->
+            <button
+              class="deal"
+              onclick="window.location.href = '/contract-form'""
+              style="
+                border-radius: 50%;
+                color: #ffffff;
+              "
+            >              
+            <svg
+                width="150px"
+                height="150px"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M22 7.99995H20M20 7.99995H19C17 6.00173 14 3.99974 12 5.99995M20 7.99995V15.9999M12 5.99995L8.99956 9.00158C8.9202 9.08097 8.88052 9.12066 8.84859 9.1558C8.15499 9.91889 8.15528 11.0842 8.84927 11.847C8.88121 11.8821 8.92098 11.9218 9.00031 12.0011C9.07967 12.0804 9.11936 12.1201 9.15449 12.152C9.91743 12.8453 11.0824 12.8452 11.8451 12.1516C11.8802 12.1197 11.9199 12.08 11.9992 12.0007L12.9996 11.0003M12 5.99995C10 3.99974 7 6.0018 5 8.00001H4M2 8.00001H4M4 8.00001V15.9999M20 15.9999V18.9999H22M20 15.9999H17.1716M15 12.9999L16.5 14.4999C16.5796 14.5796 16.6195 14.6194 16.6515 14.6547C17.3449 15.4175 17.3449 16.5824 16.6515 17.3452C16.6195 17.3805 16.5796 17.4203 16.5 17.4999C16.4204 17.5795 16.3805 17.6194 16.3453 17.6515C15.5824 18.3449 14.4176 18.3449 13.6547 17.6515C13.6195 17.6194 13.5796 17.5795 13.5 17.4999L13 16.9999C12.4548 17.5452 12.1821 17.8178 11.888 17.9636C11.3285 18.2408 10.6715 18.2408 10.112 17.9636C9.81788 17.8178 9.54525 17.5452 9 16.9999C8.31085 17.9188 6.89563 17.7912 6.38197 16.7639L6 15.9999H4M4 15.9999V18.9999H2"
+                    stroke="#ffffff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g>
+              </svg>
+            </button>
+        </div>
+
+        <!-- Tabs for different sections -->
+        <div class="tabs">
+          <div class="tab active" data-tab="general-info">General Info</div>
+          <div class="tab" data-tab="crop-info">Crops Grown</div>
+        </div>
+
+        <!-- Tab Content for General Info -->
+        <div class="tab-content active" id="general-info">
+          <p><strong>State:</strong> <span id="farmerState"></span></p>
+          <p>
+            <strong>Postal Code:</strong> <span id="farmerPostalCode"></span>
+          </p>
+          <p><strong>Address:</strong> <span id="farmerAddress"></span></p>
+        </div>
+
+        <!-- Tab Content for Crop Info -->
+        <div class="tab-content" id="crop-info">
+          <p><strong>Crops Grown:</strong> <span id="farmerCrops"></span></p>
+        </div>
+
+        <div class="swiper mySwiper hide">
+          <div class="swiper-wrapper"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <!-- <div class="swiper-pagination"></div> -->
+        </div>
+
+        <!-- Back Button -->
+        <a href="farmers-page.html" class="back-btn">Back to List</a>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- <script src="./farmers-details-details.js"></script> -->
+    <script type="module">
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+        createUserWithEmailAndPassword,
+        GoogleAuthProvider,
+      } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+      import {
+        getFirestore,
+        doc,
+        setDoc,
+        getDoc,
+        query,
+        collection,
+        where,
+        getDocs,
+      } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBNrhwRH5TeqAPyXmToaCGJ6St4g1FKOno",
+        authDomain: "kisansetu-1640.firebaseapp.com",
+        projectId: "kisansetu-1640",
+        storageBucket: "kisansetu-1640.appspot.com",
+        messagingSenderId: "763552320675",
+        appId: "1:763552320675:web:93cff2382387b7b5dc4316",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const db = getFirestore(app);
+      const googleProvider = new GoogleAuthProvider();
+
+      const cropsImages = {
+        Wheat:
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTb0GgH3ccFLjH8ZPZxa9DKvjZ4uOgErcTs1fzGKugcyuKlE6ri",
+        Rice: "https://cdn.britannica.com/89/140889-050-EC3F00BF/Ripening-heads-rice-Oryza-sativa.jpg",
+        Jowar:
+          "https://i0.wp.com/www.svaguna.com/wp-content/uploads/2019/08/Jowar.jpg?fit=600%2C400&ssl=1",
+        Bajra:
+          "https://karthickorganics.com/wp-content/uploads/2023/11/bajra.webp",
+        Chickpeas:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI2UdrUCYD-xy6Fherf3RMmzBbjBklVKPR-A&s",
+        "Mung Beans":
+          "https://cdn.britannica.com/12/158012-050-F79D3126/mung-beans-dishes-desserts-soups.jpg",
+        Peas: "https://media.post.rvohealth.io/wp-content/uploads/2020/09/green-peas-thumb-1-732x549.jpg",
+        Ragi: "https://5.imimg.com/data5/SELLER/Default/2022/9/ZB/GS/FR/25008022/jiwa-organic-ragi-flour.jpg",
+        Maize:
+          "https://5.imimg.com/data5/BB/IW/MY-28079104/organic-yellow-maize.jpg",
+        Millets:
+          "https://sonkan.in/wp-content/uploads/2023/09/From-Farm-to-Table_-Tracing-the-Journey-of-Millets-in-Indian-Markets-930x614.webp",
+        Barley:
+          "https://cdn-prod.medicalnewstoday.com/content/images/articles/295/295268/barley-grains-in-a-wooden-bowl.jpg",
+        Grapes:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTUNelf6LWd4fNNrJDDXZRgxv9n4JnMDkx3Q&s",
+      };
+      // Function to get query parameters
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
       }
 
-      if (farmerDetails) {
-        document.getElementById("farmerName").innerText = farmerDetails.name;
-        document.getElementById("farmerImage").src = farmerDetails.image || '';
-        document.getElementById("farmerState").innerText = farmerDetails.state || 'N/A';
-        document.getElementById("farmerPostalCode").innerText = farmerDetails.postalCode || 'N/A';
-        document.getElementById("farmerAddress").innerText = farmerDetails.address || 'N/A';
+      let farmers = [];
 
-        // Handle crops
-        const farmerCrops = document.getElementById("farmerCrops");
-        farmerCrops.innerHTML = farmerDetails.cropsGrown.map(crop => `<li>${crop}</li>`).join('');
+      // Function to display farmer details based on ID from the query parameter
+      async function displayFarmerDetails() {
+        const farmerId = getQueryParam("farmerId");
 
-        // Swiper logic for images
-        const swiperContainer = document.querySelector(".swiper-wrapper");
-        swiperContainer.innerHTML = farmerDetails.cropsGrown.map(crop => `
+        if (farmerId) {
+          try {
+            // Firebase data fetch
+            const docRef = doc(db, "users", farmerId);
+            const docSnap = await getDoc(docRef);
+
+            let farmerDetails;
+            if (docSnap.exists()) {
+              farmerDetails = docSnap.data(); // Firebase data
+            } else {
+              // Fallback to local JSON data if Firebase fails
+              farmerDetails = farmers.find(
+                (farmer) => farmer.farmerId == parseInt(farmerId)
+              );
+            }
+
+            if (farmerDetails) {
+              document.getElementById("farmerName").innerText =
+                farmerDetails.name;
+              document.getElementById("farmerImage").src =
+                farmerDetails.image || "";
+              document.getElementById("farmerState").innerText =
+                farmerDetails.state || "N/A";
+              document.getElementById("farmerPostalCode").innerText =
+                farmerDetails.postalCode || "N/A";
+              document.getElementById("farmerAddress").innerText =
+                farmerDetails.address || "N/A";
+
+              // Handle crops
+              const farmerCrops = document.getElementById("farmerCrops");
+              farmerCrops.innerHTML = farmerDetails.cropsGrown
+                .map((crop) => `<li>${crop}</li>`)
+                .join("");
+
+              // Swiper logic for images
+              const swiperContainer = document.querySelector(".swiper-wrapper");
+              swiperContainer.innerHTML = farmerDetails.cropsGrown
+                .map(
+                  (crop) => `
           <div class="swiper-slide">
             <div class="title" data-swiper-parallax="-300">${crop}</div>
             <img src="${cropsImages[crop]}" alt="${crop}" />
-          </div>`).join('');
+          </div>`
+                )
+                .join("");
 
-        new Swiper(".mySwiper", {
-          slidesPerView: 1,
-          spaceBetween: 30,
-          loop: true,
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-        });
-      } else {
-        document.querySelector(".profile-details").textContent = "Farmer not found.";
-      }
-    } catch (error) {
-      console.error("Error fetching farmer details:", error);
-      document.querySelector(".profile-details").textContent = "Error fetching farmer details.";
-    }
-  } else {
-    document.querySelector(".profile-details").textContent = "No farmer selected.";
-  }
-}
-
-    // Fetch the data and initialize
-    fetch('./farmers-details.json')
-      .then(response => response.json())
-      .then(data => {
-        farmers = data;
-        displayFarmerDetails();
-      })
-      .catch(error => console.error('Error fetching the JSON file:', error));
-
-    // Handle tab switching
-    document.querySelectorAll(".tab").forEach(tab => {
-      tab.addEventListener("click", function () {
-        document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-        this.classList.add("active");
-
-        const tabId = this.getAttribute("data-tab");
-        document.querySelectorAll(".tab-content").forEach(content => content.classList.remove("active"));
-        document.getElementById(tabId).classList.add("active");
-        let swiperContainer = document.getElementsByClassName("swiper")[0];
-        swiperContainer.classList.toggle("hide");
-      });
-    });
-
-    // Chat button handler
-    async function openChat() {
-      const userId = localStorage.getItem('uid');
-      if (userId) {
-        const farmerId = getQueryParam("farmerId");
-        try {
-          const response = await fetch(`/chat/${userId}`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ farmerId, userId }),
-          });
-
-          if (!response.ok) throw new Error('Network response was not ok.');
-          const data = await response.json();
-          console.log('Server response:', data);
-          window.location.href = `/chat/${userId}`;
-        } catch (error) {
-          console.error('Error:', error);
-          alert('An error occurred while sending data.');
+              new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                navigation: {
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                },
+              });
+            } else {
+              document.querySelector(".profile-details").textContent =
+                "Farmer not found.";
+            }
+          } catch (error) {
+            console.error("Error fetching farmer details:", error);
+            document.querySelector(".profile-details").textContent =
+              "Error fetching farmer details.";
+          }
+        } else {
+          document.querySelector(".profile-details").textContent =
+            "No farmer selected.";
         }
-      } else {
-        alert('User ID not found. Please log in.');
       }
-    }
-  </script>
-</body>
 
+      // Fetch the data and initialize
+      fetch("./farmers-details.json")
+        .then((response) => response.json())
+        .then((data) => {
+          farmers = data;
+          displayFarmerDetails();
+        })
+        .catch((error) =>
+          console.error("Error fetching the JSON file:", error)
+        );
+
+        const dealBtn = document.querySelector('.deal');
+      const farmerId = getQueryParam("farmerId");
+      const userId = localStorage.getItem('uid');
+
+      function contractRedirect() {
+        window.location.href = `/contract-form`
+      }
+
+      // Handle tab switching
+      document.querySelectorAll(".tab").forEach((tab) => {
+        tab.addEventListener("click", function () {
+          document
+            .querySelectorAll(".tab")
+            .forEach((t) => t.classList.remove("active"));
+          this.classList.add("active");
+
+          const tabId = this.getAttribute("data-tab");
+          document
+            .querySelectorAll(".tab-content")
+            .forEach((content) => content.classList.remove("active"));
+          document.getElementById(tabId).classList.add("active");
+          let swiperContainer = document.getElementsByClassName("swiper")[0];
+          swiperContainer.classList.toggle("hide");
+        });
+      });
+
+      // Chat button handler
+      async function openChat() {
+        const userId = localStorage.getItem("uid");
+        if (userId) {
+          const farmerId = getQueryParam("farmerId");
+          try {
+            const response = await fetch(`/chat/${userId}`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ farmerId, userId }),
+            });
+
+            if (!response.ok) throw new Error("Network response was not ok.");
+            const data = await response.json();
+            console.log("Server response:", data);
+            window.location.href = `/chat/${userId}`;
+          } catch (error) {
+            console.error("Error:", error);
+            alert("An error occurred while sending data.");
+          }
+        } else {
+          alert("User ID not found. Please log in.");
+        }
+      }
+    </script>
+
+  </body>
 </html>
