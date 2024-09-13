@@ -6,7 +6,6 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url('bg.jpeg');
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -14,6 +13,52 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
 }
+
+/* Video Background */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;  /* Ensure the video is behind the form */
+    object-fit: cover;
+}
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.main {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 1; /* Make sure the form is above the video */
+}
+
+form {
+    backdrop-filter: blur(5px);
+    padding-right: 65px !important;
+}
+
+.input-box {
+    margin-bottom: 20px;
+}
+
+/* Other existing CSS styles remain unchanged */
+
 
 .main {
     background-color: rgba(255, 255, 255, 0.9);
