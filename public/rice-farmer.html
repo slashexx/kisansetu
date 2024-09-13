@@ -1,39 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KisanSetu</title>
     <link rel="shortcut icon" href="./images/favicon.jpg" type="image/x-icon" />
     <link rel="stylesheet" href="rice-farmer.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet" />
-</head>
-<style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
     /* From Uiverse.io by ryota1231 */
     .animated-button {
-        position: relative;
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        padding: 12px 30px;
-        border: 4px solid;
-        border-color: transparent;
-        font-size: 12px;
-        /* background-color: ; */
-        border-radius: 100px;
-        font-weight: 600;
-        color: #1f387e;
-        box-shadow: 0 0 0 2px #ffffff;
-        cursor: pointer;
-        overflow: hidden;
-        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 12px 30px;
+      border: 4px solid;
+      border-color: transparent;
+      font-size: 12px;
+      /* background-color: ; */
+      border-radius: 100px;
+      font-weight: 600;
+      color: #1f387e;
+      box-shadow: 0 0 0 2px #ffffff;
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     }
-  
+
     .animated-button svg {
       position: absolute;
       width: 24px;
@@ -41,15 +47,15 @@
       z-index: 9;
       transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     }
-  
+
     .animated-button .arr-1 {
       right: 16px;
     }
-  
+
     .animated-button .arr-2 {
       left: -25%;
     }
-  
+
     .animated-button .circle {
       position: absolute;
       top: 50%;
@@ -62,191 +68,270 @@
       opacity: 0;
       transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     }
-  
+
     .animated-button .text {
       position: relative;
       z-index: 1;
       transform: translateX(-12px);
       transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     }
-  
+
     .animated-button:hover {
       box-shadow: 0 0 0 12px transparent;
       color: #212121;
       border-radius: 12px;
     }
-  
+
     .animated-button:hover .arr-1 {
       right: -25%;
     }
-  
+
     .animated-button:hover .arr-2 {
       left: 16px;
     }
-  
+
     .animated-button:hover .text {
       transform: translateX(12px);
     }
-  
+
     .animated-button:hover svg {
       fill: #1f387e;
     }
-  
+
     .animated-button:active {
       scale: 0.95;
       box-shadow: 0 0 0 4px greenyellow;
     }
-  
+
     .animated-button:hover .circle {
       width: 220px;
       height: 220px;
       opacity: 1;
     }
-  
+
     a {
       text-decoration: none;
     }
-  
-    .button {
-    display: flex;
-    margin-top: 50px;
-    justify-content: space-between;
-    width: 220px;
-  }
-  </style>*
-<body>
-    <div class="header">
-        <nav class="nav-bar">
-          <a href="home-page.html">
-            <img src="./images/farmer-logo.png" alt="logo" class="logo" />
-          </a>
-          <ul class="nav-links">
-            <div class="radio-inputs">
-              <label>
-                <input class="radio-input" type="radio" name="engine" onclick="window.location.href='home-page.html';" checked>
-                <span class="radio-tile">
-                  <span class="radio-icon">
-                    <img src="https://img.icons8.com/?size=100&id=z6m63h25vYs2&format=png&color=000000" alt="">
-                  </span>
-                  <span class="radio-label">Home</span>
-                </span>
-              </label>
-              <label>
-                <input class="radio-input" type="radio"  name="engine" onclick="window.location.href='farmers-page.html';">
-                <span class="radio-tile">
-                  <span class="radio-icon">
-                    <img src="https://img.icons8.com/?size=100&id=47584&format=png&color=000000" alt="">
-                  </span>
-                  <span class="radio-label">Farmer</span>
-                </span>
-              </label>
-              <label>
-                <input class="radio-input" type="radio" name="engine" onclick="window.location.href='crops-page.html';">
-                <span class="radio-tile">
-                  <span class="radio-icon">
-                    <img src="https://img.icons8.com/?size=100&id=1832&format=png&color=000000" alt="">
-                  </span>
-                  <span class="radio-label">Crops</span>
-                </span>
-              </label>
-              <label>
-                <input class="radio-input" type="radio" name="engine" onclick="window.location.href='about-us-page.html';">
-                <span class="radio-tile">
-                  <span class="radio-icon">
-                    <img src="https://img.icons8.com/?size=100&id=3439&format=png&color=000000" alt="">
-                  </span>
-                  <span class="radio-label">About Us</span>
-                </span>
-              </label>
-            </div>
-          </ul>
-          <div class="button">
-            <a href="./signup.html">
-              <button class="animated-button">
-                <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
-                  <path
-                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-                  </path>
-                </svg>
-                <span class="text">Sign Up</span>
-                <span class="circle"></span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
-                  <path
-                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-                  </path>
-                </svg>
-              </button>
-    
-            </a>
-            <a href="./login.html">
-              <button class="animated-button">
-                <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
-                  <path
-                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-                  </path>
-                </svg>
-                <span class="text">Login</span>
-                <span class="circle"></span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
-                  <path
-                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-                  </path>
-                </svg>
-              </button>
-    
-            </a>
-          </div>
-        </nav>
-      </div>
-    <div class="farmers-list">
-        <div class="top-page">
-            <h1>Rice</h1>
-            <a href="crops-page.html">
-                <button class="back-button">
-                    ← Back
-                </button>
-            </a>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Profile Picture</th>
-                    <th>Name</th>
-                    <th>State</th>
-                    <th>Crop Type</th>
-                    <th>Amount Produced</th>
-                    <th>Government Verified</th>
-                </tr>
-            </thead>
-            <tbody id="farmer-table-body">
-                <!-- Farmer rows will be populated here -->
-            </tbody>
-        </table>
-    </div>
-    <!-- <script src="lentil-farmers.js"></script> -->
-    <script>
-        fetch('./farmers-details.json')
-            .then(response => response.json())
-            .then(data => {
-                farmers = data;
-                displayFarmerDetails();
-            })
-            .catch(error => console.error('Error fetching the JSON file:', error));
-            function displayFarmerDetails(){
-                const farmerTableBody = document.getElementById('farmer-table-body');
-                // Paths to your custom images
-            const verifiedImage = './images/verified.png';  // Path to your verified icon image
-            const unverifiedImage = './images/unverified.jpg';  // Path to your unverified icon image
-                console.log(farmers)
-            farmers.forEach(farmer => {
-                // Check if the farmer grows rice
-                if (farmer.cropsGrown.includes('Rice')) {
-                    console.log(farmer)
-                    // Choose the appropriate image based on the governmentVerified status
-                    const verifiedStatusImage = farmer.governmentVerified ? verifiedImage : unverifiedImage;
 
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
+    .button {
+      display: flex;
+      margin-top: 50px;
+      justify-content: space-between;
+      width: 220px;
+    }
+  </style>
+
+  <body>
+    <div class="header">
+      <nav class="nav-bar">
+        <a href="home-page.html">
+          <img src="./images/farmer-logo.png" alt="logo" class="logo" />
+        </a>
+        <ul class="nav-links">
+          <div class="radio-inputs">
+            <label>
+              <input
+                class="radio-input"
+                type="radio"
+                name="engine"
+                onclick="window.location.href='home-page.html';"
+              />
+              <span class="radio-tile">
+                <span class="radio-icon">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=z6m63h25vYs2&format=png&color=000000"
+                    alt=""
+                  />
+                </span>
+                <span class="radio-label">Home</span>
+              </span>
+            </label>
+            <label>
+              <input
+                class="radio-input"
+                type="radio"
+                name="engine"
+                onclick="window.location.href='farmers-page.html';"
+                checked
+              />
+              <span class="radio-tile">
+                <span class="radio-icon">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=47584&format=png&color=000000"
+                    alt=""
+                  />
+                </span>
+                <span class="radio-label">Farmer</span>
+              </span>
+            </label>
+            <label>
+              <input
+                class="radio-input"
+                type="radio"
+                name="engine"
+                onclick="window.location.href='crops-page.html';"
+              />
+              <span class="radio-tile">
+                <span class="radio-icon">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=1832&format=png&color=000000"
+                    alt=""
+                  />
+                </span>
+                <span class="radio-label">Crops</span>
+              </span>
+            </label>
+            <label>
+              <input
+                class="radio-input"
+                type="radio"
+                name="engine"
+                onclick="window.location.href='about-us-page.html';"
+              />
+              <span class="radio-tile">
+                <span class="radio-icon">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=3439&format=png&color=000000"
+                    alt=""
+                  />
+                </span>
+                <span class="radio-label">About Us</span>
+              </span>
+            </label>
+          </div>
+        </ul>
+        <div class="button">
+          <a href="./signup.html">
+            <button class="animated-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="arr-2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                ></path>
+              </svg>
+              <span class="text">Sign Up</span>
+              <span class="circle"></span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="arr-1"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                ></path>
+              </svg>
+            </button>
+          </a>
+          <a href="./login.html">
+            <button class="animated-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="arr-2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                ></path>
+              </svg>
+              <span class="text">Login</span>
+              <span class="circle"></span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="arr-1"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                ></path>
+              </svg>
+            </button>
+          </a>
+        </div>
+      </nav>
+    </div>
+    <div class="farmers-list">
+      <div class="top-page">
+        <h1>Wheat</h1>
+        <div class="navigation-container">
+          <div class="group">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
+              <g>
+                <path
+                  d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+                ></path>
+              </g>
+            </svg>
+
+            <input
+              id="query searchBar"
+              class="input"
+              type="search"
+              placeholder="Search..."
+              name="searchbar"
+            />
+          </div>
+          <a href="crops-page.html">
+            <button class="back-button">← Back</button>
+          </a>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Profile Picture</th>
+            <th>Name</th>
+            <th>State</th>
+            <th>Crop Type</th>
+            <th>Amount Produced</th>
+            <th>Government Verified</th>
+          </tr>
+        </thead>
+        <tbody id="farmer-table-body">
+          <!-- Farmer rows will be populated here -->
+        </tbody>
+      </table>
+    </div>
+    <script src="farmers.js"></script>
+    <script>
+      fetch("./farmers-details.json")
+        .then((response) => response.json())
+        .then((data) => {
+          farmers = data;
+          displayFarmerDetails();
+
+          // Add event listener to the search bar
+          const searchBar = document.querySelector("#query\\ searchBar");
+          searchBar.addEventListener("input", function () {
+            const searchTerm = searchBar.value.toLowerCase();
+            displayFarmerDetails(searchTerm);
+          });
+        })
+        .catch((error) =>
+          console.error("Error fetching the JSON file:", error)
+        );
+
+      function displayFarmerDetails(searchTerm = "") {
+        const farmerTableBody = document.getElementById("farmer-table-body");
+        farmerTableBody.innerHTML = ""; // Clear existing table rows
+
+        const verifiedImage = "./images/verified.png";
+        const unverifiedImage = "./images/unverified.jpg";
+
+        farmers.forEach((farmer) => {
+          // Check if the farmer's name includes the search term and grows Wheat
+          if (
+            farmer.cropsGrown.includes("Rice") &&
+            farmer.name.toLowerCase().includes(searchTerm)
+          ) {
+            const verifiedStatusImage = farmer.governmentVerified
+              ? verifiedImage
+              : unverifiedImage;
+
+            const row = document.createElement("tr");
+            row.innerHTML = `
                 <td><img src="${farmer.image}" alt="${farmer.name}"></td>
                 <td>
                     <a href="farmers-details.html?farmerId=${farmer.farmerId}">
@@ -254,15 +339,39 @@
                     </a>
                 </td>
                 <td>${farmer.state}</td>
-                <td>${farmer.cropsGrown.join(', ')}</td>
+                <td>${farmer.cropsGrown.join(", ")}</td>
                 <td>${farmer.produceAmount} kg</td>
                 <td class="verified-status"><img src="${verifiedStatusImage}" alt="Verified Status"></td>
             `;
-                    farmerTableBody.appendChild(row);
-                }
-            });
-                }
-    </script>
-</body>
+            farmerTableBody.appendChild(row);
+          }
+        });
+      }
 
+      const user = localStorage.getItem("uid");
+      if (user) {
+        const buttons = document.getElementsByClassName("button")[0];
+        buttons.innerHTML = `<a href="/dashboard">
+          <button class="animated-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="arr-2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+            </svg>
+            <span class="text">Logout</span>
+            <span class="circle"></span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="arr-1"
+              viewBox="0 0 24 24"
+            >
+              <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+            </svg>
+          </button>
+        </a>`
+      }
+    </script>
+  </body>
 </html>
