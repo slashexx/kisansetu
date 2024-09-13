@@ -32,7 +32,8 @@ document.getElementById('details-form').addEventListener('submit', async (e) => 
     const aadhar = document.getElementById('aadhar').value;
     const amountProduced = document.getElementById('amountProduced').value;
     const imageFile = document.getElementById('image').files[0];
-    const occupation = document.getElementById('occupation').value; // New occupation field
+    const occupation = document.getElementById('occupation').value;
+    const phone = document.getElementById('phoneNumber').value;
 
     try {
         // Upload image to Firebase Storage and get URL
@@ -52,7 +53,8 @@ document.getElementById('details-form').addEventListener('submit', async (e) => 
             image: imageURL,
             occupation: occupation,  // Storing occupation
             governmentVerified: true,
-            uid: uid
+            uid: uid,
+            phoneNo: phone
         });
 
         alert("Details submitted successfully!");
