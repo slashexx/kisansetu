@@ -1,102 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KisanSetu</title>
+    <link rel="shortcut icon" href="./images/favicon.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="home-page.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KisanSetu</title>
-  <link rel="shortcut icon" href="./images/favicon.jpg" type="image/x-icon" />
-  <link rel="stylesheet" href="home-page.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-</head>
-
-<body>
-  <div class="header">
-    <nav class="nav-bar">
-      <a href="home-page.html">
-        <img src="./images/farmer-logo.png" alt="logo" class="logo" />
-      </a>
-      <ul class="nav-links">
-        <li><a href="home-page.html" class="active">Home</a></li>
-        <li><a href="farmers-page.html">Farmers</a></li>
-        <li><a href="crops-page.html">Crops</a></li>
-        <li><a href="about-us-page.html">About Us</a></li>
-      </ul>
-      <div class="buttons">
-        <a href="./signup.html"><button class="sign-up">Sign up</button></a>
-        <a href="./login.html"><button class="login">Login</button></a>
-      </div>
-    </nav>
-  </div>
-  <div class="page-1">
-    <div class="intro">
-      <h1>Welcome to KisanSetu</h1>
-      <p>
-        Welcome to KisanSetu, the platform that bridges the gap between farmers
-        and buyers, offering fresh, locally-sourced produce directly from the
-        field to your doorstep. Our mission is to empower farmers by providing
-        them with a fair marketplace, while giving buyers access to quality,
-        sustainable, and affordable products. Whether you're a consumer
-        looking for fresh goods or a farmer eager to expand your reach,
-        KisanSetu makes the connection seamless, transparent, and beneficial
-        for all.
-      </p>
-    </div>
-    <div class="redirect-links">
-      <div>
-        <div>
-          <h3>Click To Buy From Specific Farmers</h3>
-          <a href="farmers-page.html"><button class="farmer-btn">Check Farmers</button></a>
+  <body>
+    <div class="header">
+      <nav class="nav-bar">
+        <a href="home-page.html">
+          <img src="./images/farmer-logo.png" alt="logo" class="logo" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="home-page.html" class="active">Home</a></li>
+          <li><a href="farmers-page.html">Farmers</a></li>
+          <li><a href="crops-page.html">Crops</a></li>
+          <li><a href="about-us-page.html">About Us</a></li>
+        </ul>
+        <div class="buttons">
+          <a href="./signup.html"><button class="sign-up">Sign up</button></a>
+          <a href="./login.html"><button class="login">Login</button></a>
         </div>
+      </nav>
+    </div>
+    <div class="page-1">
+      <div class="intro">
+        <h1>Welcome to KisanSetu</h1>
+        <p>
+          Welcome to KisanSetu, the platform that bridges the gap between
+          farmers and buyers, offering fresh, locally-sourced produce directly
+          from the field to your doorstep. Our mission is to empower farmers by
+          providing them with a fair marketplace, while giving buyers access to
+          quality, sustainable, and affordable products. Whether you're a
+          consumer looking for fresh goods or a farmer eager to expand your
+          reach, KisanSetu makes the connection seamless, transparent, and
+          beneficial for all.
+        </p>
       </div>
-      <img src="./images/logo.jpeg" id="bot-img" alt="" height="50px" width="50px" style="border-radius: 10px" />
-      <div class="ai-bot">
-        <div class="content">
-          <div class="chat-container">
-            <div id="chat-messages"></div>
-            <div class="user-prompt">
-              <textarea id="userInput" rows="1" class="textarea" placeholder="किसानसेतु का उपयोग कैसे करें?"></textarea>
-              <div class="lang-select">
-                <select id="languageSelect">
-                  <option value="english">English</option>
-                  <option value="hindi">Hindi</option>
-                </select>
-              </div>
+      <div class="redirect-links">
+        <div>
+          <div>
+            <h3>Click To Buy From Specific Farmers</h3>
+            <a href="farmers-page.html"
+              ><button class="farmer-btn">Check Farmers</button></a
+            >
+          </div>
+        </div>
+        <img
+          src="./images/bot.svg"
+          id="bot-img"
+          alt=""
+          height="50px"
+          width="50px"
+          style="border-radius: 10px"
+        />
+        <div class="ai-bot">
+          <div class="content">
+            <div class="chat-container">
+              <div id="chat-messages"></div>
+              <div class="user-prompt">
+                <textarea
+                  id="userInput"
+                  rows="1"
+                  class="textarea"
+                  placeholder="किसानसेतु का उपयोग कैसे करें?"
+                ></textarea>
+                <div class="lang-select">
+                  <select id="languageSelect">
+                    <option value="english">English</option>
+                    <option value="hindi">Hindi</option>
+                  </select>
+                </div>
 
-              <img id="enterIcon" src="images/send.svg" alt="" class="enter-icon" />
+                <img
+                  id="enterIcon"
+                  src="images/send.svg"
+                  alt=""
+                  class="enter-icon"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        <h3>Click To Buy Specific Crops</h3>
-        <a href="crops-page.html"><button class="crop-btn">Buy Crops</button></a>
-      </div>
-      <div>
-        <h3>Click To Learn More About Us</h3>
-        <a href="about-us-page.html"><button class="about-btn">About Us</button></a>
+        <div>
+          <h3>Click To Buy Specific Crops</h3>
+          <a href="crops-page.html"
+            ><button class="crop-btn">Buy Crops</button></a
+          >
+        </div>
+        <div>
+          <h3>Click To Learn More About Us</h3>
+          <a href="about-us-page.html"
+            ><button class="about-btn">About Us</button></a
+          >
+        </div>
       </div>
     </div>
-  </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const navLinks = document.querySelectorAll(".nav-bar ul li a");
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".nav-bar ul li a");
 
-      // Add event listeners to all nav links
-      navLinks.forEach((link) => {
-        link.addEventListener("click", function () {
-          // Remove 'active' class from all links
-          navLinks.forEach((nav) => nav.classList.remove("active"));
+        // Add event listeners to all nav links
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            // Remove 'active' class from all links
+            navLinks.forEach((nav) => nav.classList.remove("active"));
 
-          // Add 'active' class to the clicked link
-          this.classList.add("active");
+            // Add 'active' class to the clicked link
+            this.classList.add("active");
+          });
         });
       });
-    });
-  </script>
-  <script src="bot.js"></script>
-</body>
-
+    </script>
+    <script src="bot.js"></script>
+  </body>
 </html>
