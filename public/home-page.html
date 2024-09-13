@@ -12,6 +12,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/intro.js/introjs.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <style>
   /* From Uiverse.io by ryota1231 */
@@ -198,6 +202,23 @@
     transform: translateY(400px);
     transition: transform 0.5s;
   }
+  .swiper {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 600px;
+      height: 500px;
+    }
+
+    .swiper-slide video {
+      display: block;
+      width: 100%;
+    }
 </style>
 
 <body>
@@ -307,9 +328,46 @@
       </p>
     </div>
     <div class="redirect-links">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide farmer-btn">
+            <a href="farmers-page.html">
+              <button class="farmer-btn">
+                Check Farmers
+                <video class="button-video" autoplay loop muted>
+                  <source src="./videos/farmer-video.mp4" type="video/mp4">
+                </video>
+              </button>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="crops-page.html">
+              <button class="crop-btn">
+                Buy Crops
+                <video class="button-video" autoplay loop muted>
+                  <source src="./videos/crops-1.mp4" type="video/mp4">
+                </video>
+              </button>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="about-us-page.html">
+              <button class="about-btn">
+                About Us
+                <video class="button-video" autoplay loop muted>
+                  <source src="./videos/Teamwork joining hand Free use footage.mp4" type="video/mp4">
+                </video>
+              </button>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+        <!-- <div class="swiper-pagination"></div> -->
+      </div>
       <div class="center-container">
-        <div >
-          <!-- <h3>Click To Buy From Specific Farmers</h3> -->
+        <!-- <div >
+
           <a href="farmers-page.html">
             <button class="farmer-btn">
               Check Farmers
@@ -318,7 +376,7 @@
               </video>
             </button>
           </a>
-        </div>
+        </div> -->
         <img src="./images/bot.svg" id="bot-img" alt="" height="50px" width="50px" style="border-radius: 10px" />
         <div class="ai-bot">
           <div class="content">
@@ -339,8 +397,8 @@
             </div>
           </div>
         </div>
-        <div>
-          <!-- <h3>Click To Buy Specific Crops</h3> -->
+        <!-- <div>
+
           <a href="crops-page.html">
             <button class="crop-btn">
               Buy Crops
@@ -349,9 +407,8 @@
               </video>
             </button>
           </a>
-        </div>
-        <div>
-          <!-- <h3>Click To Learn More About Us</h3> -->
+        </div> -->
+        <!-- <div>
           <a href="about-us-page.html">
             <button class="about-btn">
               About Us
@@ -360,7 +417,7 @@
               </video>
             </button>
           </a>
-        </div>
+        </div> -->
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
@@ -372,11 +429,32 @@
       integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="bot.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
       // function redirectToPage(url) {
       //   window.location.href = url;
       // }
-
+      var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+    
       const myText = new SplitType(".title")
 
     gsap.to('.char', {
