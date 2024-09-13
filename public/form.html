@@ -1,84 +1,153 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <title>Details</title>
-        <link rel="stylesheet" href="form.css">
-    </head>
-    <body>
-        <form id="details-form" class="main">
-            <h1><u>Welcome! Kindly enter your details!</u></h1>
-            
-            <!-- Name -->
-            <div class="input-box">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" placeholder="Full name" required>
-            </div>
+  <head>
+    <title>Details</title>
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <form id="details-form" class="main">
+      <h1><u>Welcome! Kindly enter your details!</u></h1>
 
-            <!-- State -->
-            <div class="input-box">
-                <label for="state">State:</label>
-                <input type="text" id="state" placeholder="State" required>
-            </div>
+      <!-- Name -->
+      <div class="input-box">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" placeholder="Full name" required />
+      </div>
 
-            <!-- Crops Grown -->
-            <div class="input-box">
-                <label for="cropsGrown">Crops Grown:</label>
-                <input type="text" id="cropsGrown" placeholder="Crops Grown (comma-separated)" required>
-            </div>
+      <!-- State -->
+      <div class="input-box">
+        <label for="state">State:</label>
+        <input type="text" id="state" placeholder="State" required />
+      </div>
 
-            <!-- Postal Code -->
-            <div class="input-box">
-                <label for="postalCode">Postal Code:</label>
-                <input type="text" id="postalCode" placeholder="Postal Code" required>
-            </div>
+      <!-- Crops Grown -->
+      <div class="input-box">
+        <label for="cropsGrown">Crops Grown:</label>
+        <input
+          type="text"
+          id="cropsGrown"
+          placeholder="Crops Grown (comma-separated)"
+          required
+        />
+      </div>
 
-            <!-- Address -->
-            <div class="input-box">
-                <label for="address">Address:</label>
-                <input type="text" id="address" placeholder="Address" required>
-            </div>
+      <!-- Postal Code -->
+      <div class="input-box">
+        <label for="postalCode">Postal Code:</label>
+        <input type="text" id="postalCode" placeholder="Postal Code" required />
+      </div>
 
-            <!-- Aadhaar Number -->
-            <div class="input-box">
-                <label for="aadhar">Aadhaar Number:</label>
-                <input type="text" id="aadhar" placeholder="Aadhaar Number" required>
-            </div>
+      <!-- Address -->
+      <div class="input-box">
+        <label for="address">Address:</label>
+        <input type="text" id="address" placeholder="Address" required />
+      </div>
 
-            <!-- Amount Produced -->
-            <div class="input-box">
-                <label for="amountProduced">Amount Produced:</label>
-                <input type="text" id="amountProduced" placeholder="Amount Produced (in kg)" required>
-            </div>
+      <!-- Aadhaar Number -->
+      <div class="input-box">
+        <label for="aadhar">Aadhaar Number:</label>
+        <input type="text" id="aadhar" placeholder="Aadhaar Number" required />
+      </div>
 
-            <div class="input-box">
-                <label for="phoneNumber">Phone number :</label>
-                <input type="text" id="phoneNumber" placeholder="+91 XXXXXXXXXX" required>
-            </div>
+      <!-- Amount Produced -->
+      <div class="input-box">
+        <label for="amountProduced">Amount Produced:</label>
+        <input
+          type="text"
+          id="amountProduced"
+          placeholder="Amount Produced (in kg)"
+          required
+        />
+      </div>
 
+      <div class="input-box">
+        <label for="phoneNumber">Phone number :</label>
+        <input
+          type="text"
+          id="phoneNumber"
+          placeholder="+91 XXXXXXXXXX"
+          required
+        />
+      </div>
 
-            <!-- Occupation Dropdown -->
-            <div class="input-box">
-                <label for="occupation">Occupation:</label>
-                <select id="occupation" required>
-                    <option value="Farmer">Farmer</option>
-                    <option value="Buyer">Buyer</option>
-                </select>
-            </div>
+      <!-- Occupation Dropdown -->
+      <div class="input-box">
+        <label for="occupation">Occupation:</label>
+        <select id="occupation" required>
+          <option value="Farmer">Farmer</option>
+          <option value="Buyer">Buyer</option>
+        </select>
+      </div>
 
-            <!-- Image Upload -->
-            <div class="input-box">
-                <label for="image">Upload Image:</label>
-                <input type="file" id="image" accept="image/jpeg" required>
-            </div>
+      <!-- Image Upload -->
+      <div class="input-box upload-container">
+        <label for="image">Click to upload your image</label>
+        <input type="file" id="image" accept="image/jpeg" required />
+        <img
+          id="imagePreview"
+          src=""
+          alt="Uploaded Image Preview"
+          style="display: none"
+        />
+      </div>
 
-            <button type="submit"><b>SUBMIT</b></button>
-        </form>
-        <div id="message"></div>
+      <h2>Bank account details :</h2>
 
-        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage.js"></script>
-        <script src="./Javascript/formRegister.js" type="module"></script>
-    </body>
+      <div class="input-box">
+        <label for="accountNo">Account number :</label>
+        <input
+          type="text"
+          id="accountNo"
+          placeholder="Enter account number"
+          required
+        />
+      </div>
+
+      <div class="input-box">
+        <label for="ifsc">IFSC code :</label>
+        <input
+          type="text"
+          id="ifsc"
+          placeholder="Enter IFSC code "
+          required
+        />
+      </div>
+
+      <div class="input-box">
+        <label for="accountHolderName">Acount holder name :</label>
+        <input
+          type="text"
+          id="accountHolderName"
+          placeholder="Enter account holder name"
+          required
+        />
+      </div>
+
+      <button type="submit"><b>SUBMIT</b></button>
+    </form>
+    <div id="message"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage.js"></script>
+    <script src="./Javascript/formRegister.js" type="module"></script>
+    <script>
+      // JavaScript to display the image preview
+      document
+        .getElementById("image")
+        .addEventListener("change", function (event) {
+          const file = event.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              const imagePreview = document.getElementById("imagePreview");
+              imagePreview.src = e.target.result;
+              imagePreview.style.display = "block";
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+    </script>
+  </body>
 </html>

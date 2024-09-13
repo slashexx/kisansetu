@@ -34,6 +34,10 @@ document.getElementById('details-form').addEventListener('submit', async (e) => 
     const imageFile = document.getElementById('image').files[0];
     const occupation = document.getElementById('occupation').value;
     const phone = document.getElementById('phoneNumber').value;
+    
+    const accountNo = document.getElementById('accountNo').value;
+    const ifsc = document.getElementById('ifsc').value;
+    const accountHolderName = document.getElementById('accountHolderName').value;
 
     try {
         // Upload image to Firebase Storage and get URL
@@ -54,7 +58,10 @@ document.getElementById('details-form').addEventListener('submit', async (e) => 
             occupation: occupation,  // Storing occupation
             governmentVerified: true,
             uid: uid,
-            phoneNo: phone
+            phoneNo: phone,
+            accountNo: accountNo,
+            ifsc: ifsc,
+            accountHolderName: accountHolderName
         });
 
         alert("Details submitted successfully!");
