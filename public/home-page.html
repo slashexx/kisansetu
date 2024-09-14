@@ -289,7 +289,6 @@
     font-weight: bold;
     z-index: 10;
   }
-
 </style>
 
 <body>
@@ -530,6 +529,11 @@
     window.addEventListener('load', function () {
       setTimeout(loadGoogleTranslate, 500);  // Adding a slight delay to ensure proper load
     });
+
+    function setLanguage(lang) {
+      localStorage.setItem('googleTranslateLanguage', lang);
+      window.location.reload();
+    }
   </script>
 
 
