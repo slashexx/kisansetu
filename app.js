@@ -357,7 +357,7 @@ app.get("/buyers/:id",async(req,res)=>{
   const farmers=await getFarmersData();
   const buyers=await getBuyersData();
   console.log(buyers)
-  const currFarmer=findFarmerById(parseInt(id),farmers);
+  const currFarmer=findFarmerById(id,farmers);
   const farmersBuyer=[];
   for(let keys in currFarmer.messages){
     farmersBuyer.push(findBuyerById(keys,buyers))
@@ -398,14 +398,14 @@ app.get("/chat/:id", async (req, res) => {
   
   const chatBetween = chats[id];
   const farmers = await getFarmersData();
-  const farmer = findFarmerById(parseInt(chatBetween), farmers);
+  const farmer = findFarmerById(chatBetween, farmers);
   const buyers=await getBuyersData();
   const buyer=await findBuyerById(id,buyers)
   console.log(buyer);
   console.log(farmer);
   
   let messages = [];
-  if(buyer.messages[parseInt(chatBetween)]) messages=buyer.messages[parseInt(chatBetween)]
+  if(buyer.messages[parseInt(chatBetween)]) messages=buyer.messages[chatBetween]
   console.log(messages)
   
   res.render('message', {
@@ -431,7 +431,7 @@ app.get("/buyer/chat/:id", async (req, res) => {
   console.log(chatBetween)
   const farmers = await getFarmersData();
   const buyers=await getBuyersData()
-  const farmer = findFarmerById(parseInt(id), farmers);
+  const farmer = findFarmerById(id, farmers);
   const buyer=findBuyerById(chatBetween,buyers)
   console.log(farmer);
   
@@ -483,7 +483,7 @@ wss.on("connection", (ws, req) => {
       // Update the farmers data
       let farmers = await getFarmersData();
       let buyers = await getBuyersData();
-      const receiver_farmer = findFarmerById(parseInt(receiver_id), farmers);
+      const receiver_farmer = findFarmerById(receiver_id, farmers);
       const receiver_buyer = findBuyerById(receiver_id, buyers);
   
       if (receiver_farmer) {
@@ -520,7 +520,7 @@ wss.on("connection", (ws, req) => {
         }
   
         receiver_buyer.messages[sender_id].push({ from: parsedMessage.message });
-        const sender_farmer = findFarmerById(parseInt(sender_id), farmers);
+        const sender_farmer = findFarmerById(sender_id, farmers);
         if (!sender_farmer.messages) {
           sender_farmer.messages = {};
         }
