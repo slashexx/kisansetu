@@ -247,11 +247,12 @@ nav {
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/banner.avif); */
   background-position: center;
   background-size: cover;
-  padding: 10% 7%;
+  padding: 5% 7%;
   position: relative;
 }
 
 .page-1 h1 {
+  font-size: 50px;
   font-family: "Playfair Display", serif;
   margin-bottom: 15px;
 }
@@ -259,10 +260,7 @@ nav {
 .page-1 p {
   font-family: "Fira Sans", sans-serif;
   font-weight: 500;
-}
-
-.page-1 p {
-  font-size: 18px;
+  font-size: 20px;
   margin-right: 90px;
   margin-bottom: 120px;
 }

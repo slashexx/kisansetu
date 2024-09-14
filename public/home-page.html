@@ -276,18 +276,20 @@
     scrollbar-width: thin;
     scrollbar-color: #4CAF50 #f1f1f1;
   }
+
   .slide-title {
-      position: absolute;
-      top: 10px;
-      left: 20px;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 20px;
-      font-weight: bold;
-      z-index: 10;
-    }
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 10;
+  }
+
 </style>
 
 <body>
@@ -377,7 +379,10 @@
           </a>
         </div>
       </nav>
-      <h1 class="title">
+      <!-- <div id="google_translate_element">
+
+      </div> -->
+      <h1 class="title" translate="no">
         KisanSetu
       </h1>
     </div>
@@ -493,6 +498,7 @@
       </div>
     </div>
   </div>
+  <div id="google_translate_element"></div>
   <footer>
     <p>&copy; 2024 KisanSetu. All Rights Reserved.</p>
     <div class="footer-links">
@@ -512,6 +518,21 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="bot.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+  <script>
+    function loadGoogleTranslate() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',  // Specify the default page language
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,  // Choose layout
+      }, 'google_translate_element');  // The ID of the element where the widget will be rendered
+    }
+
+    window.addEventListener('load', function () {
+      setTimeout(loadGoogleTranslate, 500);  // Adding a slight delay to ensure proper load
+    });
+  </script>
+
+
   <script>
     // function redirectToPage(url) {
     //   window.location.href = url;
@@ -533,8 +554,8 @@
 
     // const myIntro = new SplitType(".intro")
     //gsap timeline
-    let t1 =gsap.timeline({
-      scrollTrigger:{
+    let t1 = gsap.timeline({
+      scrollTrigger: {
         trigger: '.intro',
         start: '-90 center',
         end: 'bottom center',
@@ -544,9 +565,9 @@
     });
 
     t1.from('.intro h1', {
-      y:400
+      x: -800
     }).from('.intro p', {
-      y:400
+      y: 400
     })
 
 
