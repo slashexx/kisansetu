@@ -126,6 +126,49 @@
     border-radius: 50%;
    
 }
+.back-button {
+    margin-right: 30px;
+    height: 50px;
+    background: #33cc00; /* Electric Green background */
+    color: white;
+    font-family: inherit;
+    padding: 0.45em;
+    padding-left: 1em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1em -0.3em #00b300; /* Reduced shadow intensity */
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 1em;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.back-button:hover {
+    background-color: #33cc00; /* Slightly darker Electric Green on hover */
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.1em 0.1em #009900; /* Subtle shadow on hover */
+}
+
+.back-button:active {
+    background-color: #28a700; /* Even darker Electric Green when clicked */
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em #007700; /* Subtle shadow when clicked */
+}
+a{
+    text-decoration: none;
+}
+.back-container{
+    position: absolute;
+    top: 6rem;
+    right: 5rem;
+}
     </style>
 </head>
 
@@ -166,7 +209,12 @@
             </div>
         </div>
     </div> -->
-
+    <div class="back-container">
+        <a href="home-page.html">
+            <button class="back-button">← Home</button>
+          </a>
+    </div>
+   
 
 <div class="container">
   <div class="card">
