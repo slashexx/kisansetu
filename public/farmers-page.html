@@ -137,6 +137,66 @@
   footer p {
     margin-bottom: 25px;
   }
+  /* From Uiverse.io by vinodjangid07 */ 
+#button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 0px 1px rgba(1, 0, 6, 0.253);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: fixed;
+  bottom: 3rem;
+  right: 1.5rem;
+}
+
+.svgIcon {
+  width: 12px;
+  transition-duration: 0.3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+#button:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: #ccff00df;
+  align-items: center;
+}
+
+#button:hover .svgIcon {
+  /* width: 20px; */
+  transition-duration: 0.3s;
+  transform: translateY(-200%);
+}
+
+#button::before {
+  position: absolute;
+  bottom: -20px;
+  content: "Back to Top";
+  color: black;
+  /* transition-duration: .3s; */
+  font-size: 0px;
+}
+
+#button:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  bottom: unset;
+  /* transform: translateY(-30px); */
+  transition-duration: 0.3s;
+}
+
 </style>
 
 <body>
@@ -288,6 +348,14 @@
       </tbody>
     </table>
   </div>
+<button id="button" onclick="scrollToTop()">
+  <svg class="svgIcon" viewBox="0 0 384 512">
+    <path
+      d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+    ></path>
+  </svg>
+</button>
+
   <footer>
     <p>&copy; 2024 KisanSetu. All Rights Reserved.</p>
     <div class="footer-links">
@@ -296,6 +364,8 @@
       <a href="#">Contact</a>
     </div>
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   <!-- <script type="module" src="farmers.js"></script> -->
   <script type="module">
     import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
@@ -449,6 +519,29 @@
             </svg>
           </button>
         </a>`;
+    }
+
+    let tl=gsap.timeline({
+      scrollTrigger:{
+        trigger:'#button',
+        start:'top 500px',
+        end:'top 580px',
+        scrub:true,
+        markers:false
+      }
+    })
+    tl.from('#button',{
+      x:200
+    })
+    tl.to('#button',{
+      x:0
+    })
+
+    window.scrollToTop=function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // This makes the scroll smooth
+      });
     }
   </script>
 
