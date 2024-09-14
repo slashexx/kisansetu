@@ -224,6 +224,10 @@
   </div>
   <div class="about-us-container">
     <section class="hero">
+      <video autoplay muted loop class="background-video">
+        <source src="./videos/about-us-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       <h1>About Us</h1>
       <p>
         Welcome to KisanSetu, a government initiative dedicated to
@@ -235,7 +239,7 @@
       </p>
     </section>
     <section class="about-content">
-      <div class="content-block">
+      <div class="content-block-1">
         <h2>Our Mission</h2>
         <p>
           At KisanSetu, our mission is to facilitate sustainable development
@@ -246,7 +250,7 @@
           high-quality produce to consumers.
         </p>
       </div>
-      <div class="content-block">
+      <div class="content-block-2">
         <h2>How It Works</h2>
         <p>
           Through KisanSetu, farmers can register and list their produce on
@@ -268,7 +272,7 @@
         </ul>
         </p>
       </div>
-      <div class="content-block" id="content-super">
+      <div class="content-block-3">
         <h2>Government Commitment to Farmers</h2>
         <p>
           KisanSetu reflects the Government of India’s commitment to improving the livelihoods of farmers and ensuring
@@ -296,6 +300,7 @@
       <a href="./signup.html"><button class="cta-btn">Join Us Today</button></a>
     </div>
   </div>
+  <div id="google_translate_element"></div>
   <footer>
     <p>&copy; 2024 KisanSetu. All Rights Reserved.</p>
     <div class="footer-links">
@@ -304,21 +309,74 @@
       <a href="#">Contact</a>
     </div>
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const navLinks = document.querySelectorAll(".nav-bar ul li a");
+    const lenis = new Lenis()
 
-      // Add event listeners to all nav links
-      navLinks.forEach((link) => {
-        link.addEventListener("click", function () {
-          // Remove 'active' class from all links
-          navLinks.forEach((nav) => nav.classList.remove("active"));
+    // lenis.on('scroll', (e) => {
+    //   console.log(e)
+    // })
 
-          // Add 'active' class to the clicked link
-          this.classList.add("active");
-        });
-      });
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+    let t1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.intro',
+        start: '-90 center',
+        end: '40% center',
+        scrub: true,
+        markers: false
+      }
     });
+
+    t1.from('.content-block-1 h2', {
+      x: -60000
+    }).from('.content-block-1 p', {
+      x: -800
+    })
+
+    let t2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.content-block-1',
+        start: '50% center',
+        end: '30% center',
+        scrub: true,
+        markers: true
+      }
+    });
+
+    t2.from('.content-block-2 h2', {
+      x: -60000
+    }).from('.content-block-2 p', {
+      x: -800
+    }).from('.content-block-2 ul', {
+      x:-800
+    })
+    // document.addEventListener("DOMContentLoaded", function () {
+    //   const navLinks = document.querySelectorAll(".nav-bar ul li a");
+
+    //   // Add event listeners to all nav links
+    //   navLinks.forEach((link) => {
+    //     link.addEventListener("click", function () {
+    //       // Remove 'active' class from all links
+    //       navLinks.forEach((nav) => nav.classList.remove("active"));
+
+    //       // Add 'active' class to the clicked link
+    //       this.classList.add("active");
+    //     });
+    //   });
+    // });
     const user = localStorage.getItem("uid");
     if (user) {
       const buttons = document.getElementsByClassName("button")[0];
@@ -346,8 +404,20 @@
   </script>
   <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
   <script>
-    function loadGoogleTranslate(){
-      new google.translate.TranslateElement('content-super');
+    function loadGoogleTranslate() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',  // Specify the default page language
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,  // Choose layout
+      }, 'google_translate_element');  // The ID of the element where the widget will be rendered
+    }
+
+    window.addEventListener('load', function () {
+      setTimeout(loadGoogleTranslate, 500);  // Adding a slight delay to ensure proper load
+    });
+
+    function setLanguage(lang) {
+      localStorage.setItem('googleTranslateLanguage', lang);
+      window.location.reload();
     }
   </script>
 

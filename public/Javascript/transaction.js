@@ -1,6 +1,21 @@
-const Web3 = require('web3');
-const web3 = new Web3('https://zetachain-athens-evm.blockpi.network/v1/rpc/public');
+if (typeof window.ethereum !== 'undefined') {
+  console.log('MetaMask is installed!');
 
+  // Initialize Web3 with MetaMask as the provider
+  
+  // Request access to MetaMask accounts
+  window.ethereum.request({ method: 'eth_requestAccounts' })
+  .then(accounts => {
+    console.log('Connected account:', accounts[0]);
+  })
+  .catch(error => {
+    console.error('Error accessing MetaMask:', error);
+  });
+  
+} else {
+  alert('Please install MetaMask to use this feature.');
+}
+const web3 = new Web3(window.ethereum);
 // Load your smart contract ABI and address
 const contractABI = [
     {
@@ -102,25 +117,40 @@ const contractABI = [
       "type": "function",
       "payable": true
     }
-  ];
-  const contractAddress = '0xe9498ABB98981eC081E6AE9A79406A3189BF1441';
+  ];// transaction.js
 
+  
+  const contractAddress = '0xe9498ABB98981eC081E6AE9A79406A3189BF1441'; // Your deployed contract address
+  
   const contract = new web3.eth.Contract(contractABI, contractAddress);
   
   async function fulfillContract() {
-      const accounts = await web3.eth.getAccounts();
-      const buyerAddress = accounts[0]; // Use the first account from Ganache
-      const price = web3.utils.toWei('1', 'ether'); // Example price
-  
-      contract.methods.fulfillContract().send({
-          from: buyerAddress,
-          value: price
-      })
-      .on('receipt', function(receipt) {
-          console.log('Transaction successful:', receipt);
-      })
-      .on('error', function(error) {
-          console.error('Transaction error:', error);
-      });
-  }
+    try {
+        // Request the user's MetaMask accounts
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        const buyerAddress = accounts[0]; // Use the first account from MetaMask
+
+        // Retrieve the price from the input field (in ETH) and convert it to Wei
+        const priceInput = document.getElementById('price').value;
+        const priceInWei = web3.utils.toWei(priceInput, 'ether'); // Convert price to Wei
+
+        // Send the transaction to fulfill the contract
+        const receipt = await contract.methods.fulfillContract().send({
+            from: buyerAddress,
+            value: priceInWei // Send the value in Wei
+        });
+
+        // Display the transaction status
+        console.log('Transaction successful:', receipt);
+        document.getElementById('transactionStatus').innerText = 'Transaction successful! Transaction hash: ' + receipt.transactionHash;
+
+    } catch (error) {
+        // Handle errors and show them in the frontend
+        console.error('Transaction error:', error);
+        document.getElementById('transactionStatus').innerText = 'Transaction failed: ' + error.message;
+    }
+}
+
+
+  document.getElementById('fulfillButton').addEventListener('click', fulfillContract);
   
