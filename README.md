@@ -80,7 +80,7 @@ Kisansetu is a comprehensive platform designed to facilitate assured contract fa
      }
    };
    ```
-   (Also create a env file with MNEMONIC="your-mnemonic-here") <br>
+   (Also create a `.env` file with `MNEMONIC="your-mnemonic-here"`) <br>
    OR <br>
    ```js
    const HDWalletProvider = require('@truffle/hdwallet-provider');
@@ -95,7 +95,7 @@ Kisansetu is a comprehensive platform designed to facilitate assured contract fa
        },
        zetachain: {
          provider: () => new HDWalletProvider(
-           mnemonic, // Add your mnemonic here !
+           mnemonic, // Add your mnemonic here!
            'https://zetachain-athens-evm.blockpi.network/v1/rpc/public'
          ),
          network_id: 7001,
@@ -109,15 +109,16 @@ Kisansetu is a comprehensive platform designed to facilitate assured contract fa
        }
      }
    };
-``
-5. Compile and migrate the smart contracts: 
+   ```
+
+5. **Compile and Migrate the Smart Contracts:**
+
    ```bash
    truffle compile --config truffle-config.cjs
    truffle migrate --config truffle-config.cjs --network zetachain
    ```
 
-   (Parallely run `ganache-cli` and replace `zetachain` with `development` if deploying locally on ganache.)
-   
+   (Parallely run `ganache-cli` and replace `zetachain` with `development` if deploying locally on Ganache.)
 
 6. **Start the Development Server:**
 
@@ -128,6 +129,50 @@ Kisansetu is a comprehensive platform designed to facilitate assured contract fa
 7. **Access the Application:**
 
    Open your browser and navigate to `http://localhost:5000`.
+
+## User Setup for MetaMask
+
+To interact with the ZetaChain network on your platform, users need to configure MetaMask to include the ZetaChain network. Follow these steps:
+
+### Adding ZetaChain to MetaMask
+
+1. **Open MetaMask**:
+   - Click the MetaMask extension icon in your browser to open it.
+
+2. **Go to Settings**:
+   - Click the profile icon (your avatar) in the top-right corner of MetaMask.
+   - From the dropdown menu, choose **Settings**.
+
+3. **Select Networks**:
+   - In the Settings menu, click on **Networks**. This is where you can manage and add custom networks.
+
+4. **Add a Network**:
+   - Click **Add a network** or **Add a network manually**. This will take you to a screen where you can add a custom network.
+
+5. **Enter ZetaChain Details**:
+   Fill out the form with the following details:
+
+   - **Network Name**: ZetaChain
+   - **New RPC URL**: `https://zetachain-athens-evm.blockpi.network/v1/rpc/public`
+   - **Chain ID**: `7001`
+   - **Currency Symbol**: `ZETA`
+   - **Block Explorer URL**: (Leave blank or use an explorer URL if available)
+
+   Here’s what it looks like:
+
+   | Field               | Value                                                          |
+   |---------------------|----------------------------------------------------------------|
+   | **Network Name**     | ZetaChain                                                     |
+   | **New RPC URL**      | `https://zetachain-athens-evm.blockpi.network/v1/rpc/public`   |
+   | **Chain ID**         | `7001`                                                        |
+   | **Currency Symbol**  | `ZETA`                                                        |
+   | **Block Explorer URL** | (Optional) Leave blank or fill with explorer URL |
+
+6. **Save**:
+   - After entering the details, click the **Save** button.
+
+7. **Switch to ZetaChain**:
+   - After saving, MetaMask will switch to the newly added **ZetaChain** network. You can always switch back to other networks by clicking the network dropdown in MetaMask and selecting the network of your choice.
 
 ## Usage
 
