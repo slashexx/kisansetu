@@ -344,6 +344,14 @@ nav {
   z-index: 1000;
   cursor: pointer;
   border-radius: 10px;
+  border-radius: 10px;
+  filter: invert(20%) sepia(60%) saturate(300%) hue-rotate(85deg) brightness(80%) contrast(100%);
+  backdrop-filter: blur(8px);
+}
+
+#bot-img:hover {
+  /* Darker effect on hover with slight color shift */
+  filter: invert(30%) sepia(70%) saturate(400%) hue-rotate(95deg) brightness(75%) contrast(105%);
 }
 
 .lang-select {
@@ -377,7 +385,7 @@ nav {
 .user-prompt {
   display: flex;
   padding: 0 8px;
-  margin: 16px;
+  margin: 12px;
   background-color: #c1cad6;
   border-radius: 16px;
 }
