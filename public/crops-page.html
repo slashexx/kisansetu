@@ -13,22 +13,22 @@
 <style>
   /* From Uiverse.io by ryota1231 */
   .animated-button {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      padding: 12px 30px;
-      border: 4px solid;
-      border-color: transparent;
-      font-size: 12px;
-      /* background-color: ; */
-      border-radius: 100px;
-      font-weight: 600;
-      color: #1f387e;
-      box-shadow: 0 0 0 2px #ffffff;
-      cursor: pointer;
-      overflow: hidden;
-      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 30px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 12px;
+    /* background-color: ; */
+    border-radius: 100px;
+    font-weight: 600;
+    color: #1f387e;
+    box-shadow: 0 0 0 2px #ffffff;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .animated-button svg {
@@ -110,7 +110,33 @@
     justify-content: space-between;
     width: 220px;
   }
+
+  footer {
+    background-color: #333;
+    height: 100px;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+  }
+
+  footer .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+  footer p {
+    margin-bottom: 25px;
+  }
 </style>
+
 <body>
   <div class="header">
     <nav class="nav-bar">
@@ -120,7 +146,8 @@
       <ul class="nav-links">
         <div class="radio-inputs">
           <label>
-            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='home-page.html';" checked>
+            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='home-page.html';"
+              checked>
             <span class="radio-tile">
               <span class="radio-icon">
                 <img src="https://img.icons8.com/?size=100&id=z6m63h25vYs2&format=png&color=000000" alt="">
@@ -129,7 +156,7 @@
             </span>
           </label>
           <label>
-            <input class="radio-input" type="radio"  name="engine" onclick="window.location.href='farmers-page.html';">
+            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='farmers-page.html';">
             <span class="radio-tile">
               <span class="radio-icon">
                 <img src="https://img.icons8.com/?size=100&id=47584&format=png&color=000000" alt="">
@@ -138,7 +165,8 @@
             </span>
           </label>
           <label>
-            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='crops-page.html';" checked>
+            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='crops-page.html';"
+              checked>
             <span class="radio-tile">
               <span class="radio-icon">
                 <img src="https://img.icons8.com/?size=100&id=1832&format=png&color=000000" alt="">
@@ -249,46 +277,54 @@
       </a>
       <a href="toor-dal-farmers.html">
         <div class="card" style="background-image: url('./images/toor-dal.jpeg');">
-            <h3>Toor Dal</h3>
+          <h3>Toor Dal</h3>
         </div>
-    </a>
-    <a href="mung-farmer.html">
+      </a>
+      <a href="mung-farmer.html">
         <div class="card" style="background-image: url('./images/moong-dal.jpg');">
-            <h3>Moong Dal</h3>
+          <h3>Moong Dal</h3>
         </div>
-    </a>
-    <a href="chana-farmer.html">
+      </a>
+      <a href="chana-farmer.html">
         <div class="card" style="background-image: url('./images/chana-dal.jpeg');">
-            <h3>Chana Dal</h3>
+          <h3>Chana Dal</h3>
         </div>
-    </a>
-    <a href="masoor-farmer.html">
+      </a>
+      <a href="masoor-farmer.html">
         <div class="card" style="background-image: url('./images/masoor-dal.jpeg');">
-            <h3>Masoor Dal</h3>
+          <h3>Masoor Dal</h3>
         </div>
-    </a>
-    <a href="urad-farmer.html">
+      </a>
+      <a href="urad-farmer.html">
         <div class="card" style="background-image: url('./images/urad-dal.jpg');">
-            <h3>Urad Dal</h3>
+          <h3>Urad Dal</h3>
         </div>
-    </a>
-    <a href="lobia-farmer.html">
+      </a>
+      <a href="lobia-farmer.html">
         <div class="card" style="background-image: url('./images/lobia.jpeg');">
-            <h3>Lobia</h3>
+          <h3>Lobia</h3>
         </div>
-    </a>
-    <a href="rajma-farmer.html">
+      </a>
+      <a href="rajma-farmer.html">
         <div class="card" style="background-image: url('./images/rajma.jpg');">
-            <h3>Rajma</h3>
+          <h3>Rajma</h3>
         </div>
-    </a>
-    <a href="moth-bean-farmer.html">
+      </a>
+      <a href="moth-bean-farmer.html">
         <div class="card" style="background-image: url('./images/moth-bean.jpg');">
-            <h3>Moth Bean</h3>
+          <h3>Moth Bean</h3>
         </div>
-    </a>
+      </a>
     </div>
   </div>
+  <footer>
+    <p>&copy; 2024 KisanSetu. All Rights Reserved.</p>
+    <div class="footer-links">
+      <a href="home-page.html">Home</a>
+      <a href="about-us-page.html">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </footer>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const navLinks = document.querySelectorAll(".nav-bar ul li a");

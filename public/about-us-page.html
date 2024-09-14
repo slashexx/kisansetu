@@ -13,22 +13,22 @@
 <style>
   /* From Uiverse.io by ryota1231 */
   .animated-button {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      padding: 12px 30px;
-      border: 4px solid;
-      border-color: transparent;
-      font-size: 12px;
-      /* background-color: ; */
-      border-radius: 100px;
-      font-weight: 600;
-      color: #1f387e;
-      box-shadow: 0 0 0 2px #ffffff;
-      cursor: pointer;
-      overflow: hidden;
-      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 30px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 12px;
+    /* background-color: ; */
+    border-radius: 100px;
+    font-weight: 600;
+    color: #1f387e;
+    box-shadow: 0 0 0 2px #ffffff;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .animated-button svg {
@@ -110,7 +110,33 @@
     justify-content: space-between;
     width: 220px;
   }
+
+  footer {
+    background-color: #333;
+    height: 100px;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+  }
+
+  footer .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+  footer p {
+    margin-bottom: 25px;
+  }
 </style>
+
 <body>
   <div class="header">
     <nav class="nav-bar">
@@ -120,7 +146,7 @@
       <ul class="nav-links">
         <div class="radio-inputs">
           <label>
-            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='home-page.html';" >
+            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='home-page.html';">
             <span class="radio-tile">
               <span class="radio-icon">
                 <img src="https://img.icons8.com/?size=100&id=z6m63h25vYs2&format=png&color=000000" alt="">
@@ -129,7 +155,7 @@
             </span>
           </label>
           <label>
-            <input class="radio-input" type="radio"  name="engine" onclick="window.location.href='farmers-page.html';">
+            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='farmers-page.html';">
             <span class="radio-tile">
               <span class="radio-icon">
                 <img src="https://img.icons8.com/?size=100&id=47584&format=png&color=000000" alt="">
@@ -147,7 +173,8 @@
             </span>
           </label>
           <label>
-            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='about-us-page.html';" checked>
+            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='about-us-page.html';"
+              checked>
             <span class="radio-tile">
               <span class="radio-icon">
                 <img src="https://img.icons8.com/?size=100&id=3439&format=png&color=000000" alt="">
@@ -269,6 +296,14 @@
       <a href="./signup.html"><button class="cta-btn">Join Us Today</button></a>
     </div>
   </div>
+  <footer>
+    <p>&copy; 2024 KisanSetu. All Rights Reserved.</p>
+    <div class="footer-links">
+      <a href="home-page.html">Home</a>
+      <a href="about-us-page.html">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </footer>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const navLinks = document.querySelectorAll(".nav-bar ul li a");
@@ -285,9 +320,9 @@
       });
     });
     const user = localStorage.getItem("uid");
-      if (user) {
-        const buttons = document.getElementsByClassName("button")[0];
-        buttons.innerHTML = `<a href="/dashboard">
+    if (user) {
+      const buttons = document.getElementsByClassName("button")[0];
+      buttons.innerHTML = `<a href="/dashboard">
           <button class="animated-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -307,7 +342,7 @@
             </svg>
           </button>
         </a>`
-      }
+    }
   </script>
 </body>
 

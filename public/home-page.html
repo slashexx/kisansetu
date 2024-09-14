@@ -41,186 +41,212 @@
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
-    .animated-button svg {
-      position: absolute;
-      width: 24px;
-      fill: #000;
-      z-index: 9;
-      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-    }
+  .animated-button svg {
+    position: absolute;
+    width: 24px;
+    fill: #000;
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
 
-    .animated-button .arr-1 {
-      right: 16px;
-    }
+  .animated-button .arr-1 {
+    right: 16px;
+  }
 
-    .animated-button .arr-2 {
-      left: -25%;
-    }
+  .animated-button .arr-2 {
+    left: -25%;
+  }
 
-    .animated-button .circle {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 20px;
-      height: 20px;
-      background-color: #c5e5e4;
-      border-radius: 50%;
-      opacity: 0;
-      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-    }
+  .animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #c5e5e4;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
 
-    .animated-button .text {
-      position: relative;
-      z-index: 1;
-      transform: translateX(-12px);
-      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-    }
+  .animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
 
-    .animated-button:hover {
-      box-shadow: 0 0 0 12px transparent;
-      color: #212121;
-      border-radius: 12px;
-    }
+  .animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #212121;
+    border-radius: 12px;
+  }
 
-    .animated-button:hover .arr-1 {
-      right: -25%;
-    }
+  .animated-button:hover .arr-1 {
+    right: -25%;
+  }
 
-    .animated-button:hover .arr-2 {
-      left: 16px;
-    }
+  .animated-button:hover .arr-2 {
+    left: 16px;
+  }
 
-    .animated-button:hover .text {
-      transform: translateX(12px);
-    }
+  .animated-button:hover .text {
+    transform: translateX(12px);
+  }
 
-    .animated-button:hover svg {
-      fill: #1f387e;
-    }
+  .animated-button:hover svg {
+    fill: #1f387e;
+  }
 
-    .animated-button:active {
-      scale: 0.95;
-      box-shadow: 0 0 0 4px greenyellow;
-    }
+  .animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px greenyellow;
+  }
 
-    .animated-button:hover .circle {
-      width: 220px;
-      height: 220px;
-      opacity: 1;
-    }
+  .animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+  }
 
-    a {
-      text-decoration: none;
-    }
+  a {
+    text-decoration: none;
+  }
 
-    .button {
-      display: flex;
-      margin-top: 48px;
-      justify-content: space-between;
-      width: 220px;
-    }
+  .button {
+    display: flex;
+    margin-top: 48px;
+    justify-content: space-between;
+    width: 220px;
+  }
 
-    .header {
-      z-index: 10;
-    }
+  .header {
+    z-index: 10;
+  }
 
-    .container {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      position: absolute;
-    }
+  .container {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+  }
 
-    .nav-bar {
-      background-color: rgba(255, 255, 255, 0.1);
-      z-index: 1;
-    }
+  .nav-bar {
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+  }
 
-    .container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
 
-    .background-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      /* Sends the video behind other content */
-    }
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    /* Sends the video behind other content */
+  }
 
-    .arr-1,
-    .arr-2 {
-      color: white;
-    }
+  .arr-1,
+  .arr-2 {
+    color: white;
+  }
 
-    .arr-2 {
-      color: white;
-    }
+  .arr-2 {
+    color: white;
+  }
 
-    .radio-input+.radio-tile {
-      appearance: none;
-      background: transparent;
-      /* border-color: #2260ff; */
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-      /* color: #2260ff; */
-    }
+  .radio-input+.radio-tile {
+    appearance: none;
+    background: transparent;
+    /* border-color: #2260ff; */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    /* color: #2260ff; */
+  }
 
-    .radio-icon img {
-      filter: grayscale(100%);
-    }
+  .radio-icon img {
+    filter: grayscale(100%);
+  }
 
-    .radio-tile {
-      background-color: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
+  .radio-tile {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
 
-    .radio-label {
-      color: #000;
-      font-size: 16px;
-      font-weight: bold;
-    }
+  .radio-label {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+  }
 
-    .title {
-      letter-spacing: 5px;
-      font-family: "Bebas Neue", sans-serif;
-      font-weight: 400;
-      font-style: normal;
-      position: absolute;
-      bottom: 0;
-      color: #ffffff;
-      margin-left: 20%;
-      font-size: 18vw;
-    }
+  .title {
+    letter-spacing: 5px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    position: absolute;
+    bottom: 0;
+    color: #ffffff;
+    margin-left: 20%;
+    font-size: 18vw;
+  }
 
   .char {
     transform: translateY(400px);
     transition: transform 0.5s;
   }
+
   .swiper {
-      width: 100%;
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 
-    .swiper-slide {
-      background-position: center;
-      background-size: cover;
-      width: 600px;
-      height: 500px;
-    }
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 600px;
+    height: 500px;
+  }
 
-    .swiper-slide video {
-      display: block;
-      width: 100%;
-    }
+  .swiper-slide video {
+    display: block;
+    width: 100%;
+  }
+
+  footer {
+    background-color: #333;
+    height: 100px;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+  }
+
+  footer .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+  footer p{
+    margin-bottom: 25px;
+  }
 </style>
 
 <body>
@@ -364,7 +390,7 @@
           </div>
         </div>
         <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+        <div class="swiper-button-prev"></div>
         <!-- <div class="swiper-pagination"></div> -->
       </div>
       <div class="center-container">
@@ -422,21 +448,31 @@
         </div> -->
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
-      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="bot.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-      // function redirectToPage(url) {
-      //   window.location.href = url;
-      // }
-      var swiper = new Swiper(".mySwiper", {
+  </div>
+  <footer>
+    <p>&copy; 2024 KisanSetu. All Rights Reserved.</p>
+    <div class="footer-links">
+      <a href="home-page.html">Home</a>
+      <a href="about-us-page.html">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="bot.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // function redirectToPage(url) {
+    //   window.location.href = url;
+    // }
+    var swiper = new Swiper(".mySwiper", {
       effect: "coverflow",
       grabCursor: true,
       centeredSlides: true,
@@ -456,19 +492,19 @@
         el: ".swiper-pagination",
       },
     });
-    
-      const myText = new SplitType(".title")
 
-      gsap.to('.char', {
-        y: 0,
-        stagger: 0.05,
-        delay: 0.2,
-        duration: 0.1
-      })
-      const user = localStorage.getItem("uid");
-      if (user) {
-        const buttons = document.getElementsByClassName("button")[0];
-        buttons.innerHTML = `<a href="/dashboard">
+    const myText = new SplitType(".title")
+
+    gsap.to('.char', {
+      y: 0,
+      stagger: 0.05,
+      delay: 0.2,
+      duration: 0.1
+    })
+    const user = localStorage.getItem("uid");
+    if (user) {
+      const buttons = document.getElementsByClassName("button")[0];
+      buttons.innerHTML = `<a href="/dashboard">
           <button class="animated-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -488,8 +524,9 @@
             </svg>
           </button>
         </a>`
-      }
-    </script>
+    }
+  </script>
 </body>
+
 
 </html>
