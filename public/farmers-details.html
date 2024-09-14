@@ -435,26 +435,26 @@
       const googleProvider = new GoogleAuthProvider();
 
       const cropsImages = {
-        Wheat:
+        wheat:
           "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTb0GgH3ccFLjH8ZPZxa9DKvjZ4uOgErcTs1fzGKugcyuKlE6ri",
-        Rice: "https://cdn.britannica.com/89/140889-050-EC3F00BF/Ripening-heads-rice-Oryza-sativa.jpg",
+        rice: "https://cdn.britannica.com/89/140889-050-EC3F00BF/Ripening-heads-rice-Oryza-sativa.jpg",
         Jowar:
           "https://i0.wp.com/www.svaguna.com/wp-content/uploads/2019/08/Jowar.jpg?fit=600%2C400&ssl=1",
-        Bajra:
+        bajra:
           "https://karthickorganics.com/wp-content/uploads/2023/11/bajra.webp",
-        Chickpeas:
+        chickpeas:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI2UdrUCYD-xy6Fherf3RMmzBbjBklVKPR-A&s",
         "Mung Beans":
           "https://cdn.britannica.com/12/158012-050-F79D3126/mung-beans-dishes-desserts-soups.jpg",
-        Peas: "https://media.post.rvohealth.io/wp-content/uploads/2020/09/green-peas-thumb-1-732x549.jpg",
-        Ragi: "https://5.imimg.com/data5/SELLER/Default/2022/9/ZB/GS/FR/25008022/jiwa-organic-ragi-flour.jpg",
-        Maize:
+        peas: "https://media.post.rvohealth.io/wp-content/uploads/2020/09/green-peas-thumb-1-732x549.jpg",
+        ragi: "https://5.imimg.com/data5/SELLER/Default/2022/9/ZB/GS/FR/25008022/jiwa-organic-ragi-flour.jpg",
+        maize:
           "https://5.imimg.com/data5/BB/IW/MY-28079104/organic-yellow-maize.jpg",
-        Millets:
+        millets:
           "https://sonkan.in/wp-content/uploads/2023/09/From-Farm-to-Table_-Tracing-the-Journey-of-Millets-in-Indian-Markets-930x614.webp",
-        Barley:
+        barley:
           "https://cdn-prod.medicalnewstoday.com/content/images/articles/295/295268/barley-grains-in-a-wooden-bowl.jpg",
-        Grapes:
+        grapes:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTUNelf6LWd4fNNrJDDXZRgxv9n4JnMDkx3Q&s",
       };
       // Function to get query parameters
@@ -510,7 +510,7 @@
                   (crop) => `
           <div class="swiper-slide">
             <div class="title" data-swiper-parallax="-300">${crop}</div>
-            <img src="${cropsImages[crop]}" alt="${crop}" />
+            <img src="${cropsImages[crop.toLowerCase()]}" alt="${crop}" />
           </div>`
                 )
                 .join("");
