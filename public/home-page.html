@@ -488,10 +488,10 @@
   </footer>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
     integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
     integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -501,6 +501,40 @@
     // function redirectToPage(url) {
     //   window.location.href = url;
     // }
+
+    // lenis scroll
+    const lenis = new Lenis()
+
+    // lenis.on('scroll', (e) => {
+    //   console.log(e)
+    // })
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+    // const myIntro = new SplitType(".intro")
+    //gsap timeline
+    let t1 =gsap.timeline({
+      scrollTrigger:{
+        trigger: '.intro',
+        start: '-90 center',
+        end: 'bottom center',
+        scrub: true,
+        markers: false
+      }
+    });
+
+    t1.from('.intro h1', {
+      y:400
+    }).from('.intro p', {
+      y:400
+    })
+
+
     var swiper = new Swiper(".mySwiper", {
       effect: "coverflow",
       grabCursor: true,
@@ -522,14 +556,21 @@
       },
     });
 
+    // splitwise / splittype code
     const myText = new SplitType(".title")
 
+    //gsap
     gsap.to('.char', {
       y: 0,
       stagger: 0.05,
       delay: 0.2,
       duration: 0.1
     })
+
+    // swiper js code
+
+
+    //login code
     const user = localStorage.getItem("uid");
     if (user) {
       const buttons = document.getElementsByClassName("button")[0];
@@ -554,8 +595,9 @@
           </button>
         </a>`
     }
+
+    //
   </script>
 </body>
-
 
 </html>
