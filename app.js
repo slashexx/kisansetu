@@ -201,6 +201,9 @@ app.get("/contract-form", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "contract_form.html"));
 });
 
+app.get('/secure/sendeth', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'afterButton.html'));
+})
 app.get("/register", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "form.html"));
 });

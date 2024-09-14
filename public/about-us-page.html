@@ -343,25 +343,43 @@
     t1.from('.content-block-1 h2', {
       x: -60000
     }).from('.content-block-1 p', {
-      x: -800
+      x: -8000
     })
 
     let t2 = gsap.timeline({
       scrollTrigger: {
-        trigger: '.content-block-1',
-        start: '50% center',
-        end: '30% center',
+        trigger: '.content-block-1 p',
+        start: '190% center',
+        end: '500% center',
         scrub: true,
-        markers: true
+        markers: false
       }
     });
 
     t2.from('.content-block-2 h2', {
       x: -60000
     }).from('.content-block-2 p', {
-      x: -800
+      x: -8000
     }).from('.content-block-2 ul', {
-      x:-800
+      x:-8000
+    })
+
+    let t3 = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.content-block-2 p',
+        start: '220% center',
+        end: '700% center',
+        scrub: true,
+        markers: false
+      }
+    });
+
+    t3.from('.content-block-3 h2', {
+      x: -60000
+    }).from('.content-block-3 p', {
+      x: -8000
+    }).from('.content-block-3 ul', {
+      x:-8000
     })
     // document.addEventListener("DOMContentLoaded", function () {
     //   const navLinks = document.querySelectorAll(".nav-bar ul li a");
