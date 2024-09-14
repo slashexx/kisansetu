@@ -276,6 +276,18 @@
     scrollbar-width: thin;
     scrollbar-color: #4CAF50 #f1f1f1;
   }
+  .slide-title {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      z-index: 10;
+    }
 </style>
 
 <body>
@@ -388,6 +400,7 @@
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide farmer-btn">
+            <div class="slide-title">Check Farmers</div>
             <a href="farmers-page.html">
               <button class="farmer-btn">
                 Check Farmers
@@ -398,6 +411,7 @@
             </a>
           </div>
           <div class="swiper-slide">
+            <div class="slide-title">Check Crops</div>
             <a href="crops-page.html">
               <button class="crop-btn">
                 Buy Crops
@@ -408,6 +422,7 @@
             </a>
           </div>
           <div class="swiper-slide">
+            <div class="slide-title">About Us</div>
             <a href="about-us-page.html">
               <button class="about-btn">
                 About Us
