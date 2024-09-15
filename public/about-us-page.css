@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -260,7 +260,7 @@ body {
 /* Hero section styling */
 /* Hero section styling */
 .hero {
-    background-image: url('./images/hero-image-3.jpg');
+    /* background-image: url('./images/hero-image-3.jpg'); */
     background-size: cover;
     /* background-position: center center; */
     background-repeat: no-repeat;
@@ -273,6 +273,34 @@ body {
     border-bottom: 4px solid #ddd;
     margin-bottom: 40px;
     height: 400px;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Full viewport height */
+    overflow: hidden;
+    /* Hide overflow to keep the video in place */
+    padding: 100px 20px;
+    text-align: center;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    /* Stronger shadow for visibility */
+    border-bottom: 4px solid #ddd;
+    margin-bottom: 40px;
+    height: 400px;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Cover the entire section */
+    z-index: -1;
+    /* Ensure the video is behind the content */
 }
 
 .hero h1 {
@@ -302,7 +330,7 @@ body {
     padding: 20px 0;
 }
 
-.content-block {
+.content-block-1, .content-block-2,.content-block-3{
     background: #fff;
     /* White background for content blocks */
     border: 1px solid #ddd;
@@ -313,7 +341,7 @@ body {
     /* Light shadow for depth */
 }
 
-.content-block h2 {
+.content-block-1 h2,.content-block-2 h2,.content-block-3 h2 {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     margin-top: 0;
@@ -322,21 +350,21 @@ body {
     /* Dark blue for headings */
 }
 
-.content-block p,
+.content-block-1 p,.content-block-2 p,.content-block-3 p,
 b {
     font-family: 'Merriweather', serif;
     font-size: 18px;
     line-height: 1.6;
 }
 
-.content-block ul {
+.content-block-2 ul {
     text-decoration: none;
     font-family: 'Merriweather', serif;
     font-size: 18px;
     line-height: 1.6;
 }
 
-.content-block ul {
+.content-block-2 ul {
     text-decoration: none;
 }
 

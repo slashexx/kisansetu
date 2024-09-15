@@ -36,12 +36,15 @@ function displayUserDetails() {
         getDoc(userDocRef).then((docSnapshot) => {
             if (docSnapshot.exists()) {
                 const userData = docSnapshot.data();
-                document.getElementById('userName').innerText = userData.name;
+                // document.getElementById('userName').innerText = userData.name;
+                document.querySelectorAll('#userName')[0].innerText = userData.name;
+                document.querySelectorAll('#userName')[1].innerText = userData.name;
                 document.getElementById('userOccupation').innerText = userData.occupation;
                 document.getElementById('userState').innerText = userData.state;
                 document.getElementById('userPhoneNo').innerText = userData.phoneNo;
                 document.getElementById('userAadhar').innerText = userData.aadhar;
                 document.getElementById('userEmail').innerText = userData.email;
+                document.getElementById("userImage").src = userData.image;
             } else {
                 alert("You need to signup first ! Redirecting...");
                 window.location.href = '/signup';

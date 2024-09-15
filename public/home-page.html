@@ -276,6 +276,19 @@
     scrollbar-width: thin;
     scrollbar-color: #4CAF50 #f1f1f1;
   }
+
+  .slide-title {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 10;
+  }
 </style>
 
 <body>
@@ -365,7 +378,10 @@
           </a>
         </div>
       </nav>
-      <h1 class="title">
+      <!-- <div id="google_translate_element">
+
+      </div> -->
+      <h1 class="title" translate="no">
         KisanSetu
       </h1>
     </div>
@@ -388,6 +404,7 @@
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide farmer-btn">
+            <div class="slide-title">Check Farmers</div>
             <a href="farmers-page.html">
               <button class="farmer-btn">
                 Check Farmers
@@ -398,6 +415,7 @@
             </a>
           </div>
           <div class="swiper-slide">
+            <div class="slide-title">Check Crops</div>
             <a href="crops-page.html">
               <button class="crop-btn">
                 Buy Crops
@@ -408,6 +426,7 @@
             </a>
           </div>
           <div class="swiper-slide">
+            <div class="slide-title">About Us</div>
             <a href="about-us-page.html">
               <button class="about-btn">
                 About Us
@@ -478,6 +497,7 @@
       </div>
     </div>
   </div>
+  <div id="google_translate_element"></div>
   <footer>
     <p>&copy; 2024 KisanSetu. All Rights Reserved.</p>
     <div class="footer-links">
@@ -488,19 +508,73 @@
   </footer>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
     integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
     integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="bot.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+  <script>
+    function loadGoogleTranslate() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',  // Specify the default page language
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,  // Choose layout
+      }, 'google_translate_element');  // The ID of the element where the widget will be rendered
+    }
+
+    window.addEventListener('load', function () {
+      setTimeout(loadGoogleTranslate, 500);  // Adding a slight delay to ensure proper load
+    });
+
+    function setLanguage(lang) {
+      localStorage.setItem('googleTranslateLanguage', lang);
+      window.location.reload();
+    }
+  </script>
+
+
   <script>
     // function redirectToPage(url) {
     //   window.location.href = url;
     // }
+
+    // lenis scroll
+    const lenis = new Lenis()
+
+    // lenis.on('scroll', (e) => {
+    //   console.log(e)
+    // })
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+    // const myIntro = new SplitType(".intro")
+    //gsap timeline
+    let t1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.intro',
+        start: '-90 center',
+        end: 'bottom center',
+        scrub: true,
+        markers: false
+      }
+    });
+
+    t1.from('.intro h1', {
+      x: -800
+    }).from('.intro p', {
+      y: 400
+    })
+
+
     var swiper = new Swiper(".mySwiper", {
       effect: "coverflow",
       grabCursor: true,
@@ -522,14 +596,21 @@
       },
     });
 
+    // splitwise / splittype code
     const myText = new SplitType(".title")
 
+    //gsap
     gsap.to('.char', {
       y: 0,
       stagger: 0.05,
       delay: 0.2,
       duration: 0.1
     })
+
+    // swiper js code
+
+
+    //login code
     const user = localStorage.getItem("uid");
     if (user) {
       const buttons = document.getElementsByClassName("button")[0];
@@ -554,8 +635,9 @@
           </button>
         </a>`
     }
+
+    //
   </script>
 </body>
-
 
 </html>
