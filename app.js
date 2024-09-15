@@ -25,6 +25,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const DATA_FILE = path.join(__dirname, './public/farmers-details.json');
 const BUYERS_FILE_PATH= path.join(__dirname, './public/buyers.json');
+const DATA_FILE_DISPLAY=path.join(__dirname, './public/farmers.json');
 app.use(express.static(path.join(__dirname, "public")));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -184,9 +185,25 @@ app.post("/assistance", async (req, res) => {
 
   res.json({ text });
 });
-
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "home-page.html"));
+let uid;
+app.post("/get-uid",(req,res)=>{
+  uid=req.body.user;
+  res.redirect('/')
+})
+app.get("/", async(req, res) => {
+  // const farmers=await getFarmersData();
+  // console.log(uid);
+  // if(uid) {
+  //   const farmer=findFarmerById(uid,farmers);
+  //   if(farmer){
+  //     console.log("fameris here")
+  //   res.render("home-page.ejs",{isFarmer:'true',farmerId:farmer.farmerId})
+  //   }else{
+  //     res.render("home-page.ejs",{isFarmer:'false',farmerId:null})
+  //   }
+  // }
+  // else res.render("home-page.ejs",{isFarmer:'false',farmerId:null})
+  res.render("home-page.ejs")
 });
 
 app.get("/signup", (req, res) => {
@@ -313,6 +330,27 @@ async function writeFarmersData(data) {
   try {
     const content = JSON.stringify(data, null, 2);
     await fs.writeFile(DATA_FILE, content, 'utf-8');
+  } catch (err) {
+    console.error('Error writing data file:', err);
+    throw err;
+  }
+}
+
+async function getFarmersDataForDisplay() {
+  try {
+    const fileContent = await fs.readFile(DATA_FILE_DISPLAY, 'utf-8');
+    return JSON.parse(fileContent);
+  } catch (err) {
+    console.error('Error reading or parsing data file:', err);
+    throw err;
+  }
+}
+
+// Function to write farmers data
+async function writeFarmersDataForDisplay(data) {
+  try {
+    const content = JSON.stringify(data, null, 2);
+    await fs.writeFile(DATA_FILE_DISPLAY, content, 'utf-8');
   } catch (err) {
     console.error('Error writing data file:', err);
     throw err;
@@ -463,6 +501,44 @@ app.post("/buyer/chat/:id", async (req, res) => {
   // console.log(farmerChats);
   res.send(data);
 });
+
+app.post("/add-user",async(req,res)=>{
+  console.log(req.body);
+  if(req.body.occupation=='Buyer'){
+    const allBuyers=await getBuyersData();
+ const data={"id":req.body.uid,"username":req.body.name,messages:{}}
+  allBuyers.push(data)
+  await writeBuyersData(allBuyers)
+  }else if(req.body.occupation=='Farmer'){
+    const allFarmers=await getFarmersData();
+    const allFarmersDisplay=await getFarmersDataForDisplay();
+    const data={
+      "farmerId": req.body.uid,
+      "name": req.body.name,
+      "state": req.body.state,
+      "cropsGrown": req.body.cropsGrown,
+      "postalCode":req.body.postalCode,
+      "address":req.body.address,
+      "produceAmount": req.body.amountProduced,
+      "image": String(req.body.imageUrl),
+      "governmentVerified": req.body.governmentVerified,
+      messages:{}
+    }
+    const displayData={
+      "id": req.body.uid,
+      "name": req.body.name,
+      "state": req.body.state,
+      "cropsGrown": req.body.cropsGrown,
+      "produceAmount": req.body.amountProduced,
+      "image": String(req.body.imageUrl),
+      "governmentVerified": req.body.governmentVerified,}
+    allFarmers.push(data);
+    allFarmersDisplay.push(displayData);
+    await writeFarmersData(allFarmers)
+    await writeFarmersDataForDisplay(allFarmersDisplay);
+  }
+  
+})
 
 
 // WebSocket connection handling

@@ -38,6 +38,11 @@ document.getElementById('details-form').addEventListener('submit', async (e) => 
     const accountNo = document.getElementById('accountNo').value;
     const ifsc = document.getElementById('ifsc').value;
     const accountHolderName = document.getElementById('accountHolderName').value;
+    if(occupation=='Farmer'){
+        localStorage.setItem('isFarmer',true)
+    }else{
+        localStorage.setItem('isFarmer',false)
+    }
 
     try {
         // Upload image to Firebase Storage and get URL
@@ -65,6 +70,25 @@ document.getElementById('details-form').addEventListener('submit', async (e) => 
         });
 
         alert("Details submitted successfully!");
+        fetch('/add-user', {
+            method: 'POST', // Define the method as POST
+            headers: {
+              'Content-Type': 'application/json' // Indicate that you're sending JSON
+            },
+            body: JSON.stringify({name,occupation,uid,cropsGrown,postalCode,address,imageURL,state,amountProduced,"governmentVerified":false}) // Convert the data object to a JSON string
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json(); // Parse the JSON response from the server
+          })
+          .then(responseData => {
+            console.log('Success:', responseData); // Handle the response data
+          })
+          .catch(error => {
+            console.error('Error:', error); // Handle any errors
+          });
         window.location.href = "/dashboard.html";
     } catch (error) {
         console.error("Error submitting details:", error);

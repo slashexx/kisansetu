@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KisanSetu</title>
+  <link rel="shortcut icon" href="./images/favicon.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="home-page.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+  /* From Uiverse.io by ryota1231 */
+  .animated-button {
+    backdrop-filter: blur(10px);
+    background-color: transparent;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 30px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 12px;
+    /* background-color: ; */
+    border-radius: 100px;
+    font-weight: 600;
+    color: #000;
+    font: bold;
+    box-shadow: 0 0 0 2px #ffffff;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .animated-button svg {
+    position: absolute;
+    width: 24px;
+    fill: #000;
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .animated-button .arr-1 {
+    right: 16px;
+  }
+
+  .animated-button .arr-2 {
+    left: -25%;
+  }
+
+  .animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #c5e5e4;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #212121;
+    border-radius: 12px;
+  }
+
+  .animated-button:hover .arr-1 {
+    right: -25%;
+  }
+
+  .animated-button:hover .arr-2 {
+    left: 16px;
+  }
+
+  .animated-button:hover .text {
+    transform: translateX(12px);
+  }
+
+  .animated-button:hover svg {
+    fill: #1f387e;
+  }
+
+  .animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px greenyellow;
+  }
+
+  .animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .button {
+    display: flex;
+    margin-top: 48px;
+    justify-content: space-between;
+    width: 220px;
+  }
+
+  .header {
+    z-index: 10;
+  }
+
+  .container {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+  }
+
+  .nav-bar {
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    /* Sends the video behind other content */
+  }
+
+  .arr-1,
+  .arr-2 {
+    color: white;
+  }
+
+  .arr-2 {
+    color: white;
+  }
+
+  .radio-input+.radio-tile {
+    appearance: none;
+    background: transparent;
+    /* border-color: #2260ff; */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    /* color: #2260ff; */
+  }
+
+  .radio-icon img {
+    filter: grayscale(100%);
+  }
+
+  .radio-tile {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .radio-label {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .title {
+    letter-spacing: 5px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    position: absolute;
+    bottom: 0;
+    color: #ffffff;
+    margin-left: 20%;
+    font-size: 18vw;
+  }
+
+  .char {
+    transform: translateY(400px);
+    transition: transform 0.5s;
+  }
+
+  .swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 600px;
+    height: 500px;
+  }
+
+  .swiper-slide video {
+    display: block;
+    width: 100%;
+  }
+
+  footer {
+    background-color: #333;
+    height: 100px;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+  }
+
+  footer .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+  footer p {
+    margin-bottom: 25px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Light gray background for the track */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #4CAF50;
+    /* Green thumb color */
+    border-radius: 6px;
+    /* Rounded scrollbar edges */
+    border: 3px solid #f1f1f1;
+    /* Border to match track background */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #45a049;
+    /* Darker green on hover */
+  }
+
+  /* For Firefox */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #4CAF50 #f1f1f1;
+  }
+
+  .slide-title {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 10;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <video src="./videos/Farmer Playback Video.mp4" autoplay muted loop class="background-video"></video>
+      <nav class="nav-bar">
+        <a href="home-page.html">
+          <img src="./images/farmer-logo-removebg-preview.png" alt="logo" class="logo" />
+        </a>
+        <ul class="nav-links">
+          <div class="radio-inputs">
+            <label>
+              <input class="radio-input" type="radio" name="engine" onclick="window.location.href='home-page.html';"
+                checked>
+              <span class="radio-tile">
+                <span class="radio-icon">
+                  <img src="https://img.icons8.com/?size=100&id=z6m63h25vYs2&format=png&color=000000" alt="">
+                </span>
+                <span class="radio-label">Home</span>
+              </span>
+            </label>
+            <label>
+              <input class="radio-input" type="radio" value="https://www.example.com/page1" id="page1" name="engine"
+                onclick="window.location.href='farmers-page.html';">
+              <span class="radio-tile">
+                <span class="radio-icon">
+                  <img src="https://img.icons8.com/?size=100&id=47584&format=png&color=000000" alt="">
+                </span>
+                <span class="radio-label">Farmer</span>
+              </span>
+            </label>
+            <label>
+              <input class="radio-input" type="radio" name="engine" onclick="window.location.href='crops-page.html';">
+              <span class="radio-tile">
+                <span class="radio-icon">
+                  <img src="https://img.icons8.com/?size=100&id=1832&format=png&color=000000" alt=""
+                    onclick="window.location.href='home-page.html';">
+                </span>
+                <span class="radio-label">Crops</span>
+              </span>
+            </label>
+            <label>
+              <input class="radio-input" type="radio" name="engine"
+                onclick="window.location.href='about-us-page.html';">
+              <span class="radio-tile">
+                <span class="radio-icon">
+                  <img src="https://img.icons8.com/?size=100&id=3439&format=png&color=000000" alt="">
+                </span>
+                <span class="radio-label">About Us</span>
+              </span>
+            </label>
+          </div>
+        </ul>
+        <div class="button">
+          <a href="./signup.html">
+            <button class="animated-button">
+              <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+              </svg>
+              <span class="text">Sign Up</span>
+              <span class="circle"></span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+              </svg>
+            </button>
+          </a>
+          <a href="./login.html">
+            <button class="animated-button">
+              <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+              </svg>
+              <span class="text">Login</span>
+              <span class="circle"></span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                </path>
+              </svg>
+            </button>
+          </a>
+        </div>
+      </nav>
+      <!-- <div id="google_translate_element">
+
+      </div> -->
+      <h1 class="title" translate="no">
+        KisanSetu
+      </h1>
+    </div>
+  </div>
+  <div class="page-1">
+    <div class="intro">
+      <h1>Welcome to KisanSetu</h1>
+      <p>
+        Welcome to KisanSetu, the platform that bridges the gap between farmers
+        and buyers, offering fresh, locally-sourced produce directly from the
+        field to your doorstep. Our mission is to empower farmers by providing
+        them with a fair marketplace, while giving buyers access to quality,
+        sustainable, and affordable products. Whether you're a consumer
+        looking for fresh goods or a farmer eager to expand your reach,
+        KisanSetu makes the connection seamless, transparent, and beneficial
+        for all.
+      </p>
+    </div>
+    <div class="redirect-links">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide farmer-btn">
+            <div class="slide-title">Check Farmers</div>
+            <a href="farmers-page.html">
+              <button class="farmer-btn">
+                Check Farmers
+                <video class="button-video" autoplay loop muted>
+                  <source src="./videos/farmer-video.mp4" type="video/mp4">
+                </video>
+              </button>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide-title">Check Crops</div>
+            <a href="crops-page.html">
+              <button class="crop-btn">
+                Buy Crops
+                <video class="button-video" autoplay loop muted>
+                  <source src="./videos/crops-1.mp4" type="video/mp4">
+                </video>
+              </button>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide-title">About Us</div>
+            <a href="about-us-page.html">
+              <button class="about-btn">
+                About Us
+                <video class="button-video" autoplay loop muted>
+                  <source src="./videos/Teamwork joining hand Free use footage.mp4" type="video/mp4">
+                </video>
+              </button>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- <div class="swiper-pagination"></div> -->
+      </div>
+      <div class="center-container">
+        <!-- <div >
+
+          <a href="farmers-page.html">
+            <button class="farmer-btn">
+              Check Farmers
+              <video class="button-video" autoplay loop muted>
+                <source src="./videos/farmer-video.mp4" type="video/mp4">
+              </video>
+            </button>
+          </a>
+        </div> -->
+        <img src="./images/bot.svg" id="bot-img" alt="" height="50px" width="50px" style="border-radius: 10px" />
+        <div class="ai-bot">
+          <div class="content">
+            <div class="chat-container">
+              <div id="chat-messages"></div>
+              <div class="user-prompt">
+                <textarea id="userInput" rows="1" class="textarea"
+                  placeholder="किसानसेतु का उपयोग कैसे करें?"></textarea>
+                <div class="lang-select">
+                  <select id="languageSelect">
+                    <option value="english">English</option>
+                    <option value="hindi">Hindi</option>
+                  </select>
+                </div>
+
+                <img id="enterIcon" src="images/send.svg" alt="" class="enter-icon" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div>
+
+          <a href="crops-page.html">
+            <button class="crop-btn">
+              Buy Crops
+              <video class="button-video" autoplay loop muted>
+                <source src="./videos/crops-1.mp4" type="video/mp4">
+              </video>
+            </button>
+          </a>
+        </div> -->
+        <!-- <div>
+          <a href="about-us-page.html">
+            <button class="about-btn">
+              About Us
+              <video class="button-video" autoplay loop muted>
+                <source src="./videos/Teamwork joining hand Free use footage.mp4" type="video/mp4">
+              </video>
+            </button>
+          </a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <div id="google_translate_element"></div>
+  <footer>
+    <p>&copy; 2024 KisanSetu. All Rights Reserved.</p>
+    <div class="footer-links">
+      <a href="home-page.html">Home</a>
+      <a href="about-us-page.html">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="bot.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+  <script>
+    function loadGoogleTranslate() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',  // Specify the default page language
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,  // Choose layout
+      }, 'google_translate_element');  // The ID of the element where the widget will be rendered
+    }
+
+    window.addEventListener('load', function () {
+      setTimeout(loadGoogleTranslate, 500);  // Adding a slight delay to ensure proper load
+    });
+
+    function setLanguage(lang) {
+      localStorage.setItem('googleTranslateLanguage', lang);
+      window.location.reload();
+    }
+  </script>
+
+
+  <script>
+    // function redirectToPage(url) {
+    //   window.location.href = url;
+    // }
+
+    // lenis scroll
+    const lenis = new Lenis()
+
+    // lenis.on('scroll', (e) => {
+    //   console.log(e)
+    // })
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+    // const myIntro = new SplitType(".intro")
+    //gsap timeline
+    let t1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.intro',
+        start: '-90 center',
+        end: 'bottom center',
+        scrub: true,
+        markers: false
+      }
+    });
+
+    t1.from('.intro h1', {
+      x: -800
+    }).from('.intro p', {
+      y: 400
+    })
+
+
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+
+    // splitwise / splittype code
+    const myText = new SplitType(".title")
+
+    //gsap
+    gsap.to('.char', {
+      y: 0,
+      stagger: 0.05,
+      delay: 0.2,
+      duration: 0.1
+    })
+
+    // swiper js code
+
+    // Ensure farmerId and isFarmer are correctly formatted as strings
+
+// Login code
+const user = localStorage.getItem("uid");
+const isFarmer=localStorage.getItem("isFarmer")
+console.log(isFarmer)
+if (user) {
+    const buttons = document.getElementsByClassName("button")[0];
+    buttons.innerHTML = `
+        <a href="/dashboard">
+            <button class="animated-button">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="arr-2"
+                    viewBox="0 0 24 24"
+                >
+                    <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                </svg>
+                <span class="text">Logout</span>
+                <span class="circle"></span>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="arr-1"
+                    viewBox="0 0 24 24"
+                >
+                    <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                </svg>
+            </button>
+        </a>`;
+}
+
+if (isFarmer==='true') {
+    console.log("hello");
+    const buttons = document.getElementsByClassName("button")[0];
+    buttons.innerHTML += `
+        <a href="/buyers/${user}">
+            <button class="animated-button">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="arr-2"
+                    viewBox="0 0 24 24"
+                >
+                    <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                </svg>
+                <span class="text">Buyers</span>
+                <span class="circle"></span>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="arr-1"
+                    viewBox="0 0 24 24"
+                >
+                    <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                </svg>
+            </button>
+        </a>`;
+}
+
+// if (!user) {
+//     fetch('/get-uid', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({ user })
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log('Success:', data);
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//     });
+// }
+
+    
+
+    //
+  </script>
+</body>
+
+</html>
