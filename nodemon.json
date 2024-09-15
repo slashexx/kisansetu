@@ -1,0 +1,9 @@
+{
+    "ignore": [
+      "./public/buyers.json",
+      "./public/farmers-details.json",
+      "./public/farmers.json",
+      "node_modules/**"
+    ]
+  }
+  
