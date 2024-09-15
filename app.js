@@ -363,9 +363,14 @@ app.get("/buyers/:id",async(req,res)=>{
   const currFarmer=findFarmerById(id,farmers);
   const farmersBuyer=[];
   for(let keys in currFarmer.messages){
-    farmersBuyer.push(findBuyerById(keys,buyers))
+    console.log(keys)
+    const isBuyer=findBuyerById(keys,buyers)
+    if(isBuyer){
+      farmersBuyer.push(isBuyer)
+    }
   }
   console.log (farmersBuyer)
+  
   res.render("buyersList.ejs",{farmersBuyer,id})
 
 })
@@ -436,7 +441,7 @@ app.get("/buyer/chat/:id", async (req, res) => {
   const buyers=await getBuyersData()
   const farmer = findFarmerById(id, farmers);
   const buyer=findBuyerById(chatBetween,buyers)
-  console.log(farmer);
+  console.log(buyer);
   
   let messages = [];
   if(farmer.messages[chatBetween]) messages=farmer.messages[chatBetween]

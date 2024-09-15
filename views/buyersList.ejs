@@ -54,8 +54,11 @@
 <body>
     <% farmersBuyer.forEach(element => {%>
         <div>
-            <%= element.username %>
-            <button onclick="onChat('<%= element.id %>','<%=id %>')">Chat</button>
+            <% if ( element.username ) { %>
+                <%= element.username %>
+                <button onclick="onChat('<%= element.id %>','<%=id %>')">Chat</button>
+            <% } %>
+           
         </div>
     <% }); %>
     

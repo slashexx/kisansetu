@@ -158,13 +158,27 @@
         {
           "to": "ya sure"
         }
+      ],
+      "6": [
+        {
+          "to": "hello"
+        }
       ]
     }
   },
   {
-    "id": 2,
+    "id": "hVmU1EnvSKPHsyaAY1IhaMHyLu93",
     "username": "jane_smith",
-    "messages": {}
+    "messages": {
+      "1": [
+        {
+          "to": "hwllo"
+        },
+        {
+          "to": "how are you"
+        }
+      ]
+    }
   },
   {
     "id": 3,
