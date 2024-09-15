@@ -1,53 +1,58 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KisanSetu</title>
-    <link rel="shortcut icon" href="./images/favicon.jpg" type="image/x-icon" />
-    <link rel="stylesheet" href="signup.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="main">
-      <form id="signup-form">
-        <h1><u>SIGNUP</u></h1>
-        <h5>Enter Email</h5>
-        <div class="input-box">
-          <input type="email" id="email" placeholder="Email" required />
-        </div>
-        <h5>Enter Password</h5>
-        <div class="input-box">
-          <input
-            type="password"
-            id="password"
-            placeholder="Password"
-            required
-          />
-        </div>
-        <button type="submit" class="sign-up">Sign Up</button>
-        <p>Already have an account? <a href="login.html">Login!</a></p>
-        <p>Or, continue as a <a href="home-page.html">Guest</a></p>
-        <button id="google-sign-up">
-          <img src="../public/images/google-logo.jpg" alt="" />Google
-        </button>
-      </form>
-    </div>
-    <div id="message"></div>
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
-    <script type="module" src="./Javascript/auth.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KisanSetu</title>
+  <link rel="shortcut icon" href="./images/favicon.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="signup.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<style>
+  .video-bg {
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    z-index: -1;
+  }
+</style>
+
+<body>
+  <video class="video-bg" autoplay muted loop>
+    <source src="./videos/partbg.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="main">
+    <form id="signup-form">
+      <h1><u>SIGNUP</u></h1>
+      <h5>Enter Email</h5>
+      <div class="input-box">
+        <input type="email" id="email" placeholder="Email" required />
+      </div>
+      <h5>Enter Password</h5>
+      <div class="input-box">
+        <input type="password" id="password" placeholder="Password" required />
+      </div>
+      <button type="submit" class="sign-up">Sign Up</button>
+      <p>Already have an account? <a href="login.html">Login!</a></p>
+      <p>Or, continue as a <a href="home-page.html">Guest</a></p>
+      <button id="google-sign-up">
+        <img src="../public/images/google-logo.jpg" alt="" />Google
+      </button>
+    </form>
+  </div>
+  <div id="message"></div>
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+  <script type="module" src="./Javascript/auth.js"></script>
+</body>
+
 </html>

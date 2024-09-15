@@ -1,47 +1,54 @@
 <!doctype html>
 <html>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KisanSetu</title>
+<link rel="shortcut icon" href="./images/favicon.jpg" type="image/x-icon" />
+<link rel="stylesheet" href="login.css" />
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KisanSetu</title>
-  <link rel="shortcut icon" href="./images/favicon.jpg" type="image/x-icon" />
-  <link rel="stylesheet" href="login.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <title>Login</title>
+</head>
+<style>
+  .video-bg {
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    z-index: -1;
+  }
+</style>
 
-  <head>
-    <meta charset="UTF-8" />
-    <title>login</title>
-  </head>
+<body>
+  <video class="video-bg" autoplay muted loop>
+    <source src="./videos/partbg.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="main">
+    <form action="">
+      <h1><u>LOGIN</u></h1>
+      <h5>Enter Email</h5>
+      <div class="input-box">
+        <input type="text" placeholder="Username" required />
+      </div>
+      <h5>Enter Password</h5>
+      <div class="input-box">
+        <input type="password" placeholder="Password" required />
+      </div>
+      <button type="submit" class="login-button">Login</button>
+      <p>Do not have an account?<a href="signup.html">Signup!</a></p>
+      <p>or,continue as a <a href="home-page.html">Guest</a></p>
+      <button id="google-sign-up">
+        <img src="../public/images/google-logo.jpg" alt="" />Google
+      </button>
+    </form>
+  </div>
+</body>
 
-  <body>
-    <div class="main">
-      <form action="">
-        <h1><u>LOGIN</u></h1>
-        <h5>Enter Email</h5>
-        <div class="input-box">
-          <input type="text" placeholder="Username" required />
-        </div>
-        <h5>Enter Password</h5>
-        <div class="input-box">
-          <input type="password" placeholder="Password" required />
-        </div>
-        <button type="submit" class="login-button">Login</button>
-        <p>Do not have an account?<a href="signup.html">Signup!</a></p>
-        <p>or,continue as a <a href="home-page.html">Guest</a></p>
-        <button id="google-sign-up">
-          <img src="../public/images/google-logo.jpg" alt="" />Google
-        </button>
-      </form>
-    </div>
-  </body>
 </html>
