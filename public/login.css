@@ -41,7 +41,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url(./images/bg.jpeg);
+  /* background-image: url(./images/bg.jpeg); */
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
