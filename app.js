@@ -451,7 +451,8 @@ app.get("/chat/:id", async (req, res) => {
   console.log(farmer);
   
   let messages = [];
-  if(buyer.messages[parseInt(chatBetween)]) messages=buyer.messages[chatBetween]
+  console.log("chatbetween",chatBetween)
+  if(buyer.messages[chatBetween]) messages=buyer.messages[chatBetween]
   console.log(messages)
   
   res.render('message', {
