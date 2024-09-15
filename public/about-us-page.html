@@ -135,6 +135,48 @@
   footer p {
     margin-bottom: 25px;
   }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Light gray background for the track */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #4CAF50;
+    /* Green thumb color */
+    border-radius: 6px;
+    /* Rounded scrollbar edges */
+    border: 3px solid #f1f1f1;
+    /* Border to match track background */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #45a049;
+    /* Darker green on hover */
+  }
+
+  /* For Firefox */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #4CAF50 #f1f1f1;
+  }
+
+  .slide-title {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 10;
+  }
 </style>
 
 <body>
@@ -341,7 +383,7 @@
     });
 
     t1.from('.content-block-1 h2', {
-      x: -60000
+      x: -70000
     }).from('.content-block-1 p', {
       x: -8000
     })
@@ -361,7 +403,7 @@
     }).from('.content-block-2 p', {
       x: -8000
     }).from('.content-block-2 ul', {
-      x:-8000
+      x: -8000
     })
 
     let t3 = gsap.timeline({
@@ -379,7 +421,7 @@
     }).from('.content-block-3 p', {
       x: -8000
     }).from('.content-block-3 ul', {
-      x:-8000
+      x: -8000
     })
     // document.addEventListener("DOMContentLoaded", function () {
     //   const navLinks = document.querySelectorAll(".nav-bar ul li a");
