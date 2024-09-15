@@ -1,6 +1,6 @@
 [
   {
-    "id": "FJbnNVwBRKNXNJFIAbfZJYplK1D2",
+    "id": "xt3yLddE4JWdtA9ya4pphjfQ51V2",
     "username": "john_doe",
     "messages": {
       "1": [
@@ -125,6 +125,38 @@
         },
         {
           "from": "yes sir we can negotiate"
+        }
+      ],
+      "3": [
+        {
+          "to": "how much is chickpeas for"
+        },
+        {
+          "from": "50 per kilo"
+        },
+        {
+          "to": "okk"
+        },
+        {
+          "to": "how will you transport it"
+        },
+        {
+          "from": "i have people to send it"
+        },
+        {
+          "to": "nice"
+        },
+        {
+          "from": "are you interested in this deal"
+        },
+        {
+          "to": "yes"
+        },
+        {
+          "from": "so shall we make contract"
+        },
+        {
+          "to": "ya sure"
         }
       ]
     }

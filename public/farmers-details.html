@@ -577,7 +577,7 @@
       });
 
       // Chat button handler
-      async function openChat() {
+      window.openChat=async function openChat() {
         const userId = localStorage.getItem("uid");
         if (userId) {
           const farmerId = getQueryParam("farmerId");
