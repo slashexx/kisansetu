@@ -1,568 +1,654 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KisanSetu</title>
-  <link rel="shortcut icon" href="./images/favicon.jpg" type="image/x-icon" />
-  <link rel="stylesheet" href="rice-farmer.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-</head>
-<style>
-  /* From Uiverse.io by ryota1231 */
-  .animated-button {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    padding: 12px 30px;
-    border: 4px solid;
-    border-color: transparent;
-    font-size: 12px;
-    /* background-color: ; */
-    border-radius: 100px;
-    font-weight: 600;
-    color: #1f387e;
-    box-shadow: 0 0 0 2px #ffffff;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  .animated-button svg {
-    position: absolute;
-    width: 24px;
-    fill: #1f387e;
-    z-index: 9;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  .animated-button .arr-1 {
-    right: 16px;
-  }
-
-  .animated-button .arr-2 {
-    left: -25%;
-  }
-
-  .animated-button .circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
-    background-color: #c5e5e4;
-    border-radius: 50%;
-    opacity: 0;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  .animated-button .text {
-    position: relative;
-    z-index: 1;
-    transform: translateX(-12px);
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  .animated-button:hover {
-    box-shadow: 0 0 0 12px transparent;
-    color: #212121;
-    border-radius: 12px;
-  }
-
-  .animated-button:hover .arr-1 {
-    right: -25%;
-  }
-
-  .animated-button:hover .arr-2 {
-    left: 16px;
-  }
-
-  .animated-button:hover .text {
-    transform: translateX(12px);
-  }
-
-  .animated-button:hover svg {
-    fill: #1f387e;
-  }
-
-  .animated-button:active {
-    scale: 0.95;
-    box-shadow: 0 0 0 4px greenyellow;
-  }
-
-  .animated-button:hover .circle {
-    width: 220px;
-    height: 220px;
-    opacity: 1;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  .button {
-    display: flex;
-    margin-top: 50px;
-    justify-content: space-between;
-    width: 220px;
-  }
-
-  footer {
-    position: absolute;
-    /* bottom: 0; */
-    bottom: 0;
-    background-color: #333;
-    height: 100px;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    left: 0;
-    /* bottom: 0; */
-    width: 100%;
-  }
-
-  footer .footer-links a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-  }
-
-  footer .footer-links a:hover {
-    text-decoration: underline;
-  }
-
-  footer p {
-    margin-bottom: 25px;
-  }
-
-  ::-webkit-scrollbar {
-    width: 12px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    /* Light gray background for the track */
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: #4CAF50;
-    /* Green thumb color */
-    border-radius: 6px;
-    /* Rounded scrollbar edges */
-    border: 3px solid #f1f1f1;
-    /* Border to match track background */
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #45a049;
-    /* Darker green on hover */
-  }
-
-  /* For Firefox */
-  html {
-    scrollbar-width: thin;
-    scrollbar-color: #4CAF50 #f1f1f1;
-  }
-
-  .slide-title {
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: bold;
-    z-index: 10;
-  }
-  /* From Uiverse.io by vinodjangid07 */ 
-#button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: rgb(20, 20, 20);
-  border: none;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0px 0px 0px 1px rgba(1, 0, 6, 0.253);
-  cursor: pointer;
-  transition-duration: 0.3s;
-  overflow: hidden;
-  position: fixed;
-  bottom: 3rem;
-  right: 1.5rem;
-}
-
-.svgIcon {
-  width: 12px;
-  transition-duration: 0.3s;
-}
-
-.svgIcon path {
-  fill: white;
-}
-
-#button:hover {
-  width: 140px;
-  border-radius: 50px;
-  transition-duration: 0.3s;
-  background-color: #ccff00df;
-  align-items: center;
-}
-
-#button:hover .svgIcon {
-  /* width: 20px; */
-  transition-duration: 0.3s;
-  transform: translateY(-200%);
-}
-
-#button::before {
-  position: absolute;
-  bottom: -20px;
-  content: "Back to Top";
-  color: black;
-  /* transition-duration: .3s; */
-  font-size: 0px;
-}
-
-#button:hover::before {
-  font-size: 13px;
-  opacity: 1;
-  bottom: unset;
-  /* transform: translateY(-30px); */
-  transition-duration: 0.3s;
-}
-
-</style>
-
-<body>
-  <div class="header">
-    <nav class="nav-bar">
-      <a href="home-page.html">
-        <img src="./images/farmer-logo.png" alt="logo" class="logo" />
-      </a>
-      <ul class="nav-links">
-        <div class="radio-inputs">
-          <label>
-            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='home-page.html';" />
-            <span class="radio-tile">
-              <span class="radio-icon">
-                <img src="https://img.icons8.com/?size=100&id=z6m63h25vYs2&format=png&color=000000" alt="" />
-              </span>
-              <span class="radio-label">Home</span>
-            </span>
-          </label>
-          <label>
-            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='farmers-page.html';"
-              checked />
-            <span class="radio-tile">
-              <span class="radio-icon">
-                <img src="https://img.icons8.com/?size=100&id=47584&format=png&color=000000" alt="" />
-              </span>
-              <span class="radio-label">Farmer</span>
-            </span>
-          </label>
-          <label>
-            <input class="radio-input" type="radio" name="engine" onclick="window.location.href='crops-page.html';" />
-            <span class="radio-tile">
-              <span class="radio-icon">
-                <img src="https://img.icons8.com/?size=100&id=1832&format=png&color=000000" alt="" />
-              </span>
-              <span class="radio-label">Crops</span>
-            </span>
-          </label>
-          <label>
-            <input class="radio-input" type="radio" name="engine"
-              onclick="window.location.href='about-us-page.html';" />
-            <span class="radio-tile">
-              <span class="radio-icon">
-                <img src="https://img.icons8.com/?size=100&id=3439&format=png&color=000000" alt="" />
-              </span>
-              <span class="radio-label">About Us</span>
-            </span>
-          </label>
-        </div>
-      </ul>
-      <div class="button">
-        <a href="./signup.html">
-          <button class="animated-button">
-            <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
-              <path
-                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-              </path>
-            </svg>
-            <span class="text">Sign Up</span>
-            <span class="circle"></span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
-              <path
-                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-              </path>
-            </svg>
-          </button>
-        </a>
-        <a href="./login.html">
-          <button class="animated-button">
-            <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
-              <path
-                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-              </path>
-            </svg>
-            <span class="text">Login</span>
-            <span class="circle"></span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
-              <path
-                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
-              </path>
-            </svg>
-          </button>
-        </a>
-      </div>
-    </nav>
-  </div>
-  <div class="farmers-list">
-    <div class="top-page">
-      <h1>Browse farmers</h1>
-      <div class="navigation-container">
-        <div class="group">
-          <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
-            <g>
-              <path
-                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
-              </path>
-            </g>
-          </svg>
-
-          <input id="query searchBar" class="input" type="search" placeholder="Search..." name="searchbar" />
-        </div>
-        <a href="crops-page.html">
-          <button class="back-button">← Back</button>
-        </a>
-      </div>
-    </div>
-    <div class="loader">
-      <div class="boxes">
-        <div class="box">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div class="box">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div class="box">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div class="box">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-    </div>
-
-    <table id="farmer-data">
-      <thead>
-        <tr>
-          <th>Profile Picture</th>
-          <th>Name</th>
-          <th>State</th>
-          <th>Crop Type</th>
-          <th>Amount Produced</th>
-          <th>Government Verified</th>
-        </tr>
-      </thead>
-      <tbody id="farmer-table-body">
-        <!-- Farmer rows will be populated here -->
-      </tbody>
-    </table>
-  </div>
-  <div id="google_translate_element"></div>
-<button id="button" onclick="scrollToTop()">
-  <svg class="svgIcon" viewBox="0 0 384 512">
-    <path
-      d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
-    ></path>
-  </svg>
-</button>
-
-  <footer>
-    <p>&copy; 2024 KisanSetu. All Rights Reserved.</p>
-    <div class="footer-links">
-      <a href="home-page.html">Home</a>
-      <a href="about-us-page.html">About</a>
-      <a href="#">Contact</a>
-    </div>
-  </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-  <!-- <script type="module" src="farmers.js"></script> -->
-  <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
-  <script>
-    function loadGoogleTranslate() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',  // Specify the default page language
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,  // Choose layout
-      }, 'google_translate_element');  // The ID of the element where the widget will be rendered
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KisanSetu</title>
+    <link rel="shortcut icon" href="./images/favicon.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="rice-farmer.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    /* From Uiverse.io by ryota1231 */
+    .animated-button {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 12px 30px;
+      border: 4px solid;
+      border-color: transparent;
+      font-size: 12px;
+      /* background-color: ; */
+      border-radius: 100px;
+      font-weight: 600;
+      color: #1f387e;
+      box-shadow: 0 0 0 2px #ffffff;
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     }
 
-    window.addEventListener('load', function () {
-      setTimeout(loadGoogleTranslate, 500);  // Adding a slight delay to ensure proper load
-    });
-
-    function setLanguage(lang) {
-      localStorage.setItem('googleTranslateLanguage', lang);
-      window.location.reload();
+    .animated-button svg {
+      position: absolute;
+      width: 24px;
+      fill: #1f387e;
+      z-index: 9;
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     }
-  </script>
-  <script type="module">
-    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
-    import { getFirestore, doc, setDoc, getDoc, query, collection, where, getDocs } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyBNrhwRH5TeqAPyXmToaCGJ6St4g1FKOno",
-      authDomain: "kisansetu-1640.firebaseapp.com",
-      projectId: "kisansetu-1640",
-      storageBucket: "kisansetu-1640.appspot.com",
-      messagingSenderId: "763552320675",
-      appId: "1:763552320675:web:93cff2382387b7b5dc4316"
-    };
+    .animated-button .arr-1 {
+      right: 16px;
+    }
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
-    const googleProvider = new GoogleAuthProvider();
+    .animated-button .arr-2 {
+      left: -25%;
+    }
 
-    let farmers = [];
+    .animated-button .circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      background-color: #c5e5e4;
+      border-radius: 50%;
+      opacity: 0;
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
 
-    async function fetchFirestoreFarmers() {
-      const table = document.getElementById("farmer-data")
-      const loader = document.getElementsByClassName("boxes")[0];
-      loader.style.display = 'block';
-      table.style.display = 'none';
-      try {
-        const farmersQuery = query(collection(db, "users"), where("occupation", "==", "Farmer"));
-        const querySnapshot = await getDocs(farmersQuery);
+    .animated-button .text {
+      position: relative;
+      z-index: 1;
+      transform: translateX(-12px);
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
 
-        if (querySnapshot.empty) {
-          console.log("No matching farmers found.");
-          return;
-        }
+    .animated-button:hover {
+      box-shadow: 0 0 0 12px transparent;
+      color: #212121;
+      border-radius: 12px;
+    }
 
-        const firestoreFarmers = querySnapshot.docs.map(doc => ({
-          farmerId: doc.id,
-          ...doc.data()
-        }));
+    .animated-button:hover .arr-1 {
+      right: -25%;
+    }
 
-        // Merge with existing farmers data
-        farmers = [...farmers, ...firestoreFarmers];
-        const searchBar = document.querySelector("#query\\ searchBar");
-        searchBar.addEventListener("input", function () {
-          const searchTerm = searchBar.value.toLowerCase();
-          console.log(searchTerm)
-          displayFarmers(searchTerm);
-        });
-        console.log(farmers);
-        displayFarmers();
-      } catch (error) {
-        console.error("Error fetching farmers from Firestore:", error);
-      } finally {
-        loader.style.display = 'none';
-        table.style.display = 'block';
+    .animated-button:hover .arr-2 {
+      left: 16px;
+    }
+
+    .animated-button:hover .text {
+      transform: translateX(12px);
+    }
+
+    .animated-button:hover svg {
+      fill: #1f387e;
+    }
+
+    .animated-button:active {
+      scale: 0.95;
+      box-shadow: 0 0 0 4px greenyellow;
+    }
+
+    .animated-button:hover .circle {
+      width: 220px;
+      height: 220px;
+      opacity: 1;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .button {
+      display: flex;
+      margin-top: 50px;
+      justify-content: space-between;
+      width: 220px;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      background-color: #333;
+      height: 100px;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      left: 0;
+      width: 100%;
+    }
+
+    footer .footer-links a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    footer .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer p {
+      margin-bottom: 25px;
+    }
+
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      /* Light gray background for the track */
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #4caf50;
+      /* Green thumb color */
+      border-radius: 6px;
+      /* Rounded scrollbar edges */
+      border: 3px solid #f1f1f1;
+      /* Border to match track background */
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #45a049;
+      /* Darker green on hover */
+    }
+
+    /* For Firefox */
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: #4caf50 #f1f1f1;
+    }
+
+    .slide-title {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      z-index: 10;
+    }
+    /* From Uiverse.io by vinodjangid07 */
+    #button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: rgb(20, 20, 20);
+      border: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 0px 0px 1px rgba(1, 0, 6, 0.253);
+      cursor: pointer;
+      transition-duration: 0.3s;
+      overflow: hidden;
+      position: fixed;
+      bottom: 3rem;
+      right: 1.5rem;
+    }
+
+    .svgIcon {
+      width: 12px;
+      transition-duration: 0.3s;
+    }
+
+    .svgIcon path {
+      fill: white;
+    }
+
+    #button:hover {
+      width: 140px;
+      border-radius: 50px;
+      transition-duration: 0.3s;
+      background-color: #ccff00df;
+      align-items: center;
+    }
+
+    #button:hover .svgIcon {
+      /* width: 20px; */
+      transition-duration: 0.3s;
+      transform: translateY(-200%);
+    }
+
+    #button::before {
+      position: absolute;
+      bottom: -20px;
+      content: "Back to Top";
+      color: black;
+      /* transition-duration: .3s; */
+      font-size: 0px;
+    }
+
+    #button:hover::before {
+      font-size: 13px;
+      opacity: 1;
+      bottom: unset;
+      /* transform: translateY(-30px); */
+      transition-duration: 0.3s;
+    }
+  </style>
+
+  <body>
+    <div class="header">
+      <nav class="nav-bar">
+        <a href="home-page.html">
+          <img src="./images/farmer-logo.png" alt="logo" class="logo" />
+        </a>
+        <ul class="nav-links">
+          <div class="radio-inputs">
+            <label>
+              <input
+                class="radio-input"
+                type="radio"
+                name="engine"
+                onclick="window.location.href='home-page.html';"
+              />
+              <span class="radio-tile">
+                <span class="radio-icon">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=z6m63h25vYs2&format=png&color=000000"
+                    alt=""
+                  />
+                </span>
+                <span class="radio-label">Home</span>
+              </span>
+            </label>
+            <label>
+              <input
+                class="radio-input"
+                type="radio"
+                name="engine"
+                onclick="window.location.href='farmers-page.html';"
+                checked
+              />
+              <span class="radio-tile">
+                <span class="radio-icon">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=47584&format=png&color=000000"
+                    alt=""
+                  />
+                </span>
+                <span class="radio-label">Farmer</span>
+              </span>
+            </label>
+            <label>
+              <input
+                class="radio-input"
+                type="radio"
+                name="engine"
+                onclick="window.location.href='crops-page.html';"
+              />
+              <span class="radio-tile">
+                <span class="radio-icon">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=1832&format=png&color=000000"
+                    alt=""
+                  />
+                </span>
+                <span class="radio-label">Crops</span>
+              </span>
+            </label>
+            <label>
+              <input
+                class="radio-input"
+                type="radio"
+                name="engine"
+                onclick="window.location.href='about-us-page.html';"
+              />
+              <span class="radio-tile">
+                <span class="radio-icon">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=3439&format=png&color=000000"
+                    alt=""
+                  />
+                </span>
+                <span class="radio-label">About Us</span>
+              </span>
+            </label>
+          </div>
+        </ul>
+        <div class="button">
+          <a href="./signup.html">
+            <button class="animated-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="arr-2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                ></path>
+              </svg>
+              <span class="text">Sign Up</span>
+              <span class="circle"></span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="arr-1"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                ></path>
+              </svg>
+            </button>
+          </a>
+          <a href="./login.html">
+            <button class="animated-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="arr-2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                ></path>
+              </svg>
+              <span class="text">Login</span>
+              <span class="circle"></span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="arr-1"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                ></path>
+              </svg>
+            </button>
+          </a>
+        </div>
+      </nav>
+    </div>
+    <div class="farmers-list">
+      <div class="top-page">
+        <h1>Browse farmers</h1>
+        <div class="navigation-container">
+          <div class="group">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
+              <g>
+                <path
+                  d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+                ></path>
+              </g>
+            </svg>
+
+            <input
+              id="query searchBar"
+              class="input"
+              type="search"
+              placeholder="Search..."
+              name="searchbar"
+            />
+          </div>
+          <a href="crops-page.html">
+            <button class="back-button">← Back</button>
+          </a>
+        </div>
+      </div>
+      <div class="loader">
+        <div class="boxes">
+          <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+
+      <table id="farmer-data">
+        <thead>
+          <tr>
+            <th>Profile Picture</th>
+            <th>Name</th>
+            <th>State</th>
+            <th>Crop Type</th>
+            <th>Amount Produced</th>
+            <th>Government Verified</th>
+          </tr>
+        </thead>
+        <tbody id="farmer-table-body">
+          <!-- Farmer rows will be populated here -->
+        </tbody>
+      </table>
+    </div>
+    <div id="google_translate_element"></div>
+    <button id="button" onclick="scrollToTop()">
+      <svg class="svgIcon" viewBox="0 0 384 512">
+        <path
+          d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+        ></path>
+      </svg>
+    </button>
+
+    <footer>
+      <p>&copy; 2024 KisanSetu. All Rights Reserved.</p>
+      <div class="footer-links">
+        <a href="home-page.html">Home</a>
+        <a href="about-us-page.html">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <!-- <script type="module" src="farmers.js"></script> -->
+    <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+    <script>
+      function loadGoogleTranslate() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en", // Specify the default page language
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE, // Choose layout
+          },
+          "google_translate_element"
+        ); // The ID of the element where the widget will be rendered
       }
-    }
 
-    function displayFarmers(searchTerm = "") {
-      const farmerTableBody = document.getElementById('farmer-table-body');
-
-      // Paths to your custom images
-      const verifiedImage = './images/verified.png';  // Path to your verified icon image
-      const unverifiedImage = './images/unverified.jpg';  // Path to your unverified icon image
-
-      farmerTableBody.innerHTML = '';  // Clear existing rows
-
-      farmers.forEach(farmer => {
-        // Ensure produceAmount is an array, default to empty array if undefined
-        const produceAmount = Array.isArray(farmer.produceAmount) ? farmer.produceAmount : [];
-        // Choose the appropriate image based on the governmentVerified status
-        const verifiedStatusImage = farmer.governmentVerified ? verifiedImage : unverifiedImage;
-        let crops = farmer.cropsGrown ? farmer.cropsGrown.map((str) => str.toLowerCase()) : [];
-        let searchTermLower = searchTerm.toLowerCase()
-        if (farmer.name.toLowerCase().includes(searchTermLower) ||
-          crops.some(crop => crop.includes(searchTermLower))) {
-          const row = document.createElement('tr');
-          row.innerHTML = `
-      <td><img src="${farmer.image || './images/farmer-logo.jpg'}" alt="${farmer.name[0] || 'No name'}"></td>
-      <td>
-        <a href="farmers-details.html?farmerId=${farmer.farmerId || ''}">
-          ${farmer.name || 'No name'}
-        </a>
-      </td>
-      <td>${farmer.state || 'No state'}</td>
-      <td>${farmer.cropsGrown || 'No crops'}</td>
-      <td>${produceAmount.join(', ')} kg</td>
-      <td class="verified-status"><img src="${verifiedStatusImage}" alt="Verified Status"></td>
-    `;
-          farmerTableBody.appendChild(row);
-        }
-
+      window.addEventListener("load", function () {
+        setTimeout(loadGoogleTranslate, 500); // Adding a slight delay to ensure proper load
       });
 
-      // farmers.forEach(farmer => {
-      //   // Ensure produceAmount is an array, default to empty array if undefined
-      //   const produceAmount = Array.isArray(farmer.produceAmount) ? farmer.produceAmount : [];
+      function setLanguage(lang) {
+        localStorage.setItem("googleTranslateLanguage", lang);
+        window.location.reload();
+      }
+    </script>
+    <script type="module">
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+        createUserWithEmailAndPassword,
+        GoogleAuthProvider,
+      } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+      import {
+        getFirestore,
+        doc,
+        setDoc,
+        getDoc,
+        query,
+        collection,
+        where,
+        getDocs,
+      } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
 
-      //   // Choose the appropriate image based on the governmentVerified status
-      //   const verifiedStatusImage = farmer.governmentVerified ? verifiedImage : unverifiedImage;
+      const firebaseConfig = {
+        apiKey: "AIzaSyBNrhwRH5TeqAPyXmToaCGJ6St4g1FKOno",
+        authDomain: "kisansetu-1640.firebaseapp.com",
+        projectId: "kisansetu-1640",
+        storageBucket: "kisansetu-1640.appspot.com",
+        messagingSenderId: "763552320675",
+        appId: "1:763552320675:web:93cff2382387b7b5dc4316",
+      };
 
-      //   const row = document.createElement('tr');
-      //   row.innerHTML = `
-      //     <td><img src="${farmer.image || './images/farmer-logo.jpg'}" alt="${farmer.name[0] || 'No name'}"></td>
-      //     <td>
-      //       <a href="farmers-details.html?farmerId=${farmer.farmerId || ''}">
-      //         ${farmer.name || 'No name'}
-      //       </a>
-      //     </td>
-      //     <td>${farmer.state || 'No state'}</td>
-      //     <td>${farmer.cropsGrown || 'No crops'}</td>
-      //     <td>${produceAmount.join(', ')} kg</td>
-      //     <td class="verified-status"><img src="${verifiedStatusImage}" alt="Verified Status"></td>
-      //   `;
-      //   farmerTableBody.appendChild(row);
-      // });
-    }
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const db = getFirestore(app);
+      const googleProvider = new GoogleAuthProvider();
 
-    // Fetch existing farmers data from JSON
-    fetch('./farmers-details.json')
-      .then(response => response.json())
-      .then(data => {
-        farmers = data;  // Initialize farmers with existing data
-        fetchFirestoreFarmers();  // Fetch and merge with Firestore data
-      })
-      .catch(error => console.error('Error fetching the JSON file:', error));
+      let farmers = [];
 
+      async function fetchFirestoreFarmers() {
+        const table = document.getElementById("farmer-data");
+        const loader = document.getElementsByClassName("boxes")[0];
+        loader.style.display = "block";
+        table.style.display = "none";
+        try {
+          const farmersQuery = query(
+            collection(db, "users"),
+            where("occupation", "==", "Farmer")
+          );
+          const querySnapshot = await getDocs(farmersQuery);
 
-    const user = localStorage.getItem("uid");
-    if (user) {
-      const buttons = document.getElementsByClassName("button")[0];
-      buttons.innerHTML = `<a href="/dashboard">
+          if (querySnapshot.empty) {
+            console.log("No matching farmers found.");
+            return;
+          }
+
+          const firestoreFarmers = querySnapshot.docs.map((doc) => ({
+            farmerId: doc.id,
+            ...doc.data(),
+          }));
+
+          // Merge with existing farmers data
+          farmers = [...farmers, ...firestoreFarmers];
+          const searchBar = document.querySelector("#query\\ searchBar");
+          searchBar.addEventListener("input", function () {
+            const searchTerm = searchBar.value.toLowerCase();
+            console.log(searchTerm);
+            displayFarmers(searchTerm);
+          });
+          console.log(farmers);
+          displayFarmers();
+        } catch (error) {
+          console.error("Error fetching farmers from Firestore:", error);
+        } finally {
+          loader.style.display = "none";
+          table.style.display = "block";
+        }
+      }
+
+      function displayFarmers(searchTerm = "") {
+        const farmerTableBody = document.getElementById("farmer-table-body");
+
+        // Paths to your custom images
+        const verifiedImage = "./images/verified.png"; // Path to your verified icon image
+        const unverifiedImage = "./images/unverified.jpg"; // Path to your unverified icon image
+
+        farmerTableBody.innerHTML = ""; // Clear existing rows
+
+        farmers.forEach((farmer) => {
+          // Ensure produceAmount is an array, default to empty array if undefined
+          const produceAmount = Array.isArray(farmer.produceAmount)
+            ? farmer.produceAmount
+            : [];
+          // Choose the appropriate image based on the governmentVerified status
+          const verifiedStatusImage = farmer.governmentVerified
+            ? verifiedImage
+            : unverifiedImage;
+          let crops = farmer.cropsGrown
+            ? farmer.cropsGrown.map((str) => str.toLowerCase())
+            : [];
+          let searchTermLower = searchTerm.toLowerCase();
+          if (
+            farmer.name.toLowerCase().includes(searchTermLower) ||
+            crops.some((crop) => crop.includes(searchTermLower))
+          ) {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+      <td><img src="${farmer.image || "./images/farmer-logo.jpg"}" alt="${farmer.name[0] || "No name"}"></td>
+      <td>
+        <a href="farmers-details.html?farmerId=${farmer.farmerId || ""}">
+          ${farmer.name || "No name"}
+        </a>
+      </td>
+      <td>${farmer.state || "No state"}</td>
+      <td>${farmer.cropsGrown || "No crops"}</td>
+      <td>${produceAmount.join(", ")} kg</td>
+      <td class="verified-status"><img src="${verifiedStatusImage}" alt="Verified Status"></td>
+    `;
+            farmerTableBody.appendChild(row);
+          }
+        });
+
+        // farmers.forEach(farmer => {
+        //   // Ensure produceAmount is an array, default to empty array if undefined
+        //   const produceAmount = Array.isArray(farmer.produceAmount) ? farmer.produceAmount : [];
+
+        //   // Choose the appropriate image based on the governmentVerified status
+        //   const verifiedStatusImage = farmer.governmentVerified ? verifiedImage : unverifiedImage;
+
+        //   const row = document.createElement('tr');
+        //   row.innerHTML = `
+        //     <td><img src="${farmer.image || './images/farmer-logo.jpg'}" alt="${farmer.name[0] || 'No name'}"></td>
+        //     <td>
+        //       <a href="farmers-details.html?farmerId=${farmer.farmerId || ''}">
+        //         ${farmer.name || 'No name'}
+        //       </a>
+        //     </td>
+        //     <td>${farmer.state || 'No state'}</td>
+        //     <td>${farmer.cropsGrown || 'No crops'}</td>
+        //     <td>${produceAmount.join(', ')} kg</td>
+        //     <td class="verified-status"><img src="${verifiedStatusImage}" alt="Verified Status"></td>
+        //   `;
+        //   farmerTableBody.appendChild(row);
+        // });
+      }
+
+      // Fetch existing farmers data from JSON
+      fetch("./farmers-details.json")
+        .then((response) => response.json())
+        .then((data) => {
+          farmers = data; // Initialize farmers with existing data
+          fetchFirestoreFarmers(); // Fetch and merge with Firestore data
+        })
+        .catch((error) =>
+          console.error("Error fetching the JSON file:", error)
+        );
+
+      const user = localStorage.getItem("uid");
+      if (user) {
+        const buttons = document.getElementsByClassName("button")[0];
+        buttons.innerHTML = `<a href="/dashboard">
           <button class="animated-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -582,32 +668,30 @@
             </svg>
           </button>
         </a>`;
-    }
-
-    let tl=gsap.timeline({
-      scrollTrigger:{
-        trigger:'#button',
-        start:'top 500px',
-        end:'top 580px',
-        scrub:true,
-        markers:false
       }
-    })
-    tl.from('#button',{
-      x:200
-    })
-    tl.to('#button',{
-      x:0
-    })
 
-    window.scrollToTop=function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // This makes the scroll smooth
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#button",
+          start: "top 500px",
+          end: "top 580px",
+          scrub: true,
+          markers: false,
+        },
       });
-    }
-  </script>
+      tl.from("#button", {
+        x: 200,
+      });
+      tl.to("#button", {
+        x: 0,
+      });
 
-</body>
-
+      window.scrollToTop = function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth", // This makes the scroll smooth
+        });
+      };
+    </script>
+  </body>
 </html>
