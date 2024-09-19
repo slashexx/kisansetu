@@ -333,6 +333,7 @@ table {
     margin: 0 auto;
     /* Center the table horizontally */
     border-collapse: collapse;
+    margin-bottom: 70px;
 }
 
 /* Centering images in the first column of the table */
