@@ -1,2 +1,3 @@
 *.html linguist-vendored=true
+*.css linguist-generated=true
 *.ejs linguist-vendored=true
