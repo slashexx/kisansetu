@@ -1,2 +1,3 @@
-public/* linguist-generated=true
-views/* linguist-generated=true
+*.html linguist-vendored=true
+*.css linguist-vendored=true
+*.ejs linguist-vendored=true
